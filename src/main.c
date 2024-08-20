@@ -6,20 +6,14 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:43:30 by jperpect          #+#    #+#             */
-/*   Updated: 2024/08/20 10:11:01 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/08/20 11:46:48 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
 
-typedef struct t_times 
-{
-	int philosophers;
-	int death;
-	int food;
-	int sleep;
-} 				s_times;
+
 
 s_times set_philosophers_times(char **time)
 {
@@ -59,13 +53,13 @@ int	main(int ac, char **av)
 			 return(0);
 		}
 		gettimeofday(&tv, NULL);
-		times = set_philosophers_times(av);
+		 times = set_philosophers_times(av);
 		
 		printf("nb filo %d, nb death %d, nb food %d, nb sleep %d, time %ld \n",times.philosophers,times.death,times.food,times.sleep, tv.tv_usec /1000);
 		usleep(1000);
 		gettimeofday(&tv, NULL);
 		printf("nb filo %d, nb death %d, nb food %d, nb sleep %d, time %ld \n",times.philosophers,times.death,times.food,times.sleep, tv.tv_usec /1000);
-		filof();
+		filof(times);
 		
 	 }
 	 else

@@ -6,15 +6,16 @@
 #    By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 06:17:31 by jperpect          #+#    #+#              #
-#    Updated: 2024/08/20 10:09:39 by jperpect         ###   ########.fr        #
+#    Updated: 2024/08/20 14:35:30 by jperpect         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FLGS = -Wall -Wextra -Werror -fsanitize=thread
 
+#-fsanitize=thread
 MAKEFLAGS += -s
 
-FILES = ./src/main.c ./src/mandatory/test.c
+FILES = ./src/main.c ./src/mandatory/test.c ./src/mandatory/mutex/mutex_gen.c
 
 SRCS = $(FILES:.c=.o)
 
