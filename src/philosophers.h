@@ -24,11 +24,17 @@ typedef struct t_times
 
 typedef struct t_ThreadData{ 
     int name;
+	int n_thread;
 	s_times times;
     pthread_mutex_t *mutex;
-
+	struct t_ThreadData *temp;
+	
 } s_ThreadData;
 
+typedef struct t_loco {
+	s_ThreadData *norm;
+	s_ThreadData *loco;
+}	s_loco;
 
 s_ThreadData ft_alloc_mutex(int philosop);
 void filof(s_times times);
