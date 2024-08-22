@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 09:40:11 by jperpect          #+#    #+#             */
-/*   Updated: 2024/08/22 16:05:15 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/08/22 18:31:05 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,7 @@ int ft_time(int second)
 	pthread_mutex_t *garfo =mute->mutex;
 	int save;
 	int start;
-	
-	
-	
+
  	start = ft_time(mute->start_second_time);
 
 	save = par(mute->name);
@@ -94,33 +92,46 @@ int ft_time(int second)
 		printf("%d %d has taken a right fork\n", (ft_time(mute->start_second_time)-mute->time_start),mute->name);
 	}
 	save = ft_time(mute->start_second_time);
-	if( mute->times.death -( save - start) < 0 )
-		return(save);
-	printf("%d %d is eating\n", (ft_time(mute->start_second_time)-mute->time_start),mute->name);
-
-	usleep((mute->times.food)*1000);
+	// if( mute->times.death -( save - start) < 0 )
+	// {}
+	// else
+	// {
+		printf("%d %d is eating\n", (ft_time(mute->start_second_time)-mute->time_start),mute->name);
+		usleep((mute->times.food)*1000);
+	//}
 	
  	save =ft_time(mute->start_second_time);
 
 
-	
-	pthread_mutex_unlock(&garfo[mute->name]);
-	if(mute->name != 0)
+	if(save == 0)
+	{
+		pthread_mutex_unlock(&garfo[mute->name]);
+		if(mute->name != 0)
 		pthread_mutex_unlock(&garfo[mute->name-1]);
-	else
+		else
 		pthread_mutex_unlock(&garfo[mute->times.philosophers ]);
+	}
+	else
+		if(mute->name != 0)
+		pthread_mutex_unlock(&garfo[mute->name-1]);
+		else
+		pthread_mutex_unlock(&garfo[mute->times.philosophers ]);
+		pthread_mutex_unlock(&garfo[mute->name]);
+	
 	return(save);
+	
  }
+ 
  
 
 int ft_sleep(s_ThreadData *mute)
 {
 	
-	int times;
-	times = ft_time(mute->start_second_time);
+	// int times;
+	// times = ft_time(mute->start_second_time);
 	printf("%d %d is sleeping\n", (ft_time(mute->start_second_time)-mute->time_start),mute->name);
  	usleep(mute->times.sleep*1000);
-	times =  ft_time(mute->start_second_time);
+	// times =  ft_time(mute->start_second_time);
 	return(0);
 }
 
@@ -129,6 +140,7 @@ void *therd(void * struc)
 	s_ThreadData *mute;
 	s_loco *mutes;
 	s_ThreadData* loco;
+	
 	
 	int n_food;
 	
@@ -139,7 +151,7 @@ void *therd(void * struc)
 	mutes = (s_loco *)struc;
 	loco = (s_ThreadData *)mutes->loco;
 	mute = (s_ThreadData* )mutes->norm;
-	
+	mute->stay_or_life = true;
 	
 	while(loco->name != mute->times.philosophers-1)
 	 ;
@@ -153,10 +165,10 @@ void *therd(void * struc)
 	{
 	if(mute->times.food_x == n_food && n_food != 0)
 	{
-		//loco->name = 0;
+		mute->stay_or_life = fasle;
 		return("mori");
 	}
-	if(loco == 0)
+	if(mutes->livfe == fasle)
 	{
 		printf("%d %d died\n ",(ft_time(mute->start_second_time)-mute->time_start),mute->name);
 		return("mori");
@@ -168,19 +180,13 @@ void *therd(void * struc)
 	if(mute->times.death-( neg_temp - start) < 0)
 	{
 		printf("%d %d died\n",(ft_time(mute->start_second_time)-mute->time_start),mute->name);
-		loco->name = 0;
 		return("mori");
 	}
-	if(loco == 0)
-	{
-		printf("%d %d died\n ",(ft_time(mute->start_second_time)-mute->time_start),mute->name);
-		return("mori");
-	}	
+
 	ft_sleep(mute);
 	if(mute->times.death-  mute->times.sleep< 0)
 	{
 		printf("%d %d died\n ",(ft_time(mute->start_second_time)-mute->time_start),mute->name);
-		loco->name = 0;
 		return("mori");
 	}
 	printf("%d %d is thinking\n", (ft_time(mute->start_second_time)-mute->time_start),mute->name);
@@ -204,12 +210,36 @@ s_ThreadData copy_data(s_ThreadData data,int i)
 
 
 
+void* bar_men(void * struc)
+{
+	
+	s_ThreadData *mute;
+	s_loco *mutes;
+	int i;
+	i = -1;
+	mutes = (s_loco *)struc;
+	mute = (s_ThreadData* )mutes->norm;
+	mutes->livfe = true;
+	
+	while(++i < mute->times.philosophers)
+	{
+		if(mute[i].stay_or_life == fasle)
+		{
+				mutes->livfe = fasle;
+		}
+	}
+	return("ola");
+}
+
+
+
 void filof(s_times  times)
 {
 
 	s_ThreadData data;
 	s_ThreadData *temp;
 	pthread_t *therds;
+	pthread_t bar;
 	int i;
 
 	i = -1;
@@ -221,7 +251,9 @@ void filof(s_times  times)
 	i = -1;
 
 	 s_loco test;
-	 
+	
+
+
 	while (++i < times.philosophers)
 	{	
 			data.name = i;
@@ -230,6 +262,12 @@ void filof(s_times  times)
 			test.loco = &data;
 			pthread_create(&therds[i],NULL,therd,&test);
 	}
+	i++;	
+	data.name = i;
+			temp[i] = copy_data(data,i);
+			test.norm = &temp[i];
+			test.loco = &data;
+	pthread_create(&bar,NULL,bar_men,&test);
 
 	i = -1;
 	while (++i < times.philosophers)
@@ -237,6 +275,7 @@ void filof(s_times  times)
 		
 		pthread_join(therds[i],NULL);
 	}
+	pthread_join(bar,NULL);
 	free(therds);
 	ft_free_mutex(data,times.philosophers);
 	

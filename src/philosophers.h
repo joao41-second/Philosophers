@@ -24,6 +24,7 @@ typedef struct t_times
 
 typedef struct t_ThreadData{ 
     int name;
+	int stay_or_life;
 	int n_thread;
 	int time_start;
 	int start_second_time;
@@ -35,6 +36,7 @@ typedef struct t_ThreadData{
 } s_ThreadData;
 
 typedef struct t_loco {
+	int livfe;
 	s_ThreadData *norm;
 	s_ThreadData *loco;
 }	s_loco;
