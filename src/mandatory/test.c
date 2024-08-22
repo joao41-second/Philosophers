@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 09:40:11 by jperpect          #+#    #+#             */
-/*   Updated: 2024/08/21 16:17:35 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/08/22 16:05:15 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 // 	gettimeofday(&tv, NULL);	
 // 	start = tv.tv_usec /1000;
 // 	//printf("eu  %d comesei a comer as %d\n",mute->name,start);
-// 	usleep((mute->times.food)*1000);
+// 	usleep((mute->times. (time()-mute->time_start))*1000);
 // 	 pthread_mutex_unlock(&garfo[mute->name]);
 // 	if(mute->name != 0)
 // 	  pthread_mutex_unlock(&garfo[mute->name-1]);
@@ -50,55 +50,77 @@ int par (int n)
 	if(n %2 == 0)
 		return(true);
 	return(fasle);	
+
 }
 
- int comer( s_ThreadData *mute)
+int ft_time(int second)
+{
+	struct timeval tv;
+	gettimeofday(&tv, NULL);	
+	return( tv.tv_usec /1000 + (tv.tv_sec-second)*1000);
+}
+
+
+ int comer( s_ThreadData *mute  )
  {
 	pthread_mutex_t *garfo =mute->mutex;
-	struct timeval tv;
 	int save;
+	int start;
+	
+	
+	
+ 	start = ft_time(mute->start_second_time);
+
 	save = par(mute->name);
 	if(save == 0)
 	{
-			pthread_mutex_lock(&garfo[mute->name]);
+		pthread_mutex_lock(&garfo[mute->name]);
+		printf("%d %d has taken a right fork\n", (ft_time(mute->start_second_time)- mute->time_start),mute->name);
  		if(mute->name != 0)
 	 		pthread_mutex_lock(&garfo[mute->name-1]);
  		else
 	 		pthread_mutex_lock(&garfo[mute->times.philosophers ]);
+		printf("%d %d has taken a left fork\n", (ft_time(mute->start_second_time)-mute->time_start),mute->name);
 	}
 	else
 	{
-		usleep(1000);
-			pthread_mutex_lock(&garfo[mute->name]);
+		usleep(100);
  		if(mute->name != 0)
 	 		pthread_mutex_lock(&garfo[mute->name-1]);
  		else
 	 		pthread_mutex_lock(&garfo[mute->times.philosophers ]);
+		printf("%d %d has taken a left fork\n", (ft_time(mute->start_second_time)-mute->time_start),mute->name);
+		pthread_mutex_lock(&garfo[mute->name]);
+		printf("%d %d has taken a right fork\n", (ft_time(mute->start_second_time)-mute->time_start),mute->name);
 	}
-	
-	
+	save = ft_time(mute->start_second_time);
+	if( mute->times.death -( save - start) < 0 )
+		return(save);
+	printf("%d %d is eating\n", (ft_time(mute->start_second_time)-mute->time_start),mute->name);
+
 	usleep((mute->times.food)*1000);
-	gettimeofday(&tv, NULL);	
- 	save = tv.tv_usec /1000;
-	 pthread_mutex_unlock(&garfo[mute->name]);
+	
+ 	save =ft_time(mute->start_second_time);
+
+
+	
+	pthread_mutex_unlock(&garfo[mute->name]);
 	if(mute->name != 0)
-	  pthread_mutex_unlock(&garfo[mute->name-1]);
-	 else
-	 	pthread_mutex_unlock(&garfo[mute->times.philosophers ]);
+		pthread_mutex_unlock(&garfo[mute->name-1]);
+	else
+		pthread_mutex_unlock(&garfo[mute->times.philosophers ]);
 	return(save);
  }
  
 
 int ft_sleep(s_ThreadData *mute)
 {
-	struct timeval tv;
-	int time;
-	gettimeofday(&tv, NULL);	
-	time = tv.tv_usec /1000;
-	printf("\n eu %d vou dromir\n",mute->name);
+	
+	int times;
+	times = ft_time(mute->start_second_time);
+	printf("%d %d is sleeping\n", (ft_time(mute->start_second_time)-mute->time_start),mute->name);
  	usleep(mute->times.sleep*1000);
-	gettimeofday(&tv, NULL);	
-	time =   tv.tv_usec /1000 - time;
+	times =  ft_time(mute->start_second_time);
 	return(0);
 }
 
@@ -107,9 +129,13 @@ void *therd(void * struc)
 	s_ThreadData *mute;
 	s_loco *mutes;
 	s_ThreadData* loco;
-	struct timeval tv;
+	
+	int n_food;
+	
 	int neg_temp;
 	int start;
+	
+	n_food = 0;
 	mutes = (s_loco *)struc;
 	loco = (s_ThreadData *)mutes->loco;
 	mute = (s_ThreadData* )mutes->norm;
@@ -117,22 +143,49 @@ void *therd(void * struc)
 	
 	while(loco->name != mute->times.philosophers-1)
 	 ;
+	struct timeval tv;
+	gettimeofday(&tv, NULL);
+	mute->start_second_time = tv.tv_sec *1000;
+	start = ft_time(mute->start_second_time);	
+	mute->time_start = start;
 	
-	gettimeofday(&tv, NULL);	
-	start = tv.tv_usec /1000;
-	
-	
-	
-	neg_temp = comer(mute);
-	
-	printf("\n eu %d demorei %d\n",mute->name, mute->times.death -( neg_temp - start));
-	if(mute->times.death-( neg_temp - start) < 0)
+	while(1)
 	{
-		printf("eu %d mori",mute->name);
+	if(mute->times.food_x == n_food && n_food != 0)
+	{
+		//loco->name = 0;
 		return("mori");
 	}
+	if(loco == 0)
+	{
+		printf("%d %d died\n ",(ft_time(mute->start_second_time)-mute->time_start),mute->name);
+		return("mori");
+	}
+	
+	start = ft_time(mute->start_second_time);
+	neg_temp = comer(mute);
+	n_food++;
+	if(mute->times.death-( neg_temp - start) < 0)
+	{
+		printf("%d %d died\n",(ft_time(mute->start_second_time)-mute->time_start),mute->name);
+		loco->name = 0;
+		return("mori");
+	}
+	if(loco == 0)
+	{
+		printf("%d %d died\n ",(ft_time(mute->start_second_time)-mute->time_start),mute->name);
+		return("mori");
+	}	
 	ft_sleep(mute);
-	//printf("\n eu %d quero comer %d\n",mute->name, mute->times.death-neg_temp);
+	if(mute->times.death-  mute->times.sleep< 0)
+	{
+		printf("%d %d died\n ",(ft_time(mute->start_second_time)-mute->time_start),mute->name);
+		loco->name = 0;
+		return("mori");
+	}
+	printf("%d %d is thinking\n", (ft_time(mute->start_second_time)-mute->time_start),mute->name);
+	
+	}
 	 
 	return("ola");
 }

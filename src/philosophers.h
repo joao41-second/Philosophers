@@ -25,7 +25,10 @@ typedef struct t_times
 typedef struct t_ThreadData{ 
     int name;
 	int n_thread;
+	int time_start;
+	int start_second_time;
 	s_times times;
+	
     pthread_mutex_t *mutex;
 	struct t_ThreadData *temp;
 	

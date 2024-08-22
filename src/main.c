@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:43:30 by jperpect          #+#    #+#             */
-/*   Updated: 2024/08/20 11:46:48 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/08/22 16:07:30 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,24 @@ int	main(int ac, char **av)
 		gettimeofday(&tv, NULL);
 		 times = set_philosophers_times(av);
 		
+		printf("nb filo %d, nb death %d, nb food %d, nb sleep %d, time %ld \n",times.philosophers,times.death,times.food,times.sleep, tv.tv_usec /1000);
+		usleep(1000);
+		gettimeofday(&tv, NULL);
+		printf("nb filo %d, nb death %d, nb food %d, nb sleep %d, time %ld \n",times.philosophers,times.death,times.food,times.sleep, tv.tv_usec /1000);
+		filof(times);
+		
+	 }else  if (ac == 6)
+	 {
+		
+		if(cheke_philosophrs_times(++av,ac) == fasle)
+		{
+			 printf("erro\n");
+			 return(0);
+		}
+		gettimeofday(&tv, NULL);
+		 times = set_philosophers_times(av);
+		 times.food_x = ft_atol(av[4]) ;
+		printf("food %s\n",av[4]);
 		printf("nb filo %d, nb death %d, nb food %d, nb sleep %d, time %ld \n",times.philosophers,times.death,times.food,times.sleep, tv.tv_usec /1000);
 		usleep(1000);
 		gettimeofday(&tv, NULL);
