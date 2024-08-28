@@ -37,6 +37,7 @@ typedef struct t_ThreadData{
 
 typedef struct t_loco {
 	int livfe;
+	pthread_mutex_t death;
 	s_ThreadData *norm;
 	s_ThreadData *loco;
 }	s_loco;

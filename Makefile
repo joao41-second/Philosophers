@@ -6,7 +6,7 @@
 #    By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 06:17:31 by jperpect          #+#    #+#              #
-#    Updated: 2024/08/22 17:30:13 by jperpect         ###   ########.fr        #
+#    Updated: 2024/08/28 11:51:02 by jperpect         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,7 +56,7 @@ endif
 all: $(NAME) $(file)
 %.o:%.c 
 	make file
-	@cc -c $(FLGS) -o $@ $< && clear && echo $(COUNT) && sleep 0.2
+	@cc -c -g $(FLGS) -o $@ $< && clear && echo $(COUNT) && sleep 0.2
 	$(eval COUNT=$(shell echo $$(( $(COUNT) + 1 ))))
 
 	# Salva o novo valor de COUNT no arquivo
