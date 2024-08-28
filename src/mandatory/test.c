@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 09:40:11 by jperpect          #+#    #+#             */
-/*   Updated: 2024/08/28 15:54:52 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/08/28 16:02:26 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,11 @@ int ft_time(int second)
 	}
 	else
 	{
-		usleep(100);
+		//usleep(100);
  		if(mute->name != 0)
 	 		pthread_mutex_lock(&garfo[mute->name-1]);
  		else
-	 		pthread_mutex_lock(&garfo[mute->times.philosophers ]);
+	 		pthread_mutex_lock(&garfo[mute->times.philosophers-1 ]);
 		temp = ft_time(mute->start_second_time)-mute->time_start ;
 		printf("%d %d has taken a left fork\n", temp,mute->name);
 		pthread_mutex_lock(&garfo[mute->name]);
@@ -144,7 +144,7 @@ void *therd(void * struc)
 	int neg_temp;
 	int start;
 	
-	n_food = 0;
+	n_food = 1;
 	
 	mutes = (s_loco *)struc;
 	loco = (s_ThreadData *)mutes->loco;
@@ -248,7 +248,7 @@ void filof(s_times  times)
 	int i;
 
 	i = -1;
-	data =ft_alloc_mutex(times.philosophers);
+	data =ft_alloc_mutex(times.philosophers-1);
 	therds = (pthread_t *)malloc(times.philosophers * sizeof(pthread_t));
 	temp = (s_ThreadData *)malloc(times.philosophers *sizeof(s_ThreadData));
 	data.times = times;
