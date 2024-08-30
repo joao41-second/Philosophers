@@ -6,28 +6,28 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 11:45:15 by jperpect          #+#    #+#             */
-/*   Updated: 2024/08/27 12:20:43 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/08/29 17:27:47 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "../../philosophers.h"
 
-s_ThreadData ft_alloc_mutex(int philosop)
+pthread_mutex_t  *ft_alloc_mutex(int philosop)
 {
-	s_ThreadData data;
+	pthread_mutex_t  *data;
 	int i;
 	
 	i = -1;
-	data.mutex = ( pthread_mutex_t*)malloc( philosop * sizeof(pthread_mutex_t));
+	data = ( pthread_mutex_t*)malloc( philosop * sizeof(pthread_mutex_t));
+	if(data == NULL)
+		return(NULL);
 	while (++i < philosop)
 	{
-		pthread_mutex_init(&(data.mutex[i]),NULL);
+		pthread_mutex_init(&(data[i]),NULL);
 	}
 //	data[i].mutex = NULL;
 	//printf("%d\n",i);
-	
-	
 	return(data);
 }
 
@@ -47,7 +47,7 @@ s_ThreadData ft_alloc_mutex(int philosop)
 // 	return(data);
 // }
 
-void ft_free_mutex(s_ThreadData data,int philo)
+void ft_free_mutex(pthread_mutex_t *data,int philo)
 {
 	
 	int i;
@@ -56,10 +56,10 @@ void ft_free_mutex(s_ThreadData data,int philo)
 	
 	while (++i < philo)
 	{
-		fre =  &data.mutex[i];
+		fre =  &data[i];
 		pthread_mutex_destroy(fre);
 	
 	}
-		free(data.mutex);
+		free(data);
 		
 }

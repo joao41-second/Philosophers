@@ -25,27 +25,38 @@ typedef struct t_times
 typedef struct t_ThreadData{ 
     int name;
 	int stay_or_life;
-	int n_thread;
 	int time_start;
 	int start_second_time;
 	s_times times;
-	
-    pthread_mutex_t *mutex;
-	struct t_ThreadData *temp;
-	
 } s_ThreadData;
 
 typedef struct t_loco {
+	
 	int livfe;
+	int *eu;
+	//s_ThreadData *norm;
+	int thead_start;
 	pthread_mutex_t death;
-	s_ThreadData *norm;
-	s_ThreadData *loco;
+	pthread_mutex_t *mutex;
 }	s_loco;
 
-s_ThreadData ft_alloc_mutex(int philosop);
-void filof(s_times times);
-void ft_free_mutex(s_ThreadData data,int philo);
+typedef struct t_new {
+	int start;
+	s_times times;
+	pthread_mutex_t death;
+} s_new;
 
+
+typedef struct t_new_fuck {
+	s_new * fuck;
+	int end;
+	int pq;
+}	s_new_fuck;
+
+pthread_mutex_t  *ft_alloc_mutex(int philosop);
+void filof(s_times times);
+void ft_free_mutex(pthread_mutex_t *data,int philo);
+void *thead(void *infs);
 
 
 #endif
