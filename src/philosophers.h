@@ -57,6 +57,6 @@ pthread_mutex_t  *ft_alloc_mutex(int philosop);
 void filof(s_times times);
 void ft_free_mutex(pthread_mutex_t *data,int philo);
 void *thead(void *infs);
-
+void *bar_men_thead(void *infs);
 
 #endif

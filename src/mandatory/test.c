@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 09:40:11 by jperpect          #+#    #+#             */
-/*   Updated: 2024/08/29 13:22:04 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/02 15:00:35 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -242,7 +242,7 @@ void filof(s_times  times)
 	int i;
 
 	i = -1;
-	data =ft_alloc_mutex(times.philosophers-1);
+	data = ft_alloc_mutex(times.philosophers-1);
 	therds = (pthread_t *)malloc(times.philosophers * sizeof(pthread_t));
 	temp = (s_ThreadData *)malloc(times.philosophers *sizeof(s_ThreadData));
 	data.times = times;
