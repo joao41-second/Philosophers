@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:23:05 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/03 15:03:33 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/03 17:12:21 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,5 @@ void filof(s_times  times)
 	trhed_start(therds,infos,times);
 	trhed_sleep(times.philosophers,therds);
 	free(therds);
-	ft_free_mutex(infos.mutex,times.philosophers);
+	//ft_free_mutex(infos.mutex,times.philosophers);
 }

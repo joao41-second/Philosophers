@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/03 15:05:46 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/03 17:16:02 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void forks(s_new *infos_new,s_new_fuck *infos )
 	pthread_mutex_t *fork;
 	fork = infos->fork;
 	(void)infos_new;	
-	//save = par(infos_new->start);
 	if(save == 0)
 	{	
 		pthread_mutex_lock(&fork[infos_new->start]);
@@ -65,13 +64,45 @@ void forks(s_new *infos_new,s_new_fuck *infos )
 }
 
 
-int ft_food( s_new *infos_new,s_new_fuck *infos)
+int ft_food( s_new *infos_new,s_new_fuck *infos,int time)
 {
 	(void)infos_new;
+	int start_time;
+	int time_temp;
+	pthread_mutex_t *fork;
+	
+	start_time = ft_time(infos_new->start_time_second)-infos_new->start_time;
+	fork = infos->fork;
 	forks(infos_new,infos);
-	return(0);
-}
+	
+	time_temp = ft_time(infos_new->start_time_second)-infos_new->start_time;
+	if(time - (time_temp-start_time) < 0)
+		return(time - (time_temp-start_time));
+	printf("%d %d is eating\n", ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);
+	usleep(infos_new->times.food *1000);
 
+	
+	pthread_mutex_unlock(&fork[infos_new->start]);
+	if(infos_new->start != 0)
+		pthread_mutex_unlock(&fork[infos_new->start-1]);
+	else
+		pthread_mutex_unlock(&fork[infos_new->times.philosophers]);
+	time_temp = ft_time(infos_new->start_time_second)-infos_new->start_time;
+	return(time - (time_temp-start_time));
+}
+int ft_sleep(s_new *infos_new,int time)
+{
+	int start_time;
+	int time_temp;
+	start_time = ft_time(infos_new->start_time_second)-infos_new->start_time;
+	printf("%d %d is sleeping\n",ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);
+	usleep(infos_new->times.sleep * 1000);
+	time_temp = ft_time(infos_new->start_time_second)-infos_new->start_time;
+	if(time - (time_temp - start_time) < 0)
+		return(time - (time_temp - start_time));
+	printf("%d %d is thinking\n",ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);
+	return(time - (time_temp - start_time));
+}
 int random_in_range(int min, int max) 
 {
 	return min + rand() % (max - min + 1);
@@ -84,9 +115,13 @@ void *thead(void *infs)
 	s_new_fuck * infos;
 	s_new * infos_new;
 	struct timeval tv;
-
+	int time;
+	int x;
+	 
 	infos = (s_new_fuck*)infs;
 	infos_new = (s_new*)infos->fuck;
+	time = infos_new->times.death;
+	x = 0;
 	while (infos->pq < infos_new->times.philosophers-1)
 	{}
 	
@@ -95,18 +130,30 @@ void *thead(void *infs)
 	infos_new->start_time = ft_time(infos_new->start_time_second);
 	while (1)
 	{
+		if(x == infos_new->times.food_x && infos_new->times.food_x != 0)
+		{
+			end(infos_new);
+			return("ola mudn");
+		}
 		if(infos->end == 0)
 		{
 			printf("dead\n");
 			return("oi");
 		}
-		ft_food(infos_new,infos);
-		if(random_in_range(1, 100) == 99)
- 		{
- 			printf("eu matie\n");
- 			end(infos_new);
+		time = ft_food(infos_new,infos,time);
+		if(time < 0)
+		{
+			end(infos_new);
 			return("oi");
- 		}
+		}else
+			time = infos_new->times.death;
+		time = ft_sleep(infos_new,time);
+		if(time < 0)
+		{
+			end(infos_new);
+			return("oi");
+		}
+		x++;
 	}
 	return("oi");
 }
