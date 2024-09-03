@@ -42,6 +42,8 @@ typedef struct t_loco {
 
 typedef struct t_new {
 	int start;
+	int start_time_second;
+	int start_time; 
 	s_times times;
 	pthread_mutex_t death;
 } s_new;
@@ -49,6 +51,7 @@ typedef struct t_new {
 
 typedef struct t_new_fuck {
 	s_new * fuck;
+	pthread_mutex_t *fork;
 	int end;
 	int pq;
 }	s_new_fuck;

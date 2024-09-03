@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:23:05 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/02 15:07:23 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/03 15:03:33 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void trhed_start(pthread_t* therds,s_loco infos,s_times times)
 	pthread_mutex_t death;
 	s_new_fuck fuck;
 	int i;
-	int tem;
 	
 	pthread_mutex_init(&death,NULL);
 	i = -1;
@@ -53,7 +52,7 @@ void trhed_start(pthread_t* therds,s_loco infos,s_times times)
 	env = (s_new *)malloc( times.philosophers * sizeof(s_new));
 	if(env == NULL)
 		return;
-	tem = true;
+	fuck.fork = infos.mutex;
 	while(++i < times.philosophers)
 	{
 		env[i].start = i;
@@ -62,13 +61,13 @@ void trhed_start(pthread_t* therds,s_loco infos,s_times times)
  		fuck.pq = i;
 		fuck.end = 1;
 		fuck.fuck= &env[i];
+		
 		pthread_create(&therds[i],NULL,thead,&fuck);
 	}
 	fuck.fuck= &env[0];
 	bar_start(fuck);
-	 fuck.end = 0;
+	fuck.end = 0;
 	pthread_mutex_destroy(&death);
-	printf("end\n");
 }
 void trhed_sleep(int cont,pthread_t* therds)
 {
@@ -76,6 +75,7 @@ void trhed_sleep(int cont,pthread_t* therds)
 	i = -1;
 	while (++i < cont)
 	{
+		printf("raiva %d\n",i);
 		pthread_join(therds[i],NULL);
 	}
 }
