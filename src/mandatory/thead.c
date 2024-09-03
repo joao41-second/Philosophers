@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/03 17:16:02 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/03 17:39:23 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void forks(s_new *infos_new,s_new_fuck *infos )
  		if(infos_new->start != 0)
 	 		pthread_mutex_lock(&infos->fork[infos_new->start-1]);
  		else
-	 		pthread_mutex_lock(&infos->fork[infos_new->times.philosophers-1 ]);
+	 		pthread_mutex_lock(&infos->fork[infos_new->times.philosophers ]);
 		printf("%d %d has taken a left fork\n", ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);
 		pthread_mutex_lock(&infos->fork[infos_new->start]);
 		printf("%d %d has taken a right fork\n", ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);
@@ -157,8 +157,6 @@ void *thead(void *infs)
 	}
 	return("oi");
 }
-
-
 
 
 void *bar_men_thead(void *infs)
