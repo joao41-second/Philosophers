@@ -56,6 +56,17 @@ typedef struct t_new_fuck {
 	int pq;
 }	s_new_fuck;
 
+
+typedef union t_forks {
+	struct 
+	{
+		int my;
+		int steal;
+	};
+	int fork[2];
+	
+} s_forks;
+
 pthread_mutex_t  *ft_alloc_mutex(int philosop);
 void filof(s_times times);
 void ft_free_mutex(pthread_mutex_t *data,int philo);

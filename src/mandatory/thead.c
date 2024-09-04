@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/03 17:39:23 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/04 15:33:41 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,32 +34,57 @@ int par (int n)
 
 }
 
+s_forks set_forks(int my,int max)
+{
+	s_forks forks;
+	if(my == 0)
+	{
+		forks.my = 0;
+		forks.steal = max;
+	}
+	else
+	{
+		forks.my = my;
+		forks.steal = my -1; 
+	}
+	return(forks);
+}
+
 void forks(s_new *infos_new,s_new_fuck *infos )
 {
+	s_forks forks;
 	int save = 0;
 	pthread_mutex_t *fork;
+	static int temp = 0;
+
+
+	forks = set_forks(infos_new->start,infos_new->times.philosophers-1);
 	fork = infos->fork;
-	(void)infos_new;	
+	(void)infos_new;
+	//printf("os filom sa x = %d\n",infos_new->times.philosophers);
+	save = par(infos_new->start);
+	if(infos_new->times.philosophers  %2 != 0 && infos_new->start == infos_new->times.philosophers -2 && temp == 0)
+	{
+		temp++;
+		usleep(1000);
+		save = 0;
+	}
+
+	
 	if(save == 0)
-	{	
-		pthread_mutex_lock(&fork[infos_new->start]);
-		printf("%d %d has taken a right fork\n", ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);
- 		if(infos_new->start != 0)
-	 		pthread_mutex_lock(&infos->fork[infos_new->start-1]);
- 		else
-	 		pthread_mutex_lock(&infos->fork[infos_new->times.philosophers ]);
+	{
+		pthread_mutex_lock(&infos->fork[forks.fork[1]]);
 		printf("%d %d has taken a left fork\n", ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);
+		pthread_mutex_lock(&fork[forks.fork[0]]);
+		printf("%d %d has taken a right fork\n", ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);
 	}
 	else
 	{
 		usleep(100);
- 		if(infos_new->start != 0)
-	 		pthread_mutex_lock(&infos->fork[infos_new->start-1]);
- 		else
-	 		pthread_mutex_lock(&infos->fork[infos_new->times.philosophers ]);
-		printf("%d %d has taken a left fork\n", ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);
-		pthread_mutex_lock(&infos->fork[infos_new->start]);
+		pthread_mutex_lock(&fork[forks.fork[0]]);
 		printf("%d %d has taken a right fork\n", ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);
+	 	pthread_mutex_lock(&infos->fork[forks.fork[1]]);
+		printf("%d %d has taken a left fork\n", ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);
 	}
 }
 
@@ -70,23 +95,29 @@ int ft_food( s_new *infos_new,s_new_fuck *infos,int time)
 	int start_time;
 	int time_temp;
 	pthread_mutex_t *fork;
-	
+	s_forks forkss;
+
+
+	forkss = set_forks(infos_new->start,infos_new->times.philosophers-1);
+
 	start_time = ft_time(infos_new->start_time_second)-infos_new->start_time;
 	fork = infos->fork;
 	forks(infos_new,infos);
-	
+		
+		
 	time_temp = ft_time(infos_new->start_time_second)-infos_new->start_time;
 	if(time - (time_temp-start_time) < 0)
+	{
+		pthread_mutex_unlock(&fork[forkss.fork[1]]);
+		pthread_mutex_unlock(&fork[forkss.fork[0]]);
 		return(time - (time_temp-start_time));
+	}
 	printf("%d %d is eating\n", ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);
 	usleep(infos_new->times.food *1000);
 
 	
-	pthread_mutex_unlock(&fork[infos_new->start]);
-	if(infos_new->start != 0)
-		pthread_mutex_unlock(&fork[infos_new->start-1]);
-	else
-		pthread_mutex_unlock(&fork[infos_new->times.philosophers]);
+	pthread_mutex_unlock(&fork[forkss.fork[1]]);
+	pthread_mutex_unlock(&fork[forkss.fork[0]]);
 	time_temp = ft_time(infos_new->start_time_second)-infos_new->start_time;
 	return(time - (time_temp-start_time));
 }
@@ -143,13 +174,20 @@ void *thead(void *infs)
 		time = ft_food(infos_new,infos,time);
 		if(time < 0)
 		{
+			printf("dead\n");
 			end(infos_new);
 			return("oi");
 		}else
 			time = infos_new->times.death;
+		if(infos->end == 0)
+		{
+			printf("dead\n");
+			return("oi");
+		}
 		time = ft_sleep(infos_new,time);
 		if(time < 0)
 		{
+			printf("dead\n");
 			end(infos_new);
 			return("oi");
 		}

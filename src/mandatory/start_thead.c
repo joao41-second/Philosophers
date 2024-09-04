@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:23:05 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/03 17:12:21 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/04 11:14:41 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ void trhed_sleep(int cont,pthread_t* therds)
 	i = -1;
 	while (++i < cont)
 	{
-		printf("raiva %d\n",i);
 		pthread_join(therds[i],NULL);
 	}
+	
 }
 
 
@@ -87,7 +87,7 @@ void filof(s_times  times)
 	pthread_t *therds;
 	
 	pthread_mutex_init(&infos.death,NULL);
-	infos.mutex = ft_alloc_mutex(times.philosophers-1);
+	infos.mutex = ft_alloc_mutex(times.philosophers);
 	if(infos.mutex == NULL)
 		return ;
 	therds = trhed_criate(times);
