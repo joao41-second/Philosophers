@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/04 15:33:41 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:27:54 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,9 +164,10 @@ void *thead(void *infs)
 		if(x == infos_new->times.food_x && infos_new->times.food_x != 0)
 		{
 			end(infos_new);
+			usleep(1000);
 			return("ola mudn");
 		}
-		if(infos->end == 0)
+		if(*(infos_new->i_end) == 0)
 		{
 			printf("dead\n");
 			return("oi");
@@ -179,7 +180,7 @@ void *thead(void *infs)
 			return("oi");
 		}else
 			time = infos_new->times.death;
-		if(infos->end == 0)
+		if(*(infos_new->i_end)== 0)
 		{
 			printf("dead\n");
 			return("oi");
@@ -218,6 +219,7 @@ void *bar_men_thead(void *infs)
 			pthread_mutex_lock(&infus2[i].death);
 			if(infus2[i].start == -1)
 			{
+				infus->end = 0;
 				return("ola");
 			}
 			pthread_mutex_unlock(&infus2[i].death);
