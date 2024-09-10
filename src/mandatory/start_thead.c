@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:23:05 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/10 11:14:11 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/10 15:52:05 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,17 @@ pthread_t *trhed_criate(s_times times)
 		return(NULL);
 	return(therds);
 }
-
-void trhed_start(pthread_t* therds,s_loco infos,s_times times)
+void trhed_sleep(int cont,pthread_t* therds)
+{
+	int i;
+	i = -1;
+	while (++i < cont)
+	{
+		pthread_join(therds[i],NULL);
+	}
+	
+}
+void  trhed_start(pthread_t* therds,s_loco infos,s_times times)
 {
 	s_new *env;
 	pthread_mutex_t death;
@@ -69,25 +78,17 @@ void trhed_start(pthread_t* therds,s_loco infos,s_times times)
 	fuck.fuck= &env[0];
 	bar_start(fuck);
 	fuck.end = 0;
-	//pthread_mutex_destroy(&death);
+	trhed_sleep(times.philosophers,therds);
+	pthread_mutex_destroy(&death);
+	return;
 }
-void trhed_sleep(int cont,pthread_t* therds)
-{
-	int i;
-	i = -1;
-	while (++i < cont)
-	{
-		pthread_join(therds[i],NULL);
-	}
-	
-}
+
 
 
 void filof(s_times  times)
 {
 	s_loco infos;
 	pthread_t *therds;
-	
 	pthread_mutex_init(&infos.death,NULL);
 	infos.mutex = ft_alloc_mutex(times.philosophers);
 	if(infos.mutex == NULL)
@@ -99,7 +100,8 @@ void filof(s_times  times)
 		return;
 	}
 	trhed_start(therds,infos,times);
-	trhed_sleep(times.philosophers,therds);
+
 	free(therds);
 	//ft_free_mutex(infos.mutex,times.philosophers);
+	//pthread_mutex_destroy(&dead);
 }
