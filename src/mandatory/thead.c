@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/10 15:09:08 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:25:03 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,19 @@ int forks(s_new *infos_new,s_new_fuck *infos, s_forks forks)
 {
 	int save = 0;
 	pthread_mutex_t *fork;
-	static int temp = 0;
+	//static int temp = 0;
 	fork = infos->fork;
 	(void)infos_new;
 	save = par(infos_new->start);
-	if(infos_new->times.philosophers  %2 != 0 && infos_new->start == infos_new->times.philosophers -2 && temp == 0)
+	// if(infos_new->times.philosophers  %2 != 0 && infos_new->start == infos_new->times.philosophers -2 && temp == 0)
+	// {
+	// 	temp++;
+	// 	usleep(1000);
+	// 	save = 0;
+	// }
+	if(infos_new->start == 0)
 	{
-		temp++;
 		usleep(1000);
-		save = 0;
 	}
 	if(save == 0)
 	{
@@ -79,12 +83,6 @@ int forks(s_new *infos_new,s_new_fuck *infos, s_forks forks)
 			return(fasle);	
 		}
 		printf("%d %d has taken a left fork\n", ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);
-		if(infos->end== 0)
-		{
-			printf("oi1\n");
-			//pthread_mutex_unlock(&infos->fork[forks.fork[0]]);
-			return(fasle);	
-		}
 		pthread_mutex_lock(&fork[forks.fork[0]]);
 		if(infos->end== 0)
 		{
