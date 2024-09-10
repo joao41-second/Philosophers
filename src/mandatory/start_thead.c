@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:23:05 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/05 10:24:39 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/10 11:14:11 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void trhed_start(pthread_t* therds,s_loco infos,s_times times)
 	while(++i < times.philosophers)
 	{
 		env[i].start = i;
+		env[i].im = i;
 		env[i].death = death;
 		env[i].times = times;
  		fuck.pq = i;
@@ -67,7 +68,7 @@ void trhed_start(pthread_t* therds,s_loco infos,s_times times)
 	}
 	fuck.fuck= &env[0];
 	bar_start(fuck);
-	
+	fuck.end = 0;
 	//pthread_mutex_destroy(&death);
 }
 void trhed_sleep(int cont,pthread_t* therds)

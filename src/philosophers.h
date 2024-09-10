@@ -42,6 +42,7 @@ typedef struct t_loco {
 
 typedef struct t_new {
 	int start;
+	int im;
 	int start_time_second;
 	int start_time; 
 	s_times times;
