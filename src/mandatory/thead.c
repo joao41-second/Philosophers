@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/10 11:56:35 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/10 15:09:08 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,11 +166,14 @@ int ft_sleep(s_new *infos_new,int time)
 		return(-1);
 	printf("%d %d is sleeping\n",ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);
 	
-
+	
 	time_temp = ft_time(infos_new->start_time_second)-infos_new->start_time;
-		if(time - (time_temp - start_time) < 0)
-	while (time_temp != start_time + infos_new->times.sleep * 1000)
+	if(time - (time_temp - start_time) < 0)
+		return(-1);
+
+	while (time_temp != start_time + (infos_new->times.sleep ))
 	{
+		usleep(100);
 		if(*(infos_new->i_end)== 0)
 			return(-1);
 		time_temp = ft_time(infos_new->start_time_second)-infos_new->start_time;
