@@ -6,13 +6,13 @@
 #    By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 06:17:31 by jperpect          #+#    #+#              #
-#    Updated: 2024/09/05 10:27:04 by jperpect         ###   ########.fr        #
+#    Updated: 2024/09/11 09:17:29 by jperpect         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FLGS = -g -Wall -Wextra -Werror -pthread -fsanitize=thread
+FLGS =  -Wall -Wextra -Werror -fsanitize=thread -pthread  
 
-#-fsanitize=thread -pthread
+#-fsanitize=thread -pthread -fsanitize=leak
 MAKEFLAGS += -s
 
 FILES = ./src/main.c ./src/mandatory/start_thead.c ./src/mandatory/mutex/mutex_gen.c src/mandatory/thead.c
@@ -53,7 +53,20 @@ endif
 
 #.SILENT:
 
-all: $(NAME) $(file)
+all: $(NAME) 
+
+
+
+$(NAME) : $(SRCS)
+	cd libft && make compile && make 
+	cc $(FLGS) $(SRCS) $(LIB) -o $(NAME)
+	echo "╔══════════════════════════╗"
+	echo "║ ✅ Compiled Successfully!║"
+	echo "╚══════════════════════════╝"
+	@rm -f $(COUNT_FILE)
+
+
+
 %.o:%.c 
 	make file
 	@cc -c -g $(FLGS) -o $@ $< && clear && echo $(COUNT) && sleep 0.2
@@ -62,16 +75,6 @@ all: $(NAME) $(file)
 	# Salva o novo valor de COUNT no arquivo
 	@echo $(COUNT) > $(COUNT_FILE)
 
-	
-
-$(NAME) : $(SRCS)
-	cd libft && make compile && make 
-	
-	cc $(FLGS) $(SRCS) $(LIB) 	 -o $(NAME)
-	echo "╔══════════════════════════╗"
-	echo "║ ✅ Compiled Successfully!║"
-	echo "╚══════════════════════════╝"
-	@rm -f $(COUNT_FILE)
 	
 bonus: $(OBJECT_B) $(NAME)
 	ar rcs $(NAME) $^

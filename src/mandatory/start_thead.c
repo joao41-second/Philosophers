@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:23:05 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/10 15:52:05 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/11 09:16:47 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ void  trhed_start(pthread_t* therds,s_loco infos,s_times times)
 	fuck.end = 0;
 	trhed_sleep(times.philosophers,therds);
 	pthread_mutex_destroy(&death);
+	free(env);
 	return;
 }
 
@@ -102,6 +103,6 @@ void filof(s_times  times)
 	trhed_start(therds,infos,times);
 
 	free(therds);
-	//ft_free_mutex(infos.mutex,times.philosophers);
+	ft_free_mutex(infos.mutex,times.philosophers);
 	//pthread_mutex_destroy(&dead);
 }

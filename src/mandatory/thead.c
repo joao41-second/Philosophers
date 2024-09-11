@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/10 16:25:03 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/11 09:26:01 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ int forks(s_new *infos_new,s_new_fuck *infos, s_forks forks)
 			return(fasle);	
 		}
 		pthread_mutex_lock(&fork[forks.fork[1]]);
+		usleep(100);
 		if(*(infos_new->i_end)== 0)
 		{
 			printf("oi0\n");
@@ -84,6 +85,7 @@ int forks(s_new *infos_new,s_new_fuck *infos, s_forks forks)
 		}
 		printf("%d %d has taken a left fork\n", ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);
 		pthread_mutex_lock(&fork[forks.fork[0]]);
+		usleep(100);
 		if(infos->end== 0)
 		{
 			printf("oi2\n");
@@ -97,6 +99,7 @@ int forks(s_new *infos_new,s_new_fuck *infos, s_forks forks)
 	{
 		usleep(100);
 		pthread_mutex_lock(&fork[forks.fork[0]]);
+		usleep(100);
 		if(infos->end== 0)
 		{
 			printf("oi3\n");
@@ -106,7 +109,7 @@ int forks(s_new *infos_new,s_new_fuck *infos, s_forks forks)
 		printf("%d %d has taken a right fork\n", ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);
 	
 	 	pthread_mutex_lock(&fork[forks.fork[1]]);
-		
+		usleep(100);
 		if(infos->end== 0)
 		{
 			printf("oi5\n");
