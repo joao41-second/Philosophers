@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/11 09:26:01 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/11 10:27:55 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@ s_forks set_forks(int my,int max)
 	}
 	return(forks);
 }
+
+
+
 
 int forks(s_new *infos_new,s_new_fuck *infos, s_forks forks)
 {
@@ -149,6 +152,7 @@ int ft_food( s_new *infos_new,s_new_fuck *infos,int time)
 		pthread_mutex_unlock(&fork[forkss.fork[0]]);
 		return(time - (time_temp-start_time));
 	}
+	
 	printf("%d %d is eating\n", ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);
 	usleep(infos_new->times.food *1000);
 	//	printf("vamus ver os dois, o primiero e %d e o segund e %d \n",*(infos_new->i_end),infos->end);
