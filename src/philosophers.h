@@ -53,6 +53,7 @@ typedef struct t_new {
 
 typedef struct t_new_fuck {
 	s_new * fuck;
+	pthread_mutex_t mens;
 	pthread_mutex_t *fork;
 	int end;
 	int pq;
