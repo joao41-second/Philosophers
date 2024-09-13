@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/13 10:26:06 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/13 15:41:08 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@ void end(s_new *infos_new)
 	//printf("eu matei  %d \n",infos_new->start);
 	pthread_mutex_lock(&infos_new->death);
 	infos_new->im = -1;	
+	infos_new->i_end = 0;
 	pthread_mutex_unlock(&infos_new->death);
 }
 
 void print(s_new_fuck *infos,char *mens, s_new *infos_new ,int time)
 {
 	pthread_mutex_lock(&infos->mens);
-	printf("\n%d %d %s",time,infos_new->start,mens);
+	printf("%d %d %s\n",time,infos_new->start,mens);
 	pthread_mutex_unlock(&infos->mens);
 }
 
@@ -62,10 +63,11 @@ s_forks set_forks(int my,int max)
 int print_forks(s_new_fuck *infos,s_new *infos_new,pthread_mutex_t *fork,int mut)
 {
 	pthread_mutex_lock(&fork[mut]); 
-	if(infos->end== 0)
+	if(infos_new->i_end == 0)
 	{
 		return(fasle);
 	};
+	if(infos){}
 	print(infos,"has taken a fork",infos_new,ft_time(infos_new->start_time_second)-infos_new->start_time);
 	return(true);
 }
@@ -89,7 +91,7 @@ int forks(s_new *infos_new,s_new_fuck *infos, s_forks forks)
 	}
 	if(save == 0)
 	{
-		if(infos->end== 0)
+		if(infos_new->i_end == 0)
 		{
 			return(fasle);
 		}
@@ -109,7 +111,7 @@ int forks(s_new *infos_new,s_new_fuck *infos, s_forks forks)
 	else
 	{
 		usleep(200);
-		if(infos->end== 0)
+		if(infos_new->i_end == 0)
 		{
 			return(fasle);
 		}
@@ -141,11 +143,7 @@ int ft_food( s_new *infos_new,s_new_fuck *infos,int time)
 
 
 	forkss = set_forks(infos_new->start,infos_new->times.philosophers-1);
-	// if(forkss.fork[0] < 0 || forkss.fork[1] < 0 || forkss.fork[1] > infos_new->times.philosophers -1 || forkss.fork[1] > infos_new->times.philosophers -1 )
-	// {
-	// 	return(fasle);
-	// }
-	//usleep(1000);
+	
 	start_time = ft_time(infos_new->start_time_second)-infos_new->start_time;
 	fork = infos->fork;
 	if (forks(infos_new,infos,forkss) == fasle)
@@ -169,7 +167,7 @@ int ft_sleep(s_new *infos_new,int time,s_new_fuck *infos)
 {
 	int start_time;
 	start_time = ft_time(infos_new->start_time_second)-infos_new->start_time;
-	if(*(infos_new->i_end)== 0)
+	if(infos_new->i_end == 0)
 		return(-1);
 	print(infos,"is sleeping",infos_new,ft_time(infos_new->start_time_second)-infos_new->start_time);
 	// printf("%d %d is sleeping\n",ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);
@@ -186,69 +184,83 @@ int ft_sleep(s_new *infos_new,int time,s_new_fuck *infos)
 	//printf("%d %d is thinking\n",ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);a
 	return(time - (ft_time(infos_new->start_time_second)-infos_new->start_time - start_time));
 }
-// int ft_food( s_new *infos_new,s_new_fuck *infos,int time)
-// {
-// 	(void)time;
-// 	(void)infos;
 
-// 	if(infos_new->start== 1)
-// 	{
-// 		sleep(10);
-// 		return(-1);
-// 	}
-// 	return(10);
-// }
-
+s_new copy_struct(s_new *infos_new)
+{
+	s_new copy;
+	//copy.death = infos_new->death;
+	copy.i_end = infos_new->i_end;
+	//copy.im = infos_new->im;
+	copy.start = infos_new->start;
+	copy.start_time = infos_new->start_time;
+	copy.start_time_second = infos_new->start_time_second;
+	copy.times = infos_new->times;
+	return(copy);
+}
 
 
 void *thead(void *infs)
 {
+	usleep(1000);
 	s_new_fuck * infos;
-	s_new * infos_new;
+	s_new * infos_news;
+	s_new infos_new;
 	struct timeval tv;
 	int time;
 	int x;
+	int fil_n;
 	 
+	
 	infos = (s_new_fuck*)infs;
-	infos_new = (s_new*)infos->fuck;
-	time = infos_new->times.death;
+	pthread_mutex_lock(&infos->mens);
+	infos_news = (s_new*)infos->fuck;
+	infos_new = copy_struct(infos_news); 
+	time = infos_news->times.death;
+	pthread_mutex_unlock(&infos->mens);
+	
 	x = 0;
-	while (infos->pq <infos_new->times.philosophers-1)
+
+	fil_n = infos_new.times.philosophers-1;
+
+	
+	while (infos->pq <fil_n)
 	{}
 	
 	gettimeofday(&tv, NULL);
-	infos_new->start_time_second = tv.tv_sec * 1000;
-	infos_new->start_time = ft_time(infos_new->start_time_second);
+	infos_new.start_time_second = tv.tv_sec * 1000;
+	infos_new.start_time = ft_time(infos_new.start_time_second);
 	while (1)
 	{
-		if(x == infos_new->times.food_x && infos_new->times.food_x != 0)
+		if(x == infos_new.times.food_x && infos_new.times.food_x != 0)
 		{
-			end(infos_new);
+			end(infos_news);
 			return("ola mudn");
 		}
-		if(infos->end== 0)
+		
+		if(infos_news->i_end == 0 )
 		{
-			end(infos_new);
+			end(infos_news);
 			return("oi");
 			
 		}
-		time = ft_food(infos_new,infos,time);
+		time = ft_food(&infos_new,infos,time);
+		
 		if(time < 0)
 		{
-			//end(infos_new);
+			end(&infos_new);
 			return("oi");
 		}else
-			time = infos_new->times.death;
-		if(infos->end== 0)
+			time = infos_new.times.death;
+		if(infos_news->i_end == 0 )
 		{
-			end(infos_new);
+			end(infos_news);
 			return("oi");
 		}
-		time = infos_new->times.death;
-		time = ft_sleep(infos_new,time,infos);
+		time = infos_new.times.death;
+		time = ft_sleep(&infos_new,time,infos);
 		if(time < 0)
 		{
-			end(infos_new);
+			end(infos_news);
 			return("oi");
 		}
 		x++;
@@ -269,22 +281,24 @@ void *bar_men_thead(void *infs)
 	pthread_mutex_lock(&infus2->death);
 	nb = infus2->times.philosophers;
 	pthread_mutex_unlock(&infus2->death);
-	while (1)
-	{
-		int i;
-		i = 0;
-		while (++i < nb)
-		{
-			pthread_mutex_lock(&infus2[i].death);
-			if(infus2[i].im== -1)
-			{
-				infus->end = 0;
-				//printf("dead\n");
-				pthread_mutex_unlock(&infus2[i].death);
-				return("ola");
-			}
-			pthread_mutex_unlock(&infus2[i].death);
-		}	
-	}
+	// while (1)
+	// {
+	// 	int i;
+	// 	i = 0;
+	// 	while (++i < nb)
+	// 	{
+	// 		usleep(1000);
+	// 		printf("%d oi o numre\n",infus2[i].im);
+	// 		pthread_mutex_lock(&infus2[i].death);
+	// 		if(infus2[i].im == -1)
+	// 		{
+	// 			infus->end = 0;
+	// 			ft_printf("dead\n");
+	// 			pthread_mutex_unlock(&infus2[i].death);
+	// 			return("ola");
+	// 		}
+	// 		pthread_mutex_unlock(&infus2[i].death);
+	// 	}
+	// }
 	return("oi");
 }
