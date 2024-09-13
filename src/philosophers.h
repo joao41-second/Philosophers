@@ -48,6 +48,7 @@ typedef struct t_new {
 	s_times times;
 	pthread_mutex_t death;
 	int *i_end;
+	int *set;
 } s_new;
 
 
@@ -56,6 +57,7 @@ typedef struct t_new_fuck {
 	pthread_mutex_t mens;
 	pthread_mutex_t *fork;
 	int end;
+	int set;
 	int pq;
 }	s_new_fuck;
 

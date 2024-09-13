@@ -6,19 +6,20 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/13 15:41:08 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/13 16:18:36 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philosophers.h"
 
-void end(s_new *infos_new)
+void end(s_new *infos_new,s_new_fuck *infos)
 {
-	//printf("eu matei  %d \n",infos_new->start);
-	pthread_mutex_lock(&infos_new->death);
-	infos_new->im = -1;	
-	infos_new->i_end = 0;
-	pthread_mutex_unlock(&infos_new->death);
+	// //printf("eu matei  %d \n",infos_new->start);
+	 pthread_mutex_lock(&infos_new->death);
+	 if(infos){};
+	// //infos_new->im = -1;	
+	// infos->set = fasle;
+	 pthread_mutex_unlock(&infos_new->death);
 }
 
 void print(s_new_fuck *infos,char *mens, s_new *infos_new ,int time)
@@ -233,13 +234,13 @@ void *thead(void *infs)
 	{
 		if(x == infos_new.times.food_x && infos_new.times.food_x != 0)
 		{
-			end(infos_news);
+			end(infos_news,infos);
 			return("ola mudn");
 		}
 		
 		if(infos_news->i_end == 0 )
 		{
-			end(infos_news);
+			end(infos_news,infos);
 			return("oi");
 			
 		}
@@ -247,20 +248,20 @@ void *thead(void *infs)
 		
 		if(time < 0)
 		{
-			end(&infos_new);
+			end(&infos_new,infos);
 			return("oi");
 		}else
 			time = infos_new.times.death;
 		if(infos_news->i_end == 0 )
 		{
-			end(infos_news);
+			end(infos_news,infos);
 			return("oi");
 		}
 		time = infos_new.times.death;
 		time = ft_sleep(&infos_new,time,infos);
 		if(time < 0)
 		{
-			end(infos_news);
+			end(infos_news,infos);
 			return("oi");
 		}
 		x++;
@@ -287,17 +288,18 @@ void *bar_men_thead(void *infs)
 	// 	i = 0;
 	// 	while (++i < nb)
 	// 	{
-	// 		usleep(1000);
-	// 		printf("%d oi o numre\n",infus2[i].im);
-	// 		pthread_mutex_lock(&infus2[i].death);
-	// 		if(infus2[i].im == -1)
+	// 		usleep(500);
+	// 		pthread_mutex_lock(&infus2->death);
+	// 		if(*infus2->set == fasle)
 	// 		{
 	// 			infus->end = 0;
-	// 			ft_printf("dead\n");
-	// 			pthread_mutex_unlock(&infus2[i].death);
+	// 			printf("dead\n");
+	// 			pthread_mutex_lock(&infus->mens);
+	// 			pthread_mutex_unlock(&infus2->death);
 	// 			return("ola");
 	// 		}
-	// 		pthread_mutex_unlock(&infus2[i].death);
+	// 		pthread_mutex_unlock(&infus2->death);
+			
 	// 	}
 	// }
 	return("oi");
