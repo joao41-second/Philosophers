@@ -6,12 +6,11 @@
 #    By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 06:17:31 by jperpect          #+#    #+#              #
-#    Updated: 2024/09/12 13:27:32 by jperpect         ###   ########.fr        #
+#    Updated: 2024/09/13 10:24:30 by jperpect         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FLGS =  -Wall -Wextra -Werror 
-
+FLGS =  -Wall -Wextra -Werror -pthread 
 #-fsanitize=thread -pthread -fsanitize=leak
 MAKEFLAGS += -s
 
