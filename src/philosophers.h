@@ -78,4 +78,6 @@ void ft_free_mutex(pthread_mutex_t *data,int philo);
 void *thead(void *infs);
 void *bar_men_thead(void *infs);
 
+//int end(s_new *infos_new,s_new_fuck *infos,int boll);
+
 #endif

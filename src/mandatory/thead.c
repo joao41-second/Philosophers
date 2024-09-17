@@ -6,28 +6,11 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/13 16:18:36 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/17 12:10:58 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philosophers.h"
-
-void end(s_new *infos_new,s_new_fuck *infos)
-{
-	// //printf("eu matei  %d \n",infos_new->start);
-	 pthread_mutex_lock(&infos_new->death);
-	 if(infos){};
-	// //infos_new->im = -1;	
-	// infos->set = fasle;
-	 pthread_mutex_unlock(&infos_new->death);
-}
-
-void print(s_new_fuck *infos,char *mens, s_new *infos_new ,int time)
-{
-	pthread_mutex_lock(&infos->mens);
-	printf("%d %d %s\n",time,infos_new->start,mens);
-	pthread_mutex_unlock(&infos->mens);
-}
 
 
 int ft_time(int second)
@@ -36,6 +19,27 @@ int ft_time(int second)
 	gettimeofday(&tv, NULL);	
 	return( tv.tv_usec /1000 + (tv.tv_sec-second)*1000);
 }
+void print(s_new_fuck *infos,char *mens, s_new *infos_new ,int time)
+{
+	pthread_mutex_lock(&infos->mens);
+	printf("oi eu quer %d\n",infos->end);
+	if(infos->end != true)
+	{
+	printf("%d %d %s\n",time,infos_new->start,mens);
+	}
+	pthread_mutex_unlock(&infos->mens);
+}
+void end(s_new *infos_new,s_new_fuck *infos)
+{
+	// //printf("eu matei  %d \n",infos_new->start);
+	 if(infos){}
+	 pthread_mutex_lock(&infos_new->death);
+	 infos_new->im = -1;
+	 pthread_mutex_unlock(&infos_new->death);
+	 
+}
+
+
 
 int par (int n)
 {
@@ -235,32 +239,51 @@ void *thead(void *infs)
 		if(x == infos_new.times.food_x && infos_new.times.food_x != 0)
 		{
 			end(infos_news,infos);
+			 if(infos_new.i_end != true)
+			 {
+			print(infos,"dead",&infos_new,ft_time(infos_new.start_time_second)-infos_new.start_time);
+	 		}
 			return("ola mudn");
 		}
-		
+		printf("ola raiva %d\n",*infos_news->i_end);
 		if(infos_news->i_end == 0 )
 		{
 			end(infos_news,infos);
 			return("oi");
-			
+			 if(infos_new.i_end != true)
+			 {
+			print(infos,"dead",&infos_new,ft_time(infos_new.start_time_second)-infos_new.start_time);
+	 		}
 		}
 		time = ft_food(&infos_new,infos,time);
 		
 		if(time < 0)
 		{
-			end(&infos_new,infos);
+			end(infos_news,infos);
+			 if(infos_new.i_end != true)
+			 {
+			print(infos,"dead",&infos_new,ft_time(infos_new.start_time_second)-infos_new.start_time);
+	 		}
 			return("oi");
 		}else
 			time = infos_new.times.death;
 		if(infos_news->i_end == 0 )
 		{
 			end(infos_news,infos);
+			 if(infos_new.i_end != true)
+			 {
+			print(infos,"dead",&infos_new,ft_time(infos_new.start_time_second)-infos_new.start_time);
+	 		}
 			return("oi");
 		}
 		time = infos_new.times.death;
 		time = ft_sleep(&infos_new,time,infos);
 		if(time < 0)
 		{
+			 if(infos_new.i_end != true)
+			 {
+			print(infos,"dead",&infos_new,ft_time(infos_new.start_time_second)-infos_new.start_time);
+	 		}
 			end(infos_news,infos);
 			return("oi");
 		}
@@ -282,25 +305,25 @@ void *bar_men_thead(void *infs)
 	pthread_mutex_lock(&infus2->death);
 	nb = infus2->times.philosophers;
 	pthread_mutex_unlock(&infus2->death);
-	// while (1)
-	// {
-	// 	int i;
-	// 	i = 0;
-	// 	while (++i < nb)
-	// 	{
-	// 		usleep(500);
-	// 		pthread_mutex_lock(&infus2->death);
-	// 		if(*infus2->set == fasle)
-	// 		{
-	// 			infus->end = 0;
-	// 			printf("dead\n");
-	// 			pthread_mutex_lock(&infus->mens);
-	// 			pthread_mutex_unlock(&infus2->death);
-	// 			return("ola");
-	// 		}
-	// 		pthread_mutex_unlock(&infus2->death);
+	while (1)
+	{
+		int i;
+		i = -1;
+		while (++i < nb)
+		{
+			usleep(50);
+			//printf("ola eu so o ficha da puta : %d \n",infus2[i].im);
+			pthread_mutex_lock(&infus2->death);
+	
+			if(infus2[i].im == fasle)
+			{
+				infus->end = 0;
+				pthread_mutex_unlock(&infus2->death);
+				return("ola");
+			}
+			pthread_mutex_unlock(&infus2->death);
 			
-	// 	}
-	// }
+		}
+	}
 	return("oi");
 }

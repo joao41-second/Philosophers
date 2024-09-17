@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:23:05 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/13 16:17:26 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/17 11:35:09 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,13 +88,14 @@ void  trhed_start(pthread_t* therds,s_loco infos,s_times times)
 		usleep(500);
 		pthread_create(&therds[i],NULL,thead,&fuck);
 	}
-	// pthread_mutex_lock(&fuck.mens);
-	// fuck.fuck= &env[0];
-	// pthread_mutex_unlock(&fuck.mens);
-	// bar_start(fuck);
+	//pthread_mutex_lock(&fuck.mens);
+	//fuck.fuck= &env];
+	//pthread_mutex_unlock(&fuck.mens);
+
+	
+	bar_start(fuck);
 	fuck.end = 0;
 	trhed_sleep(times.philosophers,therds);
-	printf("dead\n");
 	pthread_mutex_destroy(&death);
 	pthread_mutex_destroy(&(fuck.mens));
 	free(env);
@@ -106,7 +107,7 @@ void  trhed_start(pthread_t* therds,s_loco infos,s_times times)
 void filof(s_times  times)
 {
 	s_loco infos;
-	pthread_t *therds;
+	pthread_t *therds;		
 	pthread_mutex_init(&infos.death,NULL);
 	infos.mutex = ft_alloc_mutex(times.philosophers);
 	if(infos.mutex == NULL)
