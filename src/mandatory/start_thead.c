@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:23:05 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/17 11:35:09 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/17 16:13:35 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void bar_start(s_new_fuck env)
 	pthread_t bar_men;
 	pthread_create(&bar_men,NULL,bar_men_thead,&env);
 	pthread_join(bar_men,NULL);
+	
 	
 }
 
@@ -87,14 +88,13 @@ void  trhed_start(pthread_t* therds,s_loco infos,s_times times)
 		pthread_mutex_unlock(&fuck.mens);
 		usleep(500);
 		pthread_create(&therds[i],NULL,thead,&fuck);
-	}
-	//pthread_mutex_lock(&fuck.mens);
-	//fuck.fuck= &env];
-	//pthread_mutex_unlock(&fuck.mens);
-
 	
+	}
+	 pthread_mutex_lock(&fuck.mens);
+	// fuck.fuck= 0;
+	pthread_mutex_unlock(&fuck.mens);
 	bar_start(fuck);
-	fuck.end = 0;
+	//fuck.end = 0;
 	trhed_sleep(times.philosophers,therds);
 	pthread_mutex_destroy(&death);
 	pthread_mutex_destroy(&(fuck.mens));

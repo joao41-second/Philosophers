@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:43:30 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/04 09:36:17 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/17 16:18:15 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	main(int ac, char **av)
 		}
 		gettimeofday(&tv, NULL);
 		 times = set_philosophers_times(av);
-		
+		 times.food_x = 0 ;
 		// printf("nb filo %d, nb death %d, nb food %d, nb sleep %d, time %ld \n",times.philosophers,times.death,times.food,times.sleep, tv.tv_usec /1000);
 		usleep(1000);
 		gettimeofday(&tv, NULL);
