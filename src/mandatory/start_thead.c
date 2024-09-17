@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:23:05 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/17 16:13:35 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/17 16:44:34 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void  trhed_start(pthread_t* therds,s_loco infos,s_times times)
 	{
 		env[i].start = i;
 		env[i].im = i;
-		env[i].death = death;
+		env[i].death = &death;
 		env[i].times = times;
  		fuck.pq = i;
 		fuck.end = 1;

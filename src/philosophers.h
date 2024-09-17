@@ -46,7 +46,7 @@ typedef struct t_new {
 	int start_time_second;
 	int start_time; 
 	s_times times;
-	pthread_mutex_t death;
+	pthread_mutex_t *death;
 	int *i_end;
 	int *set;
 } s_new;

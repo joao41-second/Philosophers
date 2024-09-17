@@ -6,28 +6,70 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/17 16:23:34 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/17 17:12:22 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philosophers.h"
 
-void end(s_new *infos_new,s_new_fuck *infos)
+ int end(s_new *infos_new,s_new_fuck *infos,int set)
 {
-	 pthread_mutex_lock(&infos_new->death);
+	
+	 pthread_mutex_lock(infos_new->death);
+	 static int ok = 0;
 	 if(infos){};
+	 if(set == true)
+	 {
+	 if(ok == 0)
+	 	printf("dead\n");
+	 ok++;
 	 infos_new->im = -1;
-	 pthread_mutex_unlock(&infos_new->death);
+	 }
+	 if(ok == 0)
+	 {
+		pthread_mutex_unlock(infos_new->death);
+		 return(true);
+	 }
+	 pthread_mutex_unlock(infos_new->death);
+	 return(fasle);
 }
+
+// int end(s_new *infos_new,s_new_fuck *infos,int set)
+// {
+	
+
+// 	pthread_mutex_lock(infos_new->death);
+// 	 	static int ok = 0;
+// 	if(set == true)
+// 	{
+// 	 if(infos){};
+// 	 if(ok == 0)
+// 	 	printf("dead\n");
+// 	 ok++;
+// 	 infos_new->im = -1;
+	
+// 	 }
+// 	  pthread_mutex_unlock(infos_new->death);
+// 	 return(ok);
+// }
+
+
 
 void print(s_new_fuck *infos,char *mens, s_new *infos_new ,int time)
 {
 	//printf("muita raiva %d\n",*infos->fuck->set);
+	int ok  ;
 	pthread_mutex_lock(&infos->mens);
-	pthread_mutex_lock(&infos->fuck->death);
-	if(infos->fuck->im != -1 )
-	printf("%d %d %s\n",time,infos_new->start,mens);
-	pthread_mutex_unlock(&infos->fuck->death);
+	if(end(infos->fuck,infos,fasle) == fasle)
+		ok = fasle;
+	else
+		ok = true;
+	pthread_mutex_unlock(&infos->mens);
+	pthread_mutex_lock(&infos->mens);
+	pthread_mutex_lock(infos->fuck->death);
+		if(ok == true)
+			printf("%d %d %s\n",time,infos_new->start,mens);
+	pthread_mutex_unlock(infos->fuck->death);
 	pthread_mutex_unlock(&infos->mens);
 }
 
@@ -237,13 +279,13 @@ void *thead(void *infs)
 	{
 		if(x == infos_new.times.food_x && infos_new.times.food_x != 0)
 		{
-			end(infos_news,infos);
+			end(infos_news,infos,true);
 			return("ola mudn");
 		}
 		
 		if(infos_news->i_end == 0 )
 		{
-			end(infos_news,infos);
+			end(infos_news,infos,true);
 			return("oi");
 			
 		}
@@ -251,13 +293,13 @@ void *thead(void *infs)
 		usleep(1000);
 		if(time < 0)
 		{
-			end(infos_news,infos);
+			end(infos_news,infos,true);
 			return("oi");
 		}else
 			time = infos_new.times.death;
 		if(infos_news->i_end == 0 )
 		{
-			end(infos_news,infos);
+			end(infos_news,infos,true);
 			return("oi");
 		}
 		time = infos_new.times.death;
@@ -265,7 +307,7 @@ void *thead(void *infs)
 		
 		if(time < 0)
 		{
-			end(infos_news,infos);
+			end(infos_news,infos,true);
 			return("oi");
 		}
 		x++;
@@ -283,18 +325,18 @@ void *bar_men_thead(void *infs)
 	infus = (s_new_fuck *)infs;
 	infus2 = (s_new *)infus->fuck;
 
-	pthread_mutex_lock(&infus2->death);
+	pthread_mutex_lock(infus2->death);
 	nb = infus2->times.philosophers;
-	pthread_mutex_unlock(&infus2->death);
+	pthread_mutex_unlock(infus2->death);
 	while (1)
 	{
 		int i;
 		i = -1;
 		while (++i < nb)
 		{
-			//usleep(50);
+			usleep(50);
 			
-			pthread_mutex_lock(&infus2->death);
+			pthread_mutex_lock(infus2->death);
 			if(infus2[i].im == fasle)
 			{
 				infus->end = fasle;
@@ -308,7 +350,7 @@ void *bar_men_thead(void *infs)
 				}
 				return("ola");
 			}
-			pthread_mutex_unlock(&infus2->death);
+			pthread_mutex_unlock(infus2->death);
 			
 		}
 		return("ola");
