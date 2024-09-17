@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/17 17:12:22 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/17 20:10:32 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@
 	 ok++;
 	 infos_new->im = -1;
 	 }
-	 if(ok == 0)
+	 if(ok != 0)
 	 {
 		pthread_mutex_unlock(infos_new->death);
-		 return(true);
+		 return(fasle);
 	 }
 	 pthread_mutex_unlock(infos_new->death);
-	 return(fasle);
+	 return(true);
 }
 
 // int end(s_new *infos_new,s_new_fuck *infos,int set)
@@ -277,6 +277,7 @@ void *thead(void *infs)
 	infos_new.start_time = ft_time(infos_new.start_time_second);
 	while (1)
 	{
+		usleep(1000);
 		if(x == infos_new.times.food_x && infos_new.times.food_x != 0)
 		{
 			end(infos_news,infos,true);
@@ -290,7 +291,6 @@ void *thead(void *infs)
 			
 		}
 		time = ft_food(&infos_new,infos,time);
-		usleep(1000);
 		if(time < 0)
 		{
 			end(infos_news,infos,true);

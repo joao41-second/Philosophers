@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:23:05 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/17 16:44:34 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/17 19:49:32 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void  trhed_start(pthread_t* therds,s_loco infos,s_times times)
 		pthread_mutex_lock(&fuck.mens);
 		fuck.fuck= &env[i];
 		pthread_mutex_unlock(&fuck.mens);
-		usleep(500);
+		usleep(1500);
 		pthread_create(&therds[i],NULL,thead,&fuck);
 	
 	}
