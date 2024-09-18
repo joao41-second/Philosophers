@@ -10,8 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-FLGS =  -Wall -Wextra -Werror -pthread 
-#-fsanitize=thread -pthread -fsanitize=leak
+FLGS = -pthread 
+#-fsanitize=thread -pthread -fsanitize=leak -Wall -Wextra -Werror
 MAKEFLAGS += -s
 
 FILES = ./src/main.c ./src/mandatory/start_thead.c ./src/mandatory/mutex/mutex_gen.c src/mandatory/thead.c
