@@ -66,10 +66,9 @@ void print(s_new_fuck *infos,char *mens, s_new *infos_new ,int time)
 		ok = true;
 	pthread_mutex_unlock(&infos->mens);
 	pthread_mutex_lock(&infos->mens);
-	pthread_mutex_lock(&infos->death);
+	
 		if(ok == true)
 			printf("%d %d %s\n",time,infos_new->start,mens);
-	pthread_mutex_unlock(&infos->death);
 	pthread_mutex_unlock(&infos->mens);
 }
 
@@ -108,10 +107,14 @@ s_forks set_forks(int my,int max)
 int print_forks(s_new_fuck *infos,s_new *infos_new,pthread_mutex_t *fork,int mut)
 {
 	pthread_mutex_lock(&fork[mut]); 
-	if(*infos_new->i_end == fasle)
-	{
-		return(fasle);
-	};
+	pthread_mutex_lock(&infos->mens);
+		if(*infos->fuck->i_end == fasle)
+		{
+			pthread_mutex_unlock(&infos->mens);
+			return(fasle);
+		}
+		pthread_mutex_unlock(&infos->mens);
+
 	if(infos){}
 	print(infos,"has taken a fork",infos_new,ft_time(infos_new->start_time_second)-infos_new->start_time);
 	return(true);
@@ -136,10 +139,14 @@ int forks(s_new *infos_new,s_new_fuck *infos, s_forks forks)
 	}
 	if(save == 0)
 	{
-		if(*infos_new->i_end == fasle)
+		pthread_mutex_lock(&infos->mens);
+		if(*infos->fuck->i_end == fasle)
 		{
+			pthread_mutex_unlock(&infos->mens);
 			return(fasle);
 		}
+		pthread_mutex_unlock(&infos->mens);
+
 		if(print_forks(infos,infos_new,fork,forks.fork[1]) == fasle)
 		{
 			pthread_mutex_unlock(&fork[forks.fork[1]]);
@@ -156,10 +163,14 @@ int forks(s_new *infos_new,s_new_fuck *infos, s_forks forks)
 	else
 	{
 		usleep(200);
-		if(*infos_new->i_end == fasle)
+		pthread_mutex_lock(&infos->mens);
+		if(*infos->fuck->i_end == fasle)
 		{
+			pthread_mutex_unlock(&infos->mens);
 			return(fasle);
 		}
+		pthread_mutex_unlock(&infos->mens);
+
 		
 		if(print_forks(infos,infos_new,fork,forks.fork[0]) == fasle)
 		{
@@ -273,8 +284,8 @@ void *thead(void *infs)
 	{}
 	
 	pthread_mutex_lock(&infos->mens);
-	//infos_news = (s_new*)infos->fuck;
-	//infos_new = copy_struct(infos_news); 
+	infos_news = (s_new*)infos->fuck;
+	infos_new = copy_struct(infos_news); 
 	time = infos->fuck->times.death;
 	pthread_mutex_unlock(&infos->mens);
 	
@@ -293,17 +304,37 @@ void *thead(void *infs)
 		pthread_mutex_unlock(&infos->mens);
 		if( temp == 0)
 		{
-			printf("end\n");
+			//printf("end\n");
 			return("end");
 		}
-		pthread_mutex_lock(&infos->mens);
-		if(infos->fuck->start == 2)
+		
+		time = ft_food(&infos_new,infos,time);
+		if(time < 0)
 		{
-				 infos->fuck->im = fasle;				 
+			pthread_mutex_lock(&infos->mens);
+			 infos->fuck->im = fasle;
+			 pthread_mutex_unlock(&infos->mens);
+			return("oi");
+		}else
+			time = infos_new.times.death;
+		time = infos_new.times.death;
+		time = ft_sleep(&infos_new,time,infos);
+		if(time < 0)
+		{
+			pthread_mutex_lock(&infos->mens);
+			 infos->fuck->im = fasle;
+			 pthread_mutex_unlock(&infos->mens);
+			return("oi");
 		}
-		pthread_mutex_unlock(&infos->mens);
+		x++;
+		// pthread_mutex_lock(&infos->mens);
+		// if(infos->fuck->start == 2)
+		// {
+		// 		 infos->fuck->im = fasle;				 
+		// }
+		// pthread_mutex_unlock(&infos->mens);
 	
-//	end(infos->fuck,infos,true);	
+	
 	}
 	return("oi");
 }
@@ -342,7 +373,6 @@ void *bar_men_thead(void *infs)
 			pthread_mutex_lock(&infus->mens);
 			if(infus2->im == fasle)
 			{
-				printf("oi\n");
 				i = -5;
 			}
 		    pthread_mutex_unlock(&infus->mens);
