@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/20 13:11:49 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/20 13:25:59 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ int forks(s_new *infos_new,s_new_fuck *infos, s_forks forks)
 	if(infos_new->times.philosophers  %2 != 0 && infos_new->start == infos_new->times.philosophers -2 && temp == 0)
 	{
 		//temp++;
-		usleep(200);
+		usleep(1500);
 		//save = 0;
 	}
 	if(save == 0)
@@ -140,7 +140,7 @@ int forks(s_new *infos_new,s_new_fuck *infos, s_forks forks)
 	}
 	else
 	{
-		//usleep(100);
+		usleep(100);
 		pthread_mutex_lock(&infos->mens);
 		if(*infos->fuck->i_end == fasle)
 		{
@@ -252,7 +252,7 @@ void *thead(void *infs)
 	
 	while (1)
 	{
-		usleep(1000);
+		usleep(50);
 		pthread_mutex_lock(&infos->mens);
 		int temp = *infos->fuck->i_end;
 		pthread_mutex_unlock(&infos->mens);
@@ -302,7 +302,7 @@ void *thead(void *infs)
 			return("oi");
 		}
 		x++;
-		usleep(1500);
+		usleep(1000);
 		// pthread_mutex_lock(&infos->mens);
 		// if(infos->fuck->start == 2)
 		// {
