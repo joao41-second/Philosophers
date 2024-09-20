@@ -1,145 +1,59 @@
-0 4 has taken a fork
-0 4 has taken a fork
-0 4 is eating
-1 2 has taken a fork
-1 2 has taken a fork
-1 2 is eating
-200 3 has taken a fork
-200 0 has taken a fork
-200 0 has taken a fork
-200 0 is eating
-200 3 has taken a fork
-200 3 is eating
-201 1 has taken a fork
-202 4 is sleeping
-202 2 is sleeping
-401 1 has taken a fork
-401 1 is eating
-402 4 is thinking
-402 4 has taken a fork
-402 4 has taken a fork
-402 4 is eating
-401 0 is sleeping
-402 2 is thinking
-401 3 is sleeping
-601 2 has taken a fork
-601 2 has taken a fork
-601 2 is eating
-601 0 is thinking
-601 0 has taken a fork
-601 0 has taken a fork
-601 0 is eating
-601 3 is thinking
-602 1 is sleeping
-603 4 is sleeping
-603 3 has taken a fork
-800 3 has taken a fork
-800 3 is eating
-802 1 is thinking
-802 2 is sleeping
-802 1 has taken a fork
-802 1 has taken a fork
-802 1 is eating
-803 4 is thinking
-802 0 is sleeping
-1001 4 has taken a fork
-1001 4 has taken a fork
-1001 4 is eating
-1002 2 is thinking
-1001 3 is sleeping
-1002 2 has taken a fork
-1002 2 has taken a fork
-1002 2 is eating
-1002 0 is thinking
-1003 1 is sleeping
-1200 0 has taken a fork
-1200 0 has taken a fork
-1200 0 is eating
-1201 3 is thinking
-1202 4 is sleeping
-1204 1 is thinking
-1204 2 is sleeping
-1204 1 has taken a fork
-1203 3 has taken a fork
-1203 3 has taken a fork
-1203 3 is eating
-1402 1 has taken a fork
-1402 1 is eating
-1403 4 is thinking
-1402 0 is sleeping
-1404 2 is thinking
-1404 4 has taken a fork
-1404 4 has taken a fork
-1404 4 is eating
-1404 3 is sleeping
-1602 2 has taken a fork
-1602 2 has taken a fork
-1602 2 is eating
-1602 0 is thinking
-1603 1 is sleeping
-1603 0 has taken a fork
-1603 0 has taken a fork
-1603 0 is eating
-1604 3 is thinking
-1605 4 is sleeping
-1606 3 has taken a fork
-1801 3 has taken a fork
-1801 3 is eating
-1803 1 is thinking
-1803 2 is sleeping
-1803 1 has taken a fork
-1805 1 has taken a fork
-1805 1 is eating
-1806 4 is thinking
-1805 0 is sleeping
-2002 4 has taken a fork
-2002 4 has taken a fork
-2002 4 is eating
-2002 3 is sleeping
-2003 2 is thinking
-2005 2 has taken a fork
-2005 2 has taken a fork
-2005 2 is eating
-2005 0 is thinking
-2006 1 is sleeping
-2201 0 has taken a fork
-2201 0 has taken a fork
-2201 0 is eating
-2202 3 is thinking
-2203 4 is sleeping
-2204 3 has taken a fork
-2204 3 has taken a fork
-2204 3 is eating
-2206 1 is thinking
-2206 2 is sleeping
-2206 1 has taken a fork
-2402 1 has taken a fork
-2402 1 is eating
-2403 4 is thinking
-2402 0 is sleeping
-2405 4 has taken a fork
-2405 4 has taken a fork
-2405 4 is eating
-2405 3 is sleeping
-2406 2 is thinking
-2603 2 has taken a fork
-2603 2 has taken a fork
-2603 2 is eating
-2603 0 is thinking
-2604 1 is sleeping
-2604 0 has taken a fork
-2604 0 has taken a fork
-2604 0 is eating
-2605 3 is thinking
-2606 4 is sleeping
-2607 3 has taken a fork
-2802 3 has taken a fork
-2802 3 is eating
-2804 1 is thinking
-2804 2 is sleeping
-2804 1 has taken a fork
-2805 1 has taken a fork
-2805 1 is eating
-2806 4 is thinking
-3406 4 dead
-tenho x motex 5 
+ola 0
+ola 1
+0 0 has taken a fork
+0 0 has taken a fork
+0 0 is eating
+200 1 has taken a fork
+200 1 has taken a fork
+200 1 is eating
+201 0 is sleeping
+401 0 is thinking
+401 0 has taken a fork
+401 0 has taken a fork
+401 0 is eating
+401 1 is sleeping
+601 1 is thinking
+601 1 has taken a fork
+601 1 has taken a fork
+602 1 is eating
+602 0 is sleeping
+802 0 is thinking
+802 0 has taken a fork
+803 0 has taken a fork
+803 0 is eating
+803 1 is sleeping
+1003 1 is thinking
+1003 1 has taken a fork
+1003 1 has taken a fork
+1003 1 is eating
+1004 0 is sleeping
+1204 0 is thinking
+1204 0 has taken a fork
+1204 0 has taken a fork
+1204 0 is eating
+1204 1 is sleeping
+1404 1 is thinking
+1404 1 has taken a fork
+1404 1 has taken a fork
+1404 1 is eating
+1405 0 is sleeping
+1605 0 is thinking
+1605 0 has taken a fork
+1605 0 has taken a fork
+1605 0 is eating
+1606 1 is sleeping
+1806 1 is thinking
+1806 1 has taken a fork
+1806 1 has taken a fork
+1806 1 is eating
+1806 0 is sleeping
+2006 0 is thinking
+2006 0 has taken a fork
+2006 0 has taken a fork
+2006 0 is eating
+2007 1 is sleeping
+2207 1 is thinking
+2207 1 has taken a fork
+2207 1 has taken a fork
+2207 1 is eating
+2207 0 is sleeping

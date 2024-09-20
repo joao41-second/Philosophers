@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/20 16:28:42 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/20 17:07:46 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -248,7 +248,7 @@ void *thead(void *infs)
 	
 	infos = (s_new_fuck*)infs;
 	fil_n = infos->fuck->start;
-	
+	ft_printf("ola %d\n",fil_n);
 	x = 0;
 	
 	while (1)
@@ -274,10 +274,9 @@ void *thead(void *infs)
 	infos_new.start_time = ft_time(infos_new.start_time_second);
 	while (1)
 	{
-		if(x == infos_new.times.food_x+1 && infos_new.times.food_x != 0)
+		if(x == infos_new.times.food_x && infos_new.times.food_x != 0)
 		{
 			end(infos_new,infos,time);
-			//return("ola mudn");
 		}
 
 		
@@ -293,7 +292,6 @@ void *thead(void *infs)
 			return("");
 		if(time < 0)
 		{
-			//printf("time %d \n",time);
 			end(infos_new,infos,time);
 			
 			return("oi");
@@ -338,10 +336,13 @@ void *bar_men_thead(void *infs)
 	pthread_mutex_unlock(&infus->mens);
 
 	infus2 = (s_new *)infus->fuck;
-
-
+	if(nb == 1)
+	{
+		nb++;
+	}
 	while (1)
 	{
+		
 		i = -1;
 		while (++i < nb-1)
 		{	
@@ -363,6 +364,7 @@ void *bar_men_thead(void *infs)
 				pthread_mutex_lock(&infus->mens);
 			infus2--;
 				pthread_mutex_unlock(&infus->mens);
+		
 		}
 		pthread_mutex_lock(&infus->mens);
 		infus2 += nb-1;
