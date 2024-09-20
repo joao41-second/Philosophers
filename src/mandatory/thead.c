@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/20 16:17:02 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/20 16:28:42 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -274,6 +274,13 @@ void *thead(void *infs)
 	infos_new.start_time = ft_time(infos_new.start_time_second);
 	while (1)
 	{
+		if(x == infos_new.times.food_x+1 && infos_new.times.food_x != 0)
+		{
+			end(infos_new,infos,time);
+			//return("ola mudn");
+		}
+
+		
 		pthread_mutex_lock(&infos->mens);
 		int temp = *infos->fuck->i_end;
 		pthread_mutex_unlock(&infos->mens);
