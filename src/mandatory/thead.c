@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/20 11:23:17 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/20 12:19:05 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,23 +34,9 @@
 	 return(true);
 }
 
-// int end(s_new *infos_new,s_new_fuck *infos,int set)
+// int chek_end( )
 // {
 	
-
-// 	pthread_mutex_lock(infos_new->death);
-// 	 	static int ok = 0;
-// 	if(set == true)
-// 	{
-// 	 if(infos){};
-// 	 if(ok == 0)
-// 	 	printf("dead\n");
-// 	 ok++;
-// 	 infos_new->im = -1;
-	
-// 	 }
-// 	  pthread_mutex_unlock(infos_new->death);
-// 	 return(ok);
 // }
 
 
@@ -220,7 +206,6 @@ int ft_sleep(s_new *infos_new,int time,s_new_fuck *infos)
 		usleep((infos_new->times.food - infos_new->times.death)*1000);
 		return(-1);
 	}
-
 	print(infos,"is thinking",infos_new,ft_time(infos_new->start_time_second)-infos_new->start_time);
 	//printf("%d %d is thinking\n",ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);a
 	return(time - (ft_time(infos_new->start_time_second)-infos_new->start_time - start_time));
@@ -229,9 +214,7 @@ int ft_sleep(s_new *infos_new,int time,s_new_fuck *infos)
 s_new copy_struct(s_new *infos_new,int im)
 {
 s_new copy;
-	//copy.death = infos_new->death;
 	copy.i_end = infos_new->i_end;
-	//copy.im = infos_new->im;
 	copy.start = im;
 	copy.start_time = infos_new->start_time;
 	copy.start_time_second = infos_new->start_time_second;
@@ -242,7 +225,6 @@ s_new copy;
 
 void *thead(void *infs)
 {
-//	usleep(500000);
 	s_new_fuck * infos;
 	s_new * infos_news;
 	s_new infos_new;
@@ -250,16 +232,9 @@ void *thead(void *infs)
 	int time;
 	int x;
 	int fil_n;
-	 
 	
 	infos = (s_new_fuck*)infs;
-	//pthread_mutex_lock(&infos->death);
-
 	fil_n = infos->fuck->start;
-	//infos->fuck->times.philosophers-1;
-	//pthread_mutex_unlock(&infos->death);
-	
-	
 	
 	x = 0;
 	
@@ -281,16 +256,11 @@ void *thead(void *infs)
 	time = infos->fuck->times.death;
 	pthread_mutex_unlock(&infos->mens);
 	
-
-	//
-
 	gettimeofday(&tv, NULL);
 	infos_new.start_time_second = tv.tv_sec * 1000;
 	infos_new.start_time = ft_time(infos_new.start_time_second);
 	while (1)
 	{
-	 	
-
 		pthread_mutex_lock(&infos->mens);
 		int temp = *infos->fuck->i_end;
 		pthread_mutex_unlock(&infos->mens);
@@ -298,7 +268,6 @@ void *thead(void *infs)
 		{
 			return("end");
 		}
-		
 		time = ft_food(&infos_new,infos,time);
 		if(time < 0)
 		{
@@ -310,7 +279,8 @@ void *thead(void *infs)
 			return("oi");
 		}else
 			time = infos_new.times.death;
-		time = infos_new.times.death;
+		
+		
 		time = ft_sleep(&infos_new,time,infos);
 		if(time < 0)
 		{
@@ -329,8 +299,6 @@ void *thead(void *infs)
 		// 		 infos->fuck->im = fasle;				 
 		// }
 		// pthread_mutex_unlock(&infos->mens);
-	
-	
 	}
 	return("oi");
 }

@@ -1,19 +1,40 @@
 tenho x motex 10 
-0 7 has taken a fork
-1 7 has taken a fork
-1 7 is eating
-0 0 has taken a fork
-0 0 has taken a fork
-0 0 is eating
+1 6 has taken a fork
+2 6 has taken a fork
+2 6 is eating
 0 4 has taken a fork
 0 4 has taken a fork
 0 4 is eating
-0 5 has taken a fork
+0 0 has taken a fork
+0 0 has taken a fork
+0 0 is eating
+0 7 has taken a fork
 0 2 has taken a fork
-1 2 has taken a fork
+0 2 has taken a fork
 1 2 is eating
-198 8 has taken a fork
-198 8 has taken a fork
-198 8 is eating
-201 9 has taken a fork
-dead
+203 6 is sleeping
+199 5 has taken a fork
+200 7 has taken a fork
+200 7 is eating
+201 4 is sleeping
+201 0 is sleeping
+201 2 is sleeping
+200 3 has taken a fork
+200 3 has taken a fork
+200 3 is eating
+199 9 has taken a fork
+199 9 has taken a fork
+199 9 is eating
+200 5 has taken a fork
+200 5 is eating
+200 1 has taken a fork
+200 1 has taken a fork
+201 1 is eating
+403 6 is thinking
+401 7 dead
+403 4 is thinking
+402 0 is thinking
+402 2 is thinking
+401 3 dead
+402 1 dead
+401 9 dead
