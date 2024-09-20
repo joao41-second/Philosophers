@@ -6,47 +6,49 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/20 12:19:05 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/20 13:11:49 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philosophers.h"
 
- int end(s_new *infos_new,s_new_fuck *infos,int set)
+ void end(s_new infos_new,s_new_fuck *infos)
 {
-	
-	// pthread_mutex_lock(&infos->death);
-	//  static int ok = 0;
-	//  if(infos){};
-	//  if(set == true)
-	//  {
-	//  if(ok == 0)
-	//  //	printf("dead\n");
-	 //ok++;
-	 infos_new->im = fasle;
-	//  }
-	//  if(ok != 0)
-	//  {
-	// 	pthread_mutex_unlock(&infos->death);
-	// 	 return(fasle);
-	//  }
-	// pthread_mutex_unlock(&infos->death);
-	 return(true);
+	pthread_mutex_lock(&infos->mens);
+	infos->fuck->im = fasle;
+	pthread_mutex_unlock(&infos->mens);
+	print(infos,"dead",&infos_new,ft_time(infos_new.start_time_second)-infos_new.start_time);
 }
 
-// int chek_end( )
-// {
-	
-// }
+int chek_end( s_new_fuck *infos)
+{
+
+		pthread_mutex_lock(&infos->mens);
+		if(*infos->fuck->i_end == fasle)
+		{
+			pthread_mutex_unlock(&infos->mens);
+			return(fasle);
+		}
+		pthread_mutex_unlock(&infos->mens);
+	return(true);
+}
 
 
 
 void print(s_new_fuck *infos,char *mens, s_new *infos_new ,int time)
 {
 	//printf("muita raiva %d\n",*infos->fuck->set);
+	static int  hp =0;
 	pthread_mutex_lock(&infos->mens);
+	if(hp == 0){
 	if(*infos->fuck->i_end != 0)
-		printf("%d %d %s\n",time,infos_new->start,mens);
+	{
+		ft_printf("%d %d %s\n",time,infos_new->start,mens);
+	}else 
+	 hp = 1;
+	if(mens[0] == 'd')
+	 hp =1;
+	}
 	pthread_mutex_unlock(&infos->mens);
 }
 
@@ -84,7 +86,14 @@ s_forks set_forks(int my,int max)
 
 int print_forks(s_new_fuck *infos,s_new *infos_new,pthread_mutex_t *fork,int mut)
 {
-	pthread_mutex_lock(&fork[mut]); 
+	pthread_mutex_lock(&fork[mut]);
+	pthread_mutex_lock(&infos->mens);
+	if(*infos->fuck->i_end == fasle)
+	{
+		pthread_mutex_unlock(&infos->mens);
+		return(fasle);
+	}
+	pthread_mutex_unlock(&infos->mens);
 	if(infos){}
 	print(infos,"has taken a fork",infos_new,ft_time(infos_new->start_time_second)-infos_new->start_time);
 	return(true);
@@ -126,7 +135,6 @@ int forks(s_new *infos_new,s_new_fuck *infos, s_forks forks)
 		{
 			pthread_mutex_unlock(&fork[forks.fork[1]]);
 			pthread_mutex_unlock(&fork[forks.fork[0]]);
-			printf("end\n");
 			return(fasle);
 		}
 	}
@@ -145,7 +153,6 @@ int forks(s_new *infos_new,s_new_fuck *infos, s_forks forks)
 		if(print_forks(infos,infos_new,fork,forks.fork[0]) == fasle)
 		{
 			pthread_mutex_unlock(&fork[forks.fork[0]]);
-			printf("end\n");
 			return(fasle);
 		}
 	
@@ -153,7 +160,6 @@ int forks(s_new *infos_new,s_new_fuck *infos, s_forks forks)
 		{
 			pthread_mutex_unlock(&fork[forks.fork[0]]);
 			pthread_mutex_unlock(&fork[forks.fork[1]]);
-			printf("end\n");
 			return(fasle);
 		}
 		
@@ -182,6 +188,8 @@ int ft_food( s_new *infos_new,s_new_fuck *infos,int time)
 		pthread_mutex_unlock(&fork[forkss.fork[0]]);
 		return(time - (time_temp-start_time));
 	}
+	if(chek_end(infos) == fasle)
+		return(-1);
 	print(infos,"is eating",infos_new,ft_time(infos_new->start_time_second)-infos_new->start_time);
 	usleep(infos_new->times.food *1000);
 	pthread_mutex_unlock(&fork[forkss.fork[1]]);
@@ -206,6 +214,10 @@ int ft_sleep(s_new *infos_new,int time,s_new_fuck *infos)
 		usleep((infos_new->times.food - infos_new->times.death)*1000);
 		return(-1);
 	}
+	if(chek_end(infos) == fasle)
+	{
+		return(fasle);
+	}
 	print(infos,"is thinking",infos_new,ft_time(infos_new->start_time_second)-infos_new->start_time);
 	//printf("%d %d is thinking\n",ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);a
 	return(time - (ft_time(infos_new->start_time_second)-infos_new->start_time - start_time));
@@ -213,7 +225,7 @@ int ft_sleep(s_new *infos_new,int time,s_new_fuck *infos)
 
 s_new copy_struct(s_new *infos_new,int im)
 {
-s_new copy;
+	s_new copy;
 	copy.i_end = infos_new->i_end;
 	copy.start = im;
 	copy.start_time = infos_new->start_time;
@@ -266,33 +278,31 @@ void *thead(void *infs)
 		pthread_mutex_unlock(&infos->mens);
 		if( temp == 0)
 		{
+			printf("ola eu mato\n"); 
 			return("end");
 		}
 		time = ft_food(&infos_new,infos,time);
+		if(chek_end(infos) == fasle)
+			return("");
 		if(time < 0)
 		{
+			end(infos_new,infos);
 			
-			pthread_mutex_lock(&infos->mens);
-			infos->fuck->im = fasle;
-			pthread_mutex_unlock(&infos->mens);
-			print(infos,"dead",&infos_new,ft_time(infos_new.start_time_second)-infos_new.start_time);
 			return("oi");
 		}else
 			time = infos_new.times.death;
 		
 		
 		time = ft_sleep(&infos_new,time,infos);
+		if(chek_end(infos) == fasle)
+			return("");
 		if(time < 0)
 		{
-			
-			pthread_mutex_lock(&infos->mens);
-			infos->fuck->im = fasle;
-			pthread_mutex_unlock(&infos->mens);
-			print(infos,"dead",&infos_new,ft_time(infos_new.start_time_second)-infos_new.start_time);
+			end(infos_new,infos);
 			return("oi");
 		}
 		x++;
-		usleep(1000);
+		usleep(1500);
 		// pthread_mutex_lock(&infos->mens);
 		// if(infos->fuck->start == 2)
 		// {
@@ -312,13 +322,9 @@ void *bar_men_thead(void *infs)
 	int i;
 
 	infus = (s_new_fuck *)infs;
-
 	
 	nb =infus->philo;
-// infus->fuck->times.philosophers;
-
 	
-
 	pthread_mutex_lock(&infus->mens);
 	*infus->fuck->i_end = 2;
 	pthread_mutex_unlock(&infus->mens);
@@ -329,13 +335,9 @@ void *bar_men_thead(void *infs)
 	while (1)
 	{
 		i = -1;
-		
-		
-		
 		while (++i < nb-1)
 		{	
 			usleep(25);
-			//	qprintf(" emrda %d \n",infus2->im);
 			pthread_mutex_lock(&infus->mens);
 			if(infus2->im == fasle)
 			{
@@ -348,7 +350,6 @@ void *bar_men_thead(void *infs)
 				pthread_mutex_lock(&infus->mens);
 				*infus->fuck->i_end = 0;
 				pthread_mutex_unlock(&infus->mens);
-				//printf("dead\n");
 				return("ola");
 			}
 				pthread_mutex_lock(&infus->mens);
