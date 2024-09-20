@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/20 15:25:48 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/20 16:17:02 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -293,7 +293,7 @@ void *thead(void *infs)
 		}else
 			time = infos_new.times.death;
 		
-		
+		usleep(1000);
 		time = ft_sleep(&infos_new,time,infos);
 		if(chek_end(infos) == fasle)
 			return("");
@@ -303,7 +303,7 @@ void *thead(void *infs)
 			return("oi");
 		}
 		x++;
-		usleep(1000);
+		
 		// pthread_mutex_lock(&infos->mens);
 		// if(infos->fuck->start == 2)
 		// {

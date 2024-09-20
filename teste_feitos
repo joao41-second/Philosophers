@@ -1,0 +1,2639 @@
+ 3789  ./philosophers 5 6 8 9 5
+ 3790  ./philosophers 5 6 8 9 
+ 3791  ./philosophers 1
+ 3792  ./philosophers 1 3 4 5
+ 3793  ./philosophers 1 3 4 5 6
+ 3794  ./philosophers 1 3 4 5 
+ 3795  ./philosophers 1 3 4 0 
+ 3796  ./philosophers -1 3 4 9 
+ 3797  ./philosophers 1 3 4 9 
+ 3798  ./philosophers 1  4 5 9
+ 3799  ./philosophers 1  4 5 9 5
+ 3800  ./philosophers 1  4 5 9 
+ 3803  ./philosophers 2 4 5 6
+ 3819  ./philosophers 1 5 6 3
+ 3831  ./philosophers 8 9 0 3
+ 3832  ./philosophers 3 5 5  5
+ 3833  ./philosophers 8 9 7 6
+ 3834  ./philosophers 8 5 9 0
+ 3837  valgrind ./philosophers 5 9 7 5
+ 3838  valgrind --leak-check=full --show-leak-kinds=all ./philosophers 8 900 3 3
+ 3839  ./philosophers 8 5 9 2
+ 3840  ./philosophers 8 9 6 54
+ 3841  ./philosophers 1 9 6 54
+ 3842  ./philosophers 2 9 6 54
+ 3843  ./philosophers 2 93 4 9
+ 3844  ./philosophers 8OA 93 4 9
+ 3845  ./philosophers 8O 93 4 9
+ 3846  ./philosophers 8 93 4 9
+ 3847  ./philosophers 80 93 4 9
+ 3848  valgrind --leak-check=full --show-leak-kinds=all ./philosophers 8 900 3
+ 3851  valgrind --leak-check=full --show-leak-kinds=all ./philosophers 8 900 3 5
+ 3852  ./philosophers  8 5 6 4 2
+ 3853  ./philosophers  8 5 6 4 
+ 3854  ./philosophers  1 5 6 4 
+ 3855  ./philosophers  0 5 6 4 
+ 3856  ./philosophers  6 5 6 4 '
+ 3857  ./philosophers  2 5 6 4 
+ 3858  ./philosophers  3 5 6 4 
+ 3859  ./philosophers  5 5 6 4 
+ 3860  ./philosophers  7 5 6 4 
+ 3862  ./philosophers 5 10 9 5
+ 3863  ./philosophers 5 5 9 5
+ 3864  ./philosophers 5 1 5 5
+ 3865  ./philosophers 5 5 5 51
+ 3866  ./philosophers 5 6 5 51
+ 3867  ./philosophers 5 10 5 51
+ 3868  ./philosophers 5 15 10 1
+ 3869  ./philosophers 5 1 10 1
+ 3874  ./philosophers 5 5 5 1
+ 3875  ./philosophers 5 1 5 1
+ 3876  ./philosophers 5 10 5 1
+ 3877  ./philosophers 5 5 10 1
+ 3878  ./philosophers 6 5 10 1
+ 3879  ./philosophers 100 5 10 1
+ 3880  ./philosophers 1000 5 10 1
+ 3881  ./philosophers 5 6 7 9
+ 3882  ./philosophers 5 6 6 9
+ 3883  ./philosophers 5 6 5 9
+ 3884  ./philosophers 5 6 3 9
+ 3885  ./philosophers 5 6  1
+ 3886  ./philosophers 5 6 5 1
+ 3887  ./philosophers 5 6  
+ 3888  ./philosophers 5 6  3 5
+ 3889  ./philosophers 5 3 3 5
+ 3890  ./philosophers 5 3 1 5
+ 3891  ./philosophers 5 3 1 1
+ 3892  ./philosophers 5 1 1 1
+ 3894  ./philosophers 3 5 9 0
+ 3895  ./philosophers 3 5 9 1
+ 3897  ./philosophers 100 5 9 1 
+ 3898  ./philosophers 10 5 9 1 
+ 3899  ./philosophers 10 5 6 1 
+ 3900  ./philosophers 10 5 4 1 
+ 3901  ./philosophers 10 5 5 1 
+ 3902  ./philosophers 10 5 100 1 
+ 3903  ./philosophers 10 5 200 1 
+ 3904  ./philosophers 10 5 10 1 
+ 3905  ./philosophers 10 1 10 1 
+ 3906  ./philosophers 10 5 10 1
+ 3910  ./philosophers 10 1 10 1
+ 3911  ./philosophers 10 5 1000 1
+ 3912  ./philosophers 10 5 1000 5
+ 3913  ./philosophers 10 1 1000 1
+ 3915  ./philosophers 10 1 1000 5
+ 3916  ./philosophers 5 1 1000 5
+ 3917  ./philosophers 5 5 1000 5
+ 3918  ./philosophers 5 6 1000 5
+ 3919  ./philosophers 5 6 0 5
+ 3920  ./philosophers 5 6 1\ 5
+ 3921  ./philosophers 5 6 1 5
+ 3922  ./philosophers 5 5 5  5
+ 3923  ./philosophers 5 15 5  5
+ 3924  ./philosophers 5 5 15  5
+ 3925  ./philosophers 5 15 15  5
+ 3926  ./philosophers 6 15 15  5
+ 3927  ./philosophers 6 5 6 1
+ 3928  ./philosophers 10 6 5 1 
+ 3961  ./philosophers 5 6 3 2
+ 3962  ./philosophers 6 6 5 1 
+ 3968  ./philosophers 6 15 5 1 
+ 3975  ./philosophers 6 4 5 1
+ 3980  ./philosophers 6 30 5 1
+ 3981  ./philosophers 6 100 5 1
+ 3982  ./philosophers 6 20 5 1
+ 3983  ./philosophers 6 15 5 1
+ 3984  ./philosophers 6 5 5 1
+ 3985  ./philosophers 6 7 5 1
+ 3986  ./philosophers 6 8 5 1
+ 3987  ./philosophers 6 9 5 1
+ 3988  ./philosophers 6 10 5 1
+ 3989  ./philosophers  4 5 6 4 
+ 3990  ./philosophers  4 2 6 4 
+ 3991  ./philosophers  4 10 6 4 
+ 3992  ./philosophers  4 100 6 4 
+ 3993  ./philosophers  6 10000000 6 4 
+ 3996  ./philosophers  6 1000 6 4 
+ 3997  ./philosophers  6 100 6 4 
+ 3998  ./philosophers  6 100 6 50 
+ 3999  ./philosophers  6 10 6 50 
+ 4001  ./philosophers  6 10 6 1 
+ 4002  ./philosophers  6 10 6 1 ^@
+ 4003  ./philosophers 10 10 1 1
+ 4004  ./philosophers 10 2 1 1
+ 4005  ./philosophers  6 14 6 4 
+ 4006  ./philosophers  6 9 6 4 
+ 4007  ./philosophers  6 6 6 4 
+ 4008  ./philosophers  6 7 6 4 
+ 4009  ./philosophers  6 8 6 4 
+ 4010  ./philosophers  6 5 6 4 
+ 4011  ./philosophers  6 5 6 3 
+ 4012  ./philosophers  4 5 3 3 
+ 4013  ./philosophers  4 5 3 
+ 4014  ./philosophers  4 5 3 3
+ 4015  ./philosophers  4 5 3 1
+ 4016  ./philosophers  4 6 3 1
+ 4017  ./philosophers  4 4 3 1
+ 4018  ./philosophers  4 8 3 1
+ 4019  ./philosophers  4 8 3 1 1
+ 4020  ./philosophers  4 8 3 1 
+ 4021  ./philosophers  4 8 3 1 6
+ 4023  ./philosophers  4 4 3 1 5
+ 4025  ./philosophers  4 8 3 1 5
+ 4027  ./philosophers  4 8 3 1 10
+ 4028  ./philosophers  4 8 3 1 3
+ 4133  ./philosophers 6 6 5 1
+ 4136  ./philosophers 6 6 5 11
+ 4138  ./philosophers 6 6 5 11\n: 1724761323:0;./philosophers 6 6 5 11
+ 4139  ./philosophers 6 20 5 11 5
+ 4140  ./philosophers 6 20 5 11
+ 4146  ./philosophers 10 20 5 11 6
+ 4148  ./philosophers 6 20 5 11 6\n: 1724842035:0;./philosophers 6 20 5 11 6
+ 4193  ./philosophers 5 20 5 11 6
+ 4195  ./philosophers 5 20 5 11 6
+ 4197  ./philosophers 5 20 5 11 6
+ 4199  ./philosophers 5 20 5 11 6
+ 4202  ./philosophers 5 20 5 11 6
+ 4204  ./philosophers 5 20 5 11 6
+ 4206  ./philosophers 5 20 5 11 6
+ 4208  ./philosophers 5 20 5 11 6
+ 4210  ./philosophers 5 20 5 11 6
+ 4213  ./philosophers 5 20 5 11 6
+ 4215  ./philosophers 5 20 5 11 6
+ 4218  ./philosophers 5 20 5 11 6
+ 4222  ./philosophers 5 20 5 11 6
+ 4225  ./philosophers 5 20 5 11 6
+ 4227  ./philosophers 5 20 5 11 6
+ 4230  ./philosophers 5 20 5 11 6
+ 4232  ./philosophers 5 20 5 11 6
+ 4234  ./philosophers 5 20 5 11 6
+ 4236  ./philosophers 5 20 5 11 6
+ 4239  ./philosophers 5 20 5 11 6
+ 4241  ./philosophers 5 20 5 11 6
+ 4243  ./philosophers 5 20 5 11 6
+ 4245  ./philosophers 5 20 5 11 6
+ 4264  ./philosophers 5 20 5 11 6
+ 4266  ./philosophers 5 20 5 11 6
+ 4268  ./philosophers 5 20 5 11 6
+ 4270  ./philosophers 5 20 5 11 6
+ 4273  ./philosophers 5 20 5 11 6
+ 4275  ./philosophers 
+ 4276  ./philosophers 5 20 5 11 6 
+ 4278  ./philosophers 5 20 5 11 6 
+ 4281  ./philosophers 6 20 5 11 6
+ 4283  ./philosophers 6 20 5 11 6
+ 4286  ./philosophers 6 20 5 11 6
+ 4288  ./philosophers 6 20 5 11 6
+ 4290  ./philosophers 6 20 5 11 6
+ 4293  ./philosophers 6 20 5 11 6
+ 4295  ./philosophers 6 20 5 11 6
+ 4297  ./philosophers 6 20 5 11 6
+ 4299  ./philosophers 6 20 5 11 6
+ 4301  ./philosophers 6 20 5 11 6
+ 4303  ./philosophers 6 20 5 11 6
+ 4305  ./philosophers 6 20 5 11 6
+ 4307  ./philosophers 6 20 5 11 6
+ 4309  ./philosophers 6 20 5 11 6
+ 4311  ./philosophers 6 20 5 11 6
+ 4313  ./philosophers 6 20 5 11 6
+ 4315  ./philosophers 6 20 5 11 6
+ 4316  ./philosophers 6 20 5 11 8
+ 4317  ./philosophers 6 20 5 11 
+ 4318  ./philosophers 6 20 5 11 10
+ 4320  ./philosophers 6 20 5 11 10
+ 4323  ./philosophers 6 20 5 11 10
+ 4325  ./philosophers 6 20 5 11 10
+ 4328  ./philosophers 6 20 5 11 10
+ 4330  ./philosophers 6 20 5 11 10
+ 4332  ./philosophers 6 20 5 11 3
+ 4334  ./philosophers 6 20 5 11 3
+ 4336  ./philosophers 6 20 5 11 3
+ 4338  ./philosophers 6 20 5 11 3
+ 4340  ./philosophers 6 20 5 11 3
+ 4342  ./philosophers 6 20 5 11 3
+ 4344  ./philosophers 6 20 5 11 3
+ 4346  ./philosophers 6 20 5 11 3
+ 4348  ./philosophers 6 20 5 11 3
+ 4350  ./philosophers 6 20 5 11 3
+ 4352  ./philosophers 6 20 5 11 3
+ 4354  ./philosophers 6 20 5 11 3
+ 4356  ./philosophers 6 20 5 11 3
+ 4359  ./philosophers 6 20 5 11 3
+ 4360  ./philosophers 5 20 5 11 3
+ 4361  ./philosophers 6 20 5 11 3
+ 4363  ./philosophers 6 20 5 11 3
+ 4365  ./philosophers 6 20 5 11 3
+ 4373  ./philosophers 6 20 5 11 3
+ 4376  ./philosophers 6 20 5 11 3
+ 4378  ./philosophers 6 20 5 11 3
+ 4380  ./philosophers 6 20 5 11 3
+ 4382  ./philosophers 6 20 5 11 3
+ 4391  ./philosophers 6 20 5 11 3
+ 4394  ./philosophers 6 20 5 11 3
+ 4396  ./philosophers 6 20 5 11 3
+ 4398  ./philosophers 6 20 5 11 3
+ 4400  ./philosophers 6 20 5 11 3
+ 4402  ./philosophers 6 20 5 11 3
+ 4404  ./philosophers 6 20 5 11 3
+ 4406  ./philosophers 6 20 5 11 3
+ 4409  ./philosophers 6 20 5 11 3
+ 4410  ./philosophers 5 20 5 11 3
+ 4413  ./philosophers 5 20 5 11 3
+ 4415  ./philosophers 5 20 5 11 3
+ 4417  ./philosophers 5 20 5 11 3
+ 4420  ./philosophers 5 20 5 11 3
+ 4429  ./philosophers 5 20 5 11 3
+ 4435  ./philosophers 5 20 5 11 3
+ 4438  ./philosophers 5 20 5 11 3
+ 4440  ./philosophers 6 20 5 11 3
+ 4442  ./philosophers 6 20 5 11 3g
+ 4443  ./philosophers 6 20 5 11 3
+ 4448  ./philosophers  4 2 3 1 3
+ 4450  ./philosophers  4 2 3 1 3
+ 4452  ./philosophers  4 2 3 1 3
+ 4454  ./philosophers  4 2 3 1 3]
+ 4455  ./philosophers  4 2 3 1 3
+ 4458  ./philosophers  4 2 3 1 3
+ 4460  ./philosophers  4 2 3 1 3
+ 4467  ./philosophers  4 2 3 1 3
+ 4475  ./philosophers  4 2 3 1 3
+ 4479  ./philosophers  4 2 3 1 3
+ 4480  ./philosophers  6 8 9
+ 4481  ./philosophers 4 6 8 9
+ 4482  ./philosophers 5 6 8 9
+ 4483  ./philosophers 6 6 8 9
+ 4489  ./philosophers  6 8 9
+ 4490  ./philosophers  6 8 9 5
+ 4491  ./philosophers  6 10 6 4 
+ 4492  ./philosophers  6 8 9 5 5
+ 4493  ./philosophers  6 10 6 4 5
+ 4495  ./philosophers 
+ 4496  ./philosophers  6 10 6 4 5
+ 4499  ./philosophers  6 10 6 4 5
+ 4502  ./philosophers  6 10 6 4 5
+ 4505  ./philosophers  6 10 6 4 5
+ 4507  ./philosophers  6 10 6 4 5
+ 4512  ./philosophers  6 10 6 4 5
+ 4516  ./philosophers  6 10 6 4 5
+ 4519  ./philosophers  6 10 6 4 5
+ 4521  ./philosophers  6 10 6 4 5
+ 4525  ./philosophers  6 10 6 4 5
+ 4527  ./philosophers  6 10 6 4 5
+ 4529  ./philosophers  6 10 6 4 5
+ 4531  ./philosophers  6 10 6 4 5
+ 4533  ./philosophers  6 10 6 4 5
+ 4535  run-help ./philosophers
+ 4536  ./philosophers 
+ 4537  run-help ./philosophers
+ 4542  ./philosophers  6 10 6 4 5
+ 4545  ./philosophers  6 10 6 4 5
+ 4549  ./philosophers  6 10 6 4 5
+ 4551  ./philosophers  6 10 6 4 5
+ 4553  ./philosophers  6 10 6 4 5
+ 4555  ./philosophers  6 10 6 4 5
+ 4557  ./philosophers  6 10 6 4 5
+ 4559  ./philosophers  6 10 6 4 5
+ 4561  ./philosophers  6 10 6 4 5
+ 4563  ./philosophers  6 10 6 4 5
+ 4565  ./philosophers  6 10 6 4 5
+ 4568  ./philosophers  6 10 6 4 5
+ 4570  ./philosophers  6 10 6 4 5\n: 1724933642:0;./philosophers  6 10 6 4 5
+ 4573  ./philosophers  6 10 6 4 5
+ 4575  ./philosophers  6 10 6 4 5
+ 4577  ./philosophers  6 10 6 4 5
+ 4579  ./philosophers  6 10 6 4 5
+ 4583  ./philosophers  6 10 6 4 5
+ 4586  ./philosophers  6 10 6 4 5
+ 4595  ./philosophers  6 10 6 4 5
+ 4598  valgrind --tool=helgrind ./philosophers 5 6 92 1\\n
+ 4599  valgrind --tool=helgrind ./philosophers 5 6 92 1\n
+ 4601  ./philosophers  6 10 6 4 5
+ 4602  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 4607  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 4611  ./philosophers  6 10 6 4 5
+ 4724  ./philosophers  6 10 6 4 5
+ 4726  ./philosophers  6 10 6 4 5
+ 4730  ./philosophers  6 10 6 4 5
+ 4735  ./philosophers  6 10 6 4 5
+ 4739  ./philosophers  6 10 6 4 5
+ 4741  ./philosophers  6 10 6 4 5
+ 4743  ./philosophers  6 10 6 4 5
+ 4745  ./philosophers  6 10 6 4 5\n: 1724942066:0;./philosophers  6 10 6 4 5
+ 4747  ./philosophers  6 10 6 4 5
+ 4749  ./philosophers  6 10 6 4 5
+ 4751  ./philosophers  6 10 6 4 5
+ 4753  ./philosophers  6 10 6 4 5
+ 4755  ./philosophers  6 10 6 4 5
+ 4757  ./philosophers  6 10 6 4 5
+ 4759  ./philosophers  6 10 6 4 5
+ 4761  ./philosophers  6 10 6 4 5
+ 4763  ./philosophers  6 10 6 4 5
+ 4765  ./philosophers  6 10 6 4 5
+ 4767  ./philosophers  6 10 6 4 5
+ 4770  run-help ./philosophers
+ 4772  run-help ./philosophers
+ 4773  ./philosophers  6 10 6 4 5
+ 4776  ./philosophers  6 10 6 4 5
+ 4778  ./philosophers  6 10 6 4 5
+ 4780  ./philosophers  6 10 6 4 5
+ 4786  ./philosophers  6 10 6 4 5
+ 4789  ./philosophers  6 10 6 4 5
+ 4791  ./philosophers  6 10 6 4 5
+ 4793  ./philosophers  6 10 6 4 5
+ 4795  run-help ./philosophers
+ 4796  ./philosophers 
+ 4797  ./philosophers  6 10 6 4 5
+ 4800  ./philosophers  6 10 6 4 5
+ 4802  ./philosophers  6 10 6 4 5
+ 4805  ./philosophers  6 10 6 4 5
+ 4807  ./philosophers  6 10 6 4 5
+ 4809  ./philosophers  6 10 6 4 5
+ 4812  ./philosophers  6 10 6 4 5
+ 4815  ./philosophers  6 10 6 4 5
+ 4817  valgrind ./philosophers ./philosophers 5 6 44 8
+ 4819  valgrind ./philosophers ./philosophers 5 6 44 8
+ 4823  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 4825  ./philosophers 
+ 4826  ./philosophers  6 10 6 4 5
+ 4829  ./philosophers  6 10 6 4 5
+ 4833  ./philosophers  6 10 6 4 5
+ 4835  ./philosophers  6 10 6 4 5
+ 4839  ./philosophers  6 10 6 4 5
+ 4844  ./philosophers 
+ 4845  ./philosophers  6 10 6 4 5
+ 4847  ./philosophers  6 10 6 4 5
+ 4849  ./philosophers  6 10 6 4 5
+ 4852  ./philosophers  6 10 6 4 5
+ 4855  ./philosophers  6 10 6 4 5
+ 4857  ./philosophers  6 10 6 4 5
+ 4861  ./philosophers  6 10 6 4 5
+ 4864  ./philosophers  6 10 6 4 5
+ 4866  ./philosophers  6 10 6 4 5
+ 4871  ./philosophers  6 10 6 4 5
+ 4873  ./philosophers  6 10 6 4 5
+ 4875  ./philosophers  6 10 6 4 5
+ 4877  ./philosophers 
+ 4878  ./philosophers  6 10 6 4 5
+ 4880  ./philosophers  6 10 6 4 5
+ 4881  ./philosophers  6 10 6 4 5m
+ 4883  ./philosophers  6 10 6 4 5m
+ 4884  ./philosophers  6 10 6 4 5
+ 4887  ./philosophers  6 10 6 4 5
+ 4889  ./philosophers  6 10 6 4 5
+ 4896  ./philosophers  6 10 6 4 5
+ 4898  ./philosophers  6 10 6 4 5
+ 4901  ./philosophers  6 10 6 4 5
+ 4903  ./philosophers  6 10 6 4 5
+ 4905  ./philosophers  6 10 6 4 5
+ 4908  ./philosophers  6 10 6 4 5
+ 4910  ./philosophers  6 10 6 4 5
+ 4912  ./philosophers  6 10 6 4 5
+ 4914  ./philosophers  6 10 6 4 5
+ 4916  ./philosophers  6 10 6 4 5
+ 4918  ./philosophers  6 10 6 4 5
+ 4920  ./philosophers  6 10 6 4 5
+ 4922  ./philosophers  6 10 6 4 5
+ 4925  ./philosophers  6 10 6 4 5
+ 4927  ./philosophers  6 10 6 4 5
+ 4929  ./philosophers  6 10 6 4 5
+ 4931  ./philosophers  6 10 6 4 5
+ 4935  ./philosophers  6 10 6 4 5
+ 4937  ./philosophers  6 10 6 4 5
+ 4939  ./philosophers  6 10 6 4 5
+ 4941  ./philosophers  6 10 6 4 5
+ 4943  ./philosophers  6 10 6 4 5
+ 4945  ./philosophers  6 10 6 4 5
+ 4947  ./philosophers  6 10 6 4 5
+ 4949  ./philosophers  6 10 6 4 5
+ 4951  ./philosophers  6 10 6 4 5
+ 4953  ./philosophers  6 10 6 4 5
+ 4955  ./philosophers  6 10 6 4 5
+ 4957  ./philosophers  6 10 6 4 5
+ 4959  ./philosophers  6 10 6 4 5
+ 4961  ./philosophers  6 10 6 4 5
+ 4964  ./philosophers  6 10 6 4 5
+ 4966  ./philosophers  6 10 6 4 5
+ 4968  ./philosophers  6 10 6 4 5
+ 4970  ./philosophers  6 10 6 4 5
+ 4972  ./philosophers  6 10 6 4 5
+ 4975  ./philosophers  6 10 6 4 5
+ 4977  ./philosophers  6 10 6 4 5
+ 4979  ./philosophers  6 10 6 4 5
+ 4981  ./philosophers  6 10 6 4 5
+ 4984  ./philosophers  6 10 6 4 5
+ 4987  ./philosophers  6 10 6 4 5
+ 4989  ./philosophers  6 10 6 4 5
+ 4991  ./philosophers  6 10 6 4 5
+ 4993  ./philosophers  6 10 6 4 5
+ 4995  ./philosophers  6 10 6 4 5
+ 4997  ./philosophers  6 10 6 4 5
+ 4999  ./philosophers  6 10 6 4 5
+ 5001  ./philosophers  6 10 6 4 5
+ 5003  ./philosophers  6 10 6 4 5
+ 5005  ./philosophers  6 10 6 4 5
+ 5007  ./philosophers  6 10 6 4 5
+ 5010  ./philosophers  6 10 6 4 5
+ 5013  ./philosophers  6 10 6 4 5
+ 5015  ./philosophers  6 10 6 4 5
+ 5017  ./philosophers  6 10 6 4 5
+ 5019  ./philosophers  6 10 6 4 5
+ 5022  ./philosophers  6 10 6 4 5
+ 5024  ./philosophers  6 10 6 4 5
+ 5028  ./philosophers  6 10 6 4 5
+ 5030  ./philosophers  6 10 6 4 5
+ 5032  ./philosophers  6 10 6 4 5
+ 5040  ./philosophers  6 10 6 4 5
+ 5042  ./philosophers  6 10 6 4 5
+ 5101  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 5419  run-help ./philosophers
+ 5420  ./philosophers  6 10 6 4 5
+ 5423  ./philosophers  6 10 6 4 5
+ 5428  ./philosophers  6 10 6 4 5
+ 5430  ./philosophers  6 10 6 4 5
+ 5432  ./philosophers  6 10 6 4 5
+ 5521  run-help ./philosophers
+ 5522  ./philosophers  6 10 6 4 5
+ 5526  ./philosophers  6 10 6 4 5
+ 5529  ./philosophers  6 10 6 4 5
+ 5532  ./philosophers  6 10 6 4 5
+ 5534  ./philosophers  6 10 6 4 5
+ 5538  ./philosophers  6 10 6 4 5
+ 5540  ./philosophers  6 10 6 4 5
+ 5542  ./philosophers  6 10 6 4 5
+ 5545  ./philosophers  6 10 6 4 5
+ 5550  ./philosophers  6 10 6 4 5
+ 5554  ./philosophers  6 10 6 4 5
+ 5557  ./philosophers  6 10 6 4 5
+ 5559  ./philosophers  6 10 6 4 5
+ 5561  ./philosophers  6 10 6 4 5
+ 5564  ./philosophers  6 10 6 4 5
+ 5566  ./philosophers  6 10 6 4 5
+ 5571  ./philosophers  6 10 6 4 5
+ 5573  ./philosophers  6 10 6 4 5
+ 5575  ./philosophers  6 10 6 4 5
+ 5577  ./philosophers  6 10 6 4 5
+ 5579  ./philosophers  6 10 6 4 5
+ 5581  ./philosophers  6 10 6 4 5
+ 5585  ./philosophers  6 10 6 4 5
+ 5590  ./philosophers  6 10 6 4 5
+ 5593  ./philosophers  6 10 6 4 5
+ 5595  ./philosophers  6 10 6 4 5
+ 5622  run-help ./philosophers
+ 5623  ./philosophers  6 10 6 4 5
+ 5628  ./philosophers  6 10 6 4 5
+ 5630  ./philosophers  6 10 6 4 5]
+ 5631  ./philosophers  6 10 6 4 5
+ 5633  ./philosophers  6 10 6 4 5
+ 5635  ./philosophers  6 10 6 4 5
+ 5637  ./philosophers  6 10 6 4 5
+ 5639  ./philosophers  6 10 6 4 5
+ 5641  ./philosophers  6 10 6 4 5
+ 5643  ./philosophers  6 10 6 4 5
+ 5646  ./philosophers  6 10 6 4 5
+ 5649  ./philosophers  6 10 6 4 5
+ 5651  ./philosophers  6 10 6 4 5
+ 5653  ./philosophers  6 10 6 4 5
+ 5655  ./philosophers  6 10 6 4 5]
+ 5656  ./philosophers  6 10 6 4 5
+ 5658  ./philosophers  6 10 6 4 5
+ 5660  ./philosophers  6 10 6 4 5
+ 5662  ./philosophers  6 10 6 4 5
+ 5664  ./philosophers  6 10 6 4 5
+ 5666  ./philosophers  6 10 6 4 51
+ 5668  ./philosophers  6 10 6 4 51
+ 5670  ./philosophers  6 10 6 4 51
+ 5672  ./philosophers  6 10 6 4 51
+ 5674  ./philosophers  6 10 6 4 51
+ 5677  ./philosophers  6 10 6 4 51
+ 5679  ./philosophers  6 10 6 4 51
+ 5686  ./philosophers  6 10 6 4 51
+ 5690  ./philosophers  6 10 6 4 51
+ 5692  ./philosophers  6 10 6 4 51
+ 5697  ./philosophers  6 10 6 4 51
+ 5699  ./philosophers  6 10 6 4 51
+ 5702  ./philosophers  6 10 6 4 51
+ 5704  ./philosophers  6 10 6 4 51
+ 5705  ./philosophers  6 10 6 4 5111
+ 5706  ./philosophers  6 10 6 4 51
+ 5708  ./philosophers  6 10 6 4 51
+ 5710  ./philosophers  6 10 6 4 5111
+ 5713  ./philosophers  6 10 6 4 5111
+ 5715  ./philosophers  6 10 6 4 5111
+ 5888  ./philosophers  6 10 6 4 5111
+ 5890  ./philosophers  6 10 6 4 5111
+ 5893  ./philosophers  6 10 6 4 5111
+ 5895  ./philosophers  6 10 6 4 5111
+ 5898  ./philosophers  6 10 6 4 5111
+ 5900  ./philosophers  6 10 6 4 5111
+ 5903  ./philosophers  6 10 6 4 5111'
+ 5904  ./philosophers  6 10 6 4 5111
+ 5919  ./philosophers  6 10 6 4 5111
+ 5923  ./philosophers  6 10 6 4 5111
+ 5927  ./philosophers  6 10 6 4 5111
+ 5932  ./philosophers  6 10 6 4 5111
+ 5935  ./philosophers  6 10 6 4 5111
+ 5937  ./philosophers  6 10 6 4 5111
+ 5939  ./philosophers  6 10 6 4 5111
+ 5948  ./philosophers  6 10 6 4 5111
+ 5951  ./philosophers  6 10 6 4 5111
+ 5953  ./philosophers  6 10 6 4 5111
+ 5956  ./philosophers  6 10 6 4 5111
+ 5958  ./philosophers  6 10 6 4 5111
+ 5961  ./philosophers  6 10 6 4 5111
+ 5964  ./philosophers  6 10 6 4 5111
+ 5966  ./philosophers  6 10 6 4 5111
+ 5968  ./philosophers  6 10 6 4 5111
+ 5970  ./philosophers  6 10 6 4 5111
+ 5973  ./philosophers  6 10 6 4 5111
+ 5975  ./philosophers  6 10 6 4 5111
+ 5977  ./philosophers  6 10 6 4 5111
+ 5992  ./philosophers  6 10 6 4 5111
+ 5994  ./philosophers  6 10 6 4 5111
+ 6009  ./philosophers  6 10 6 4 5111
+ 6012  ./philosophers  6 10 6 4 5111
+ 6014  ./philosophers  6 10 6 4 5111
+ 6025  ./philosophers  6 10 6 4 5111
+ 6028  ./philosophers  6 10 6 4 5111
+ 6031  ./philosophers  6 10 6 4 5111
+ 6035  ./philosophers  6 10 6 4 5111
+ 6037  ./philosophers  6 10 6 4 5111
+ 6040  ./philosophers  6 10 6 4 5111
+ 6044  ./philosophers  6 10 6 4 5111
+ 6099  ./philosophers  6 10 6 4 5111
+ 6101  ./philosophers  6 10 6 4 5111
+ 6103  ./philosophers  6 10 6 4 5111
+ 6105  ./philosophers  6 10 6 4 5111
+ 6107  ./philosophers  6 10 6 4 5111
+ 6109  ./philosophers  6 10 6 4 5111
+ 6112  ./philosophers  6 10 6 4 5111
+ 6116  ./philosophers  6 10 6 4 5111
+ 6118  ./philosophers  6 10 6 4 5111
+ 6120  ./philosophers  6 10 6 4 5111
+ 6123  ./philosophers  6 10 6 4 5111
+ 6125  ./philosophers  6 10 6 4 5111
+ 6127  ./philosophers  6 10 6 4 5111
+ 6130  ./philosophers  6 10 6 4 5111
+ 6132  ./philosophers  6 10 6 4 5111
+ 6135  ./philosophers  6 10 6 4 5111
+ 6137  ./philosophers  6 10 6 4 5111
+ 6139  ./philosophers  6 10 6 4 5111
+ 6141  ./philosophers  6 10 6 4 5111
+ 6143  ./philosophers  6 10 6 4 5111
+ 6145  ./philosophers  6 10 6 4 5111
+ 6148  ./philosophers  6 10 6 4 5111
+ 6150  ./philosophers  6 10 6 4 5111
+ 6153  ./philosophers  6 10 6 4 5111
+ 6155  ./philosophers  6 10 6 4 5111
+ 6159  ./philosophers  6 10 6 4 5111
+ 6162  ./philosophers  6 10 6 4 5111
+ 6166  ./philosophers  6 10 6 4 5111\n: 1725285181:0;./philosophers  6 10 6 4 5111
+ 6168  ./philosophers  6 10 6 4 5111
+ 6178  ./philosophers  6 10 6 4 5111
+ 6180  ./philosophers  6 10 6 4 5111
+ 6182  ./philosophers  6 10 6 4 5111
+ 6185  ./philosophers  6 10 6 4 5111
+ 6187  ./philosophers  6 10 6 4 5111
+ 6189  ./philosophers  6 10 6 4 5111\n: 1725285181:0;./philosophers  6 10 6 4 5111
+ 6191  ./philosophers  6 10 6 4 5111\n: 1725285181:0;./philosophers  6 10 6 4 5111
+ 6195  ./philosophers  6 10 6 4 5111\n: 1725285181:0;./philosophers  6 10 6 4 5111
+ 6197  ./philosophers  6 10 6 4 5111\n: 1725285181:0;./philosophers  6 10 6 4 5111
+ 6199  ./philosophers  6 10 6 4 5111
+ 6201  ./philosophers  6 10 6 4 5111
+ 6204  ./philosophers  6 10 6 4 5111
+ 6212  ./philosophers  6 10 6 4 5111
+ 6237  ./philosophers  6 10 6 4 5111
+ 6240  ./philosophers  6 10 6 4 5111
+ 6242  ./philosophers  6 10 6 4 f
+ 6244  ./philosophers  6 10 6 4 3
+ 6248  ./philosophers  6 10 6 4 3
+ 6256  ./philosophers  6 10 6 4 3
+ 6284  ./philosophers  6 10 6 4 3
+ 6286  ./philosophers  6 10 6 4 3
+ 6288  ./philosophers  6 10 6 4 3
+ 6291  ./philosophers  6 10 6 4 3
+ 6296  ./philosophers  6 10 6 4 3
+ 6298  ./philosophers  6 10 6 4 3
+ 6301  ./philosophers  6 10 6 4 3
+ 6303  ./philosophers  6 10 6 4 3
+ 6306  ./philosophers  6 10 6 4 3
+ 6308  ./philosophers  6 10 6 4 3
+ 6310  ./philosophers  6 10 6 4 3
+ 6312  ./philosophers  6 10 6 4 3
+ 6314  ./philosophers  6 10 6 4 3
+ 6316  ./philosophers  6 10 6 4 3
+ 6318  ./philosophers  6 10 6 4 3
+ 6322  ./philosophers  6 10 6 4 3
+ 6335  ./philosophers  6 10 6 4 3
+ 6337  ./philosophers  6 10 6 4 3
+ 6339  ./philosophers  6 10 6 4 3
+ 6341  ./philosophers  6 10 6 4 3
+ 6344  ./philosophers  6 10 6 4 3
+ 6347  ./philosophers  6 10 6 4 3
+ 6350  ./philosophers  6 10 6 4 3
+ 6352  ./philosophers  6 10 6 4 3
+ 6354  ./philosophers  6 10 6 4 f
+ 6355  ./philosophers  6 10 6 4 3
+ 6357  ./philosophers  6 10 6 4 3
+ 6359  ./philosophers  6 10 6 4 3g
+ 6360  ./philosophers  6 10 6 4 3
+ 6362  ./philosophers  6 10 6 4 3
+ 6364  ./philosophers  6 10 6 4 3
+ 6368  ./philosophers  6 10 6 4 3
+ 6370  ./philosophers h
+ 6371  ./philosophers  6 10 6 4 3
+ 6372  ./philosophers h
+ 6373  ./philosophers 
+ 6374  ./philosophers  6 10 6 4 3
+ 6377  %./philosophers
+ 6382  ./philosophers 3 5 9 1 
+ 6383  ./philosophers 5 5 9 1 
+ 6387  ./philosophers 5 5 9 1 
+ 6389  ./philosophers 5 5 9 1 
+ 6394  ./philosophers 5 5 9 1 
+ 6398  ./philosophers 5 5 9 1 
+ 6400  run-help ./philosophers
+ 6401  ./philosophers 5 5 9 1 
+ 6404  run-help ./philosophers
+ 6405  ./philosophers 5 5 9 1 
+ 6408  ./philosophers 5 5 9 1 
+ 6410  ./philosophers 5 5 9 1 
+ 6412  ./philosophers 5 5 9 1 
+ 6415  ./philosophers 5 5 9 1 
+ 6418  ./philosophers 5 5 9 1 
+ 6421  ./philosophers 5 5 9 1 
+ 6423  ./philosophers 5 5 9 1 
+ 6426  ./philosophers 5 5 9 1 
+ 6428  ./philosophers  6 10 6 4 3
+ 6430  ./philosophers  6 10 6 4 3
+ 6432  ./philosophers  6 10 6 4 3
+ 6435  ./philosophers  6 10 6 4 3
+ 6436  ./philosophers  3 10 6 4 3
+ 6438  ./philosophers  3 10 6 4 3
+ 6440  ./philosophers  3 10 6 4 3
+ 6442  ./philosophers  3 10 6 4 3
+ 6444  ./philosophers  3 10 6 4 3
+ 6449  ./philosophers  3 10 6 4 3
+ 6452  ./philosophers  3 10 6 4 3
+ 6462  ./philosophers  3 10 6 4 3
+ 6464  ./philosophers  3 10 6 4 3
+ 6468  run-help ./philosophers
+ 6469  ./philosophers 
+ 6470  run-help ./philosophers
+ 6471  ./philosophers 
+ 6473  ./philosophers  3 10 6 4 3
+ 6476  ./philosophers  3 10 6 4 3
+ 6484  ./philosophers  3 10 6 4 3
+ 6486  ./philosophers  3 10 6 4 3
+ 6487  ./philosophers  3 10 6 4 
+ 6489  ./philosophers  3 10 6 4 
+ 6491  ./philosophers  3 10 6 4 
+ 6493  ./philosophers  3 10 6 4 
+ 6495  ./philosophers  3 10 6 4 
+ 6498  run-help ./philosophers
+ 6499  ./philosophers  3 10 6 4 
+ 6503  ./philosophers  3 10 6 
+ 6504  ./philosophers  3 10 6 5
+ 6505  ./philosophers  3 1 6 5
+ 6506  ./philosophers  3 1000 6 5
+ 6508  ./philosophers  3 1000 6 5
+ 6509  ./philosophers  3 10 6 5
+ 6516  ./philosophers  3 10 6 5
+ 6518  ./philosophers  3 10 6 5
+ 6520  ./philosophers  3 10 6 5
+ 6521  ./philosophers  3 10 6 5 >> cat test.t
+ 6525  ./philosophers  3 10 6 5 >> cat.txxt
+ 6529  ./philosophers  3 5 1 5 >> cat.txxt
+ 6530  ./philosophers  3 5 1 5 > cat.txxt
+ 6531  ./philosophers  3 5 1 1 > cat.txxt
+ 6532  ./philosophers  3 5 1 5 3 > cat.txxt
+ 6533  ./philosophers  3 5 1 1 5 > cat.txxt
+ 6534  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6535  ./philosophers  5 5 1 2 5 > cat.txxt
+ 6536  ./philosophers  6 5 1 2 5 > cat.txxt
+ 6537  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6540  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6541  ./philosophers  3 5 1 2 5 
+ 6542  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6544  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6547  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6549  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6558  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6562  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6564  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6566  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6568  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6570  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6573  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6575  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6577  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6581  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6583  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6594  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6596  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6597  ./philosophers  3 3 1 2  > cat.txxt
+ 6599  ./philosophers  3 3 1 2  > cat.txxt
+ 6600  ./philosophers 
+ 6601  ./philosophers  3 3 1 2  > 
+ 6602  ./philosophers  3 3 1 2  
+ 6603  ./philosophers  3 1 1 2  
+ 6604  ./philosophers  1 800 200 200.  
+ 6605  ./philosophers  2 800 200 200.  
+ 6606  ./philosophers  3 800 200 200.  
+ 6607  ./philosophers  1 80 200 200.  
+ 6608  ./philosophers  1 800 200 200 
+ 6609  ./philosophers  2 800 200 200 
+ 6610  ./philosophers  5 800 200 200
+ 6611  ./philosophers  5 800 200 200 7
+ 6612  ./philosophers   4 410 200 200.
+ 6613  ./philosophers   4 410 200 200
+ 6614  ./philosophers   4 310 200 100
+ 6615  ./philosophers  5 800 200 200 7
+ 6616  ./philosophers  5 800 200 200 7 >cat.txxt 
+ 6619  ./philosophers  5 800 200 200 7 >cat.txxt 
+ 6620  ./philosophers  5 800 200 200 7 
+ 6623  ./philosophers  5 800 200 200 7 
+ 6626  ./philosophers  5 800 200 200 7 
+ 6628  ./philosophers  5 800 200 200 7 
+ 6631  ./philosophers  5 800 200 200 7 
+ 6633  ./philosophers  5 800 200 200 7 
+ 6634  ./philosophers  5 800 200 200 
+ 6636  ./philosophers  5 800 200 200 
+ 6638  ./philosophers  5 800 200 200 
+ 6663  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6666  ./philosophers  3 5 1 2 5 > cat.txxt
+ 6667  ./philosophers  3 5 1 2 5 
+ 6669  ./philosophers  3 5 1 2 5 
+ 6672  ./philosophers  3 5 1 2 5 
+ 6675  ./philosophers  3 5 1 2 5 
+ 6676  ./philosophers   1 800 200 200
+ 6677  ./philosophers   2 800 200 200
+ 6678  ./philosophers   2 800 200 200 10 >cat.txxt
+ 6679  ./philosophers   2 800 200 200 10 > cat.txxt
+ 6680  ./philosophers   2 800 200 200 10 
+ 6681  ./philosophers   2 800 200 200 
+ 6683  ./philosophers   2 800 200 200 
+ 6690  ./philosophers   2 800 200 200 
+ 6691  ./philosophers   3 800 200 200 
+ 6693  ./philosophers   2 800 200 200 
+ 6694  ./philosophers   1 800 200 200 
+ 6695  ./philosophers   2 800 200 200 
+ 6696  ./philosophers   3 800 200 200 
+ 6697  ./philosophers  5 800 200 200
+ 6698  ./philosophers  4 800 200 200
+ 6701  ./philosophers  4 800 200 200
+ 6706  ./philosophers  4 800 200 200
+ 6709  ./philosophers  4 800 200 200
+ 6711  ./philosophers  4 800 200 200
+ 6713  ./philosophers  4 800 200 200
+ 6715  ./philosophers  4 800 200 200
+ 6717  ./philosophers  4 800 200 200
+ 6719  ./philosophers  4 800 200 200
+ 6721  ./philosophers  4 800 200 200
+ 6723  ./philosophers  4 800 200 200
+ 6726  ./philosophers  4 800 200 200
+ 6728  ./philosophers  4 800 200 200
+ 6731  ./philosophers  4 800 200 200
+ 6733  ./philosophers  4 800 200 200
+ 6736  ./philosophers  4 800 200 200
+ 6738  run-help ./philosophers
+ 6739  ./philosophers 
+ 6742  ./philosophers  4 800 200 200
+ 6744  ./philosophers  4 800 200 200
+ 6746  ./philosophers  4 800 200 200
+ 6748  ./philosophers  4 800 200 200
+ 6750  ./philosophers 10 1 1 1
+ 6752  ./philosophers 10 1 1 1
+ 6754  ./philosophers 10 1 1 1
+ 6756  ./philosophers 10 1 1 1
+ 6758  ./philosophers 10 1 1 1
+ 6760  ./philosophers 10 1 1 1
+ 6762  ./philosophers 10 1 1 1
+ 6764  ./philosophers 10 1 1 1
+ 6766  ./philosophers 10 1 1 1
+ 6768  ./philosophers 10 1 1 1
+ 6770  ./philosophers 10 1 1 1
+ 6773  ./philosophers 10 1 1 1
+ 6774  ./philosophers  4 800 200 200
+ 6776  ./philosophers  4 800 200 200
+ 6777  ./philosophers  4 800 200 200 5
+ 6780  ./philosophers  4 800 200 200 5
+ 6782  ./philosophers  4 800 200 200 5
+ 6784  ./philosophers  4 800 200 200
+ 6787  ./philosophers  4 800 200 200
+ 6790  ./philosophers  4 800 200 200
+ 6792  ./philosophers  4 800 200 200
+ 6794  ./philosophers  4 800 200 200
+ 6798  ./philosophers  4 800 200 200
+ 6801  ./philosophers  4 800 200 200
+ 6803  ./philosophers  4 800 200 200
+ 6806  ./philosophers  4 800 200 200
+ 6807  ./philosophers  5 800 200 200
+ 6809  ./philosophers  5 800 200 200 >cat.txxt
+ 6811  ./philosophers  5 800 200 200 >cat.txxt
+ 6812  ./philosophers  5 800 200 200 
+ 6817  ./philosophers  5 800 200 200 
+ 6820  ./philosophers  5 800 200 200 
+ 6822  ./philosophers  5 800 200 200 
+ 6824  ./philosophers  5 800 200 200 
+ 6826  ./philosophers  5 800 200 200 
+ 6831  run-help ./philosophers
+ 6832  ./philosophers 
+ 6833  run-help ./philosophers
+ 6834  ./philosophers 
+ 6836  ./philosophers  5 800 200 200 
+ 6838  ./philosophers  5 800 200 200 
+ 6840  ./philosophers  5 800 200 200 
+ 6842  ./philosophers  5 800 200 200 
+ 6844  ./philosophers  5 800 200 200 
+ 6848  ./philosophers  5 800 200 200 
+ 6849  ./philosophers  5 800 200 200
+ 6850  ./philosophers  4 800 200 200
+ 6852  ./philosophers  4 800 200 200
+ 6853  ./philosophers  5 800 200 200
+ 6854  ./philosophers  5 1000 200 200
+ 6855  ./philosophers  5 800 200 200
+ 6857  ./philosophers  5 800 200 200
+ 6859  ./philosophers  5 800 200 200
+ 6862  ./philosophers  5 800 200 200
+ 6866  ./philosophers  5 800 200 200
+ 6868  ./philosophers  5 800 200 200
+ 6870  ./philosophers  5 800 200 200
+ 6872  ./philosophers  5 800 200 200
+ 6875  ./philosophers  5 800 200 200
+ 6878  ./philosophers  5 800 200 200
+ 6880  ./philosophers  5 800 200 200
+ 6882  ./philosophers  5 800 200 200
+ 6885  run-help ./philosophers
+ 6886  ./philosophers 
+ 6889  run-help ./philosophers
+ 6890  ./philosophers 
+ 6892  ./philosophers  5 800 200 200
+ 6895  ./philosophers  5 800 200 200
+ 6898  ./philosophers  5 800 200 200
+ 6903  ./philosophers  5 800 200 200
+ 6905  ./philosophers  1 800 200 200
+ 6906  ./philosophers  5 800 200 200 8
+ 6909  ./philosophers  5 800 200 200 8
+ 6913  run-help ./philosophers
+ 6914  ./philosophers 
+ 6915  ./philosophers  5 800 200 200 8
+ 6918  ./philosophers  5 800 200 200 8
+ 6920  ./philosophers  5 800 200 200 8
+ 6921  ./philosophers  5 800 200 200 
+ 6923  ./philosophers  5 800 200 200 
+ 6925  ./philosophers  5 800 200 200 
+ 6927  ./philosophers  5 800 200 200 
+ 6929  ./philosophers  5 800 200 200 
+ 6933  ./philosophers  5 800 200 200 
+ 6936  ./philosophers  5 800 200 200 
+ 6939  ./philosophers  5 800 200 200 
+ 6942  ./philosophers  5 800 200 200 
+ 6946  ./philosophers  5 800 200 200 
+ 6948  ./philosophers  5 800 200 200 
+ 6951  ./philosophers  5 800 200 200 
+ 6953  ./philosophers  5 800 200 200 
+ 6956  ./philosophers  5 800 200 200 
+ 6957  ./philosophers  5 800 200 200 6
+ 6958  ./philosophers  5 800 200 200 
+ 6961  ./philosophers  5 800 200 200 
+ 6963  ./philosophers  5 800 200 200 
+ 6965  ./philosophers  5 800 200 200 
+ 6967  ./philosophers  5 800 200 200 
+ 6970  ./philosophers  5 800 200 200 
+ 6972  ./philosophers  5 800 200 200 
+ 6974  ./philosophers  5 800 200 200 
+ 6976  ./philosophers  5 800 200 200 
+ 6978  ./philosophers  5 800 200 200 
+ 6987  ./philosophers  5 800 200 200 
+ 6989  ./philosophers  5 800 200 200 
+ 6991  ./philosophers  5 800 200 200 
+ 6993  ./philosophers  5 800 200 200 
+ 6995  ./philosophers  5 800 200 200 
+ 6997  ./philosophers  5 800 200 200 
+ 7001  ./philosophers  5 800 200 200 
+ 7003  ./philosophers  5 800 200 200 
+ 7005  ./philosophers  5 800 200 200 
+ 7011  ./philosophers  5 800 200 200 
+ 7012  ./philosophers  5 800 200 200 \\n./philosophers  5 800 200 200 
+ 7013  ./philosophers  5 800 200 200 \n./philosophers  5 800 200 200 
+ 7015  ./philosophers  5 800 200 200 \n./philosophers  5 800 200 200 
+ 7016  ./philosophers  6 800 200 200 \n./philosophers  5 800 200 200 
+ 7017  ./philosophers  7 800 200 200 \n./philosophers  5 800 200 200 
+ 7018  ./philosophers 300 800 200 200 \n./philosophers  5 800 200 200 
+ 7019  ./philosophers 200 800 200 200 \n./philosophers  5 800 200 200 
+ 7020  ./philosophers 20 800 200 200 \n./philosophers  5 800 200 200 
+ 7021  ./philosophers 21 800 200 200 \n./philosophers  5 800 200 200 
+ 7022  ./philosophers 21 100 200 200 \n./philosophers  5 800 200 200 
+ 7024  ./philosophers 21 100 200 200 \n./philosophers  5 800 200 200 
+ 7027  ./philosophers 21 100 200 200 \n./philosophers  5 800 200 200 
+ 7029  \n./philosophers  5 800 200 200 
+ 7030  \n./philosophers 100 800 200 200 
+ 7035  ./philosophers 21 100 200 200 \n./philosophers  5 800 200 200 
+ 7037  ./philosophers 21 100 200 200 \n./philosophers  5 800 200 200 
+ 7040  ./philosophers 21 100 200 200 \n./philosophers  5 800 200 200 
+ 7086  ./philosophers 21 100 200 200 \n./philosophers  5 800 200 200 
+ 7088  ./philosophers 21 100 200 200 \n./philosophers  5 800 200 200 
+ 7090  ./philosophers 21 100 200 200 \n./philosophers  5 800 200 200 
+ 7093  ./philosophers 21 100 200 200 \n./philosophers  5 800 200 200 
+ 7096  ./philosophers 21 100 200 200 \n./philosophers  5 800 200 200 
+ 7097  ./philosophers 21 100 200 200 
+ 7101  ./philosophers 21 100 200 200 
+ 7104  ./philosophers 21 100 200 200 
+ 7105  ./philosophers 4 100 200 200 
+ 7106  ./philosophers 2 100 200 200 
+ 7107  ./philosophers 2 800 200 200 
+ 7108  ./philosophers 5 800 200 200 
+ 7110  ./philosophers 5 800 200 200 
+ 7121  run-help ./philosophers
+ 7122  ./philosophers 
+ 7123  run-help ./philosophers
+ 7124  ./philosophers 5 800 200 200 
+ 7126  ./philosophers 5 800 200 200 
+ 7129  ./philosophers 5 800 200 200 
+ 7130  ./philosophers 10 800 200 200 
+ 7136  ./philosophers 10 800 200 200 
+ 7139  ./philosophers 10 800 200 200 
+ 7141  ./philosophers 10 800 200 200 
+ 7144  ./philosophers 10 800 200 200 
+ 7145  ./philosophers 50 800 200 200 
+ 7149  ./philosophers 50 800 200 200 
+ 7151  ./philosophers 50 800 200 200 
+ 7154  ./philosophers 50 800 200 200 
+ 7160  ./philosophers 50 800 200 200 
+ 7165  ./philosophers 50 800 200 200 
+ 7167  ./philosophers 50 800 200 200 
+ 7170  ./philosophers 50 800 200 200 
+ 7176  ./philosophers 50 800 200 200 
+ 7188  ./philosophers 50 800 200 200 
+ 7189  ./philosophers 50 800 200 200 5
+ 7190  ./philosophers 50 800 200 200 2
+ 7194  ./philosophers 50 800 200 200 2
+ 7199  ./philosophers 50 800 200 200 2
+ 7201  ./philosophers 50 800 200 200 2
+ 7205  ./philosophers 50 800 200 200 2
+ 7207  ./philosophers 50 800 200 200 2
+ 7209  ./philosophers 50 800 200 200 2
+ 7211  ./philosophers 50 800 200 200 2
+ 7214  ./philosophers 50 800 200 200 2
+ 7222  ./philosophers 50 800 200 200 2
+ 7229  ./philosophers 50 800 200 200 2
+ 7235  ./philosophers 50 800 200 200 2
+ 7237  ./philosophers 50 800 200 200 2
+ 7238  ./philosophers 5 800 200 200 2
+ 7240  ./philosophers 5 800 200 200 2
+ 7242  ./philosophers 5 800 200 200 2
+ 7244  ./philosophers 5 800 200 200 2
+ 7245  ./philosophers 5 800 200 200 10
+ 7246  ./philosophers 10 800 200 200 10
+ 7247  ./philosophers 20 800 200 200 10
+ 7260  ./philosophers 20 800 200 200 10
+ 7262  ./philosophers 20 800 200 200 10
+ 7266  ./philosophers 20 800 200 200 10
+ 7269  ./philosophers 20 800 200 200 10
+ 7271  ./philosophers 20 800 200 200 10
+ 7273  ./philosophers 20 800 200 200 10
+ 7275  ./philosophers 20 800 200 200 10
+ 7278  ./philosophers 20 800 200 200 10
+ 7281  ./philosophers 20 800 200 200 10
+ 7283  ./philosophers 20 800 200 200 10
+ 7286  ./philosophers 20 800 200 200 10
+ 7288  ./philosophers 20 800 200 200 10
+ 7291  ./philosophers 20 800 200 200 10
+ 7293  ./philosophers 20 800 200 200 10
+ 7298  ./philosophers 20 800 200 200 10
+ 7299  ./philosophers 5 800 200 200 10
+ 7300  ./philosophers 5 800 200 200 
+ 7306  ./philosophers 5 800 200 200 
+ 7308  ./philosophers 5 800 200 200 
+ 7313  ./philosophers  5 800 200 200 | echo "Texto que você deseja copiar" | xclip -selection clipboard\n
+ 7314  ./philosophers  5 800 200 200 | xclip -selection clipboard\n
+ 7317  run-help ./philosophers
+ 7318  ./philosophers 
+ 7321  ./philosophers  5 800 200 200 | xclip -selection clipboard\n
+ 7324  ./philosophers  5 800 200 200 | xclip -selection clipboard\n
+ 7325  ./philosophers 5 800 200 200 
+ 7326  ./philosophers 5 100 200 200 
+ 7327  ./philosophers 5 1000 200 200 
+ 7330  ./philosophers 5 1000 200 200 
+ 7333  ./philosophers 5 1000 200 200 
+ 7335  ./philosophers 5 1000 200 200 
+ 7338  ./philosophers 5 1000 200 200 
+ 7341  ./philosophers  5 800 200 200 | xclip -selection clipboard\n
+ 7344  ./philosophers  5 800 200 200 | xclip -selection clipboard\n
+ 7345  ./philosophers 5 800 200 200 
+ 7369  ./philosophers 5 800 200 200 
+ 7371  ./philosophers 5 800 200 200 
+ 7374  ./philosophers 5 800 200 200 
+ 7377  ./philosophers 5 800 200 200 
+ 7379  ./philosophers 5 800 200 200 
+ 7383  ./philosophers 5 800 200 200 
+ 7385  ./philosophers 5 800 200 200 
+ 7386  ./philosophers 5 800 200 200 5
+ 7388  ./philosophers 5 800 200 200 5
+ 7392  ./philosophers 5 800 200 200 5
+ 7396  ./philosophers 5 800 200 200 5
+ 7398  ./philosophers 5 800 200 200 5
+ 7400  ./philosophers 5 800 200 200 5
+ 7402  ./philosophers 5 800 200 200 5
+ 7404  ./philosophers 5 800 200 200 5
+ 7406  ./philosophers 5 800 200 200 5
+ 7410  ./philosophers 5 800 200 200 5
+ 7413  ./philosophers 5 800 200 200 5g
+ 7414  ./philosophers 5 800 200 200 5
+ 7417  ./philosophers 5 800 200 200 5
+ 7419  ./philosophers 5 800 200 200 5
+ 7421  ./philosophers 5 800 200 200 5
+ 7423  ./philosophers 5 800 200 200 5
+ 7425  ./philosophers 5 800 200 200 5
+ 7429  ./philosophers 5 800 200 200 5
+ 7431  ./philosophers 5 800 200 200 5
+ 7434  ./philosophers 5 800 200 200 5
+ 7438  ./philosophers 5 800 200 200 5
+ 7439  ./philosophers 5 800 200 200 
+ 7440  ./philosophers 5 800 200 200 5
+ 7444  ./philosophers 5 800 200 200 5
+ 7449  ./philosophers 5 800 200 200 5
+ 7458  ./philosophers 5 800 200 200 5
+ 7460  ./philosophers 5 800 200 200 5
+ 7462  ./philosophers 5 800 200 200 5
+ 7465  ./philosophers 5 800 200 200 5
+ 7468  ./philosophers 5 800 200 200 5
+ 7469  valgrind ./philosophers 5 6 44 8
+ 7473  ./philosophers 5 800 200 200 5
+ 7475  ./philosophers 5 800 200 200 5
+ 7477  ./philosophers 5 800 200 200 5
+ 7479  ./philosophers 5 800 200 200 5
+ 7481  ./philosophers 5 800 200 200 5
+ 7483  ./philosophers 5 800 200 200 5
+ 7487  ./philosophers 5 800 200 200 5
+ 7489  ./philosophers 5 800 200 200 5
+ 7491  ./philosophers 5 800 200 200 5
+ 7493  ./philosophers 5 800 200 200 5
+ 7495  ./philosophers 5 800 200 200 5
+ 7497  ./philosophers 5 800 200 200 5
+ 7499  ./philosophers 5 800 200 200 5
+ 7501  ./philosophers 5 800 200 200 5
+ 7503  ./philosophers 5 800 200 200 5
+ 7505  ./philosophers 5 800 200 200 5
+ 7507  ./philosophers 5 800 200 200 5
+ 7509  ./philosophers 5 800 200 200 5
+ 7512  ./philosophers 5 800 200 200 5
+ 7514  ./philosophers 5 800 200 200 5
+ 7516  ./philosophers 5 800 200 200 5
+ 7518  ./philosophers 5 800 200 200 5
+ 7520  ./philosophers 5 800 200 200 5
+ 7522  ./philosophers 5 800 200 200 5
+ 7524  ./philosophers 5 800 200 200 5
+ 7526  run-help ./philosophers
+ 7527  ./philosophers  
+ 7528  run-help ./philosophers
+ 7540  ./philosophers  
+ 7541  ./philosophers 5 800 200 200 5
+ 7543  ./philosophers 5 800 200 200 5
+ 7545  ./philosophers 5 800 200 200 5
+ 7551  ./philosophers 5 800 200 200 5
+ 7555  ./philosophers 5 800 200 200 5
+ 7557  ./philosophers 5 800 200 200 5
+ 7559  ./philosophers 5 800 200 200 5
+ 7561  ./philosophers 5 800 200 200 5
+ 7563  ./philosophers 5 800 200 200 5
+ 7566  ./philosophers 5 800 200 200 5
+ 7568  ./philosophers 5 800 200 200 5
+ 7570  ./philosophers 5 800 200 200 5
+ 7572  ./philosophers 5 800 200 200 5
+ 7574  ./philosophers 5 800 200 200 5
+ 7576  ./philosophers 5 800 200 200 5
+ 7579  ./philosophers 5 800 200 200 5
+ 7581  ./philosophers  5 800 200 200 | xclip -selection clipboard\n
+ 7582  ./philosophers  5 800 200 200 \n
+ 7584  ./philosophers  5 800 200 200 \n
+ 7588  ./philosophers  5 800 200 200 \n
+ 7590  ./philosophers  5 800 200 200 \n
+ 7592  ./philosophers  5 800 200 200 \n
+ 7598  ./philosophers  5 800 200 200 \n
+ 7600  ./philosophers  5 800 200 200 \n
+ 7602  ./philosophers  5 800 200 200 \n
+ 7604  ./philosophers  5 800 200 200 \n
+ 7607  ./philosophers  5 800 200 200 \n
+ 7609  ./philosophers  5 800 200 200 \n
+ 7611  ./philosophers  5 800 200 200 \n
+ 7613  ./philosophers  5 800 200 200 \n
+ 7615  ./philosophers  5 800 200 200 \n
+ 7618  ./philosophers  5 800 200 200 \n
+ 7620  ./philosophers  5 800 200 200 \n
+ 7622  ./philosophers  5 800 200 200 \n
+ 7624  ./philosophers  5 800 200 200 \n
+ 7628  ./philosophers  5 800 200 200 \n
+ 7629  ./philosophers  5 800 200 200 5\n
+ 7635  run-help ./philosophers
+ 7636  ./philosophers 
+ 7637  ./philosophers  5 800 200 200 5\n
+ 7639  ./philosophers  5 800 200 200 5\n
+ 7642  ./philosophers  5 800 200 200 5\n
+ 7644  ./philosophers  5 800 200 200 5\n
+ 7649  ./philosophers  5 800 200 200 5\n
+ 7652  ./philosophers  5 800 200 200 5\n
+ 7654  ./philosophers  5 800 200 200 5\n
+ 7656  ./philosophers  5 800 200 200 5\n
+ 7658  ./philosophers  5 800 200 200 5\n
+ 7660  ./philosophers  5 800 200 200 5\n
+ 7662  ./philosophers  5 800 200 200 5\n
+ 7664  ./philosophers  5 800 200 200 5\n
+ 7855  run-help ./philosophers
+ 7856  ./philosophers 
+ 7857  ./philosophers  5 800 200 200 5\n
+ 7858  ./philosophers 
+ 7859  ./philosophers  5 800 200 200 5\n
+ 7861  ./philosophers  5 800 200 200 \n
+ 7865  ./philosophers  5 800 200 200 > cat\n
+ 7882  ./philosophers  5 800 200 200 \n
+ 7888  ./philosophers  5 800 200 200 \n
+ 7891  ./philosophers  5 800 200 200 \n
+ 7894  ./philosophers  5 800 200 200 \n
+ 7897  run-help ./philosophers
+ 7901  ./philosophers  5 800 200 200 \n
+ 7903  ./philosophers  5 800 200 200 \n
+ 7906  ./philosophers  5 800 200 200 \n
+ 7911  ./philosophers  5 800 200 200 \n
+ 7913  ./philosophers  5 800 200 200 \n
+ 7915  ./philosophers  5 800 200 200 \n
+ 7918  ./philosophers  5 800 200 200 \n
+ 7921  ./philosophers  5 800 200 200 \n
+ 7923  ./philosophers  5 800 200 200 \n
+ 7925  ./philosophers  1 800 200 200 \n
+ 7926  ./philosophers   4 410 200 200.\n
+ 7927  ./philosophers   4 410 200 200\n
+ 7928  ./philosophers 4 310 200 100\n
+ 7930  ./philosophers 4 310 200 100\n
+ 7932  ./philosophers 4 310 200 100\n
+ 7934  ./philosophers 4 310 200 100\n
+ 7935  ./philosophers   4 410 200 200\n
+ 7936  ./philosophers   5 410 200 200\n
+ 7984  ./philosophers   5 410 200 200\n
+ 7991  ./philosophers   5 410 200 200\n
+ 7993  ./philosophers   5 410 200 200\n
+ 7999  ./philosophers   5 410 200 200\n
+ 8002  ./philosophers   5 410 200 200\n
+ 8005  ./philosophers   5 410 200 200\n
+ 8013  ./philosophers   5 410 200 200\n
+ 8029  ./philosophers   5 410 200 200\n
+ 8032  ./philosophers   5 410 200 200\n
+ 8036  ./philosophers   5 410 200 200\n
+ 8040  ./philosophers   5 410 200 200\n
+ 8042  ./philosophers   4 410 200 200\n
+ 8043  ./philosophers   4 410 200 200 15\n
+ 8044  ./philosophers  5 800 200 200 \n
+ 8045  ./philosophers  5 800 200 200 5\n
+ 8281  ./philosophers  5 800 200 200 5\n
+ 8283  ./philosophers  5 800 200 200 5\n
+ 8285  ./philosophers  5 800 200 200 5\n
+ 8287  ./philosophers  5 800 200 200 5\n
+ 8288  ./philosophers  5 800 200 200 \n
+ 8292  ./philosophers  5 800 200 200 \n
+ 8295  ./philosophers  5 800 200 200 \n
+ 8297  ./philosophers  5 800 200 200 5\n
+ 8298  ./philosophers  5 800 200 200 50\n
+ 8300  ./philosophers  5 800 200 200 5\n
+ 8301  ./philosophers  5 800 200 200 \n
+ 8302  ./philosophers  5 800 200 200 10\n
+ 8303  ./philosophers  5 800 200 200 \n
+ 8304  ./philosophers  5 800 200 200 10\n
+ 8305  ./philosophers  5 800 200 200 \n
+ 8306  ./philosophers  5 800 200 200 5\n
+ 8318  ./philosophers  5 800 200 200 5\n
+ 8320  ./philosophers  5 800 200 200 5\n
+ 8325  ./philosophers  5 800 200 200 5\n
+ 8329  ./philosophers  5 800 200 200 5\n
+ 8330  ./philosophers   4 410 200 200 15\n
+ 8331  valgrind ./philosophers 5 6 44 8
+ 8335  ./philosophers   4 410 200 200 15\n
+ 8336  valgrind ./philosophers   4 410 200 200 15\n
+ 8341  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 8345  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 8377  ./philosophers   4 410 200 200 15\n
+ 8378  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 8380  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 8383  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 8390  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 8392  ./philosophers   4 410 200 200 15\n
+ 8393  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 8407  ./philosophers   4 410 200 200 15\n
+ 8411  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 8418  ./philosophers   4 410 200 200 15 5\n
+ 8419  ./philosophers   4 410 200 200 15 \n
+ 8431  ./philosophers   4 410 200 200 15 \n
+ 8436  ./philosophers   4 410 200 200 15 \n
+ 8439  ./philosophers   4 410 200 200 15 \n
+ 8441  ./philosophers   4 410 200 200 15 \n
+ 8443  ./philosophers  5 800 200 200 10\n
+ 8444  ./philosophers  5 300 200 200 10\n
+ 8449  ./philosophers  5 300 200 200 10\n
+ 8453  ./philosophers  5 300 200 200 10\n
+ 8461  ./philosophers  5 300 200 200 10\n
+ 8465  ./test.sh ../philosophers
+ 8466  ./test.sh ../philosophers 0
+ 8467  ./test.sh ../philosophers 
+ 8469  ./philosophers [200 800 200 200]
+ 8470  ./philosophers 200 800 200 200
+ 8472  ./philosophers 200 800 200 200
+ 8474  ./philosophers 200 800 200 200
+ 8477  ./philosophers 200 800 200 200
+ 8479  ./philosophers 200 800 200 200
+ 8481  ./philosophers 200 800 200 200
+ 8483  ./philosophers 200 800 200 200
+ 8487  ./philosophers 200 800 200 200
+ 8491  ./test.sh ../philosophers 3
+ 8492  ./test.sh ../philosophers 
+ 8495  ./test.sh ../philosophers 
+ 8497  ./philosophers 50 800 200 200
+ 8499  ./test.sh ../philosophers 
+ 8503  ./test.sh ../philosophers 
+ 8504  ./philosophers 100 800 200 200
+ 8506  ./philosophers 100 800 200 200
+ 8508  ./philosophers 100 800 200 200
+ 8511  ./philosophers 100 800 200 200g
+ 8512  ./philosophers 100 800 200 200
+ 8513  ./philosophers 100 800 200 200g
+ 8517  ./philosophers 100 800 200 200g
+ 8518  ./philosophers 100 800 200 200
+ 8520  ./philosophers 100 800 200 200
+ 8522  ./philosophers 100 800 200 200
+ 8523  ./philosophers 5 800 200 200
+ 8524  ./test.sh ../philosophers 
+ 8527  ./philosophers 5 800 200 200
+ 8558  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 8559  valgrind  ./philosophers 6 10 6 4 5\n
+ 8561  valgrind  ./philosophers 6 10 6 4 5\n
+ 8562  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 8565  ./philosophers 5 800 200 200
+ 8566  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 8568  ./philosophers 100 800 200 200 
+ 8569  ./philosophers 5 800 200 200 
+ 8571  ./philosophers 100 800 200 200 5
+ 8573  ./philosophers 100 800 200 200 5
+ 8575  ./philosophers 100 800 200 200 
+ 8578  ./philosophers 100 800 200 200 
+ 8583  ./philosophers 100 800 200 200 
+ 8585  ./philosophers 100 800 200 200 
+ 8589  ./philosophers 100 800 200 200 
+ 8591  ./philosophers 100 800 200 200 
+ 8593  ./philosophers 100 800 200 200  > cat.txxt
+ 8595  ./philosophers 100 800 200 200  > cat.txxt
+ 8596  ./philosophers 100 800 200 200 
+ 8599  ./philosophers 10 800 200 200 
+ 8603  ./philosophers  5 300 200 200 10\n
+ 8604  ./philosophers 5 800 200 200 
+ 8605  ./philosophers 6 800 200 200 
+ 8606  ./philosophers 10 800 200 200 
+ 8613  ./philosophers 10 800 200 200 
+ 8614  ./philosophers 50 800 200 200 
+ 8615  ./philosophers 5 800 200 200 
+ 8616  ./philosophers 10 800 200 200 
+ 8618  ./philosophers 10 800 200 200 
+ 8620  ./philosophers 10 800 200 200 
+ 8622  ./philosophers 10 800 200 200 
+ 8624  ./philosophers  5 300 200 200 10\n
+ 8625  ./philosophers  5 800 200 200 \n
+ 8627  ./philosophers  5 800 200 200 \n
+ 8629  ./philosophers  5 800 200 200 \n
+ 8631  ./philosophers  5 800 200 200 \n
+ 8633  ./philosophers  5 800 200 200 \n
+ 8636  ./philosophers  5 800 200 200 \n
+ 8639  ./philosophers  5 800 200 200 \n
+ 8641  ./philosophers  5 800 200 200 \n
+ 8643  ./philosophers  5 800 200 200 \n
+ 8651  ./philosophers  5 800 200 200 \n
+ 8653  ./philosophers  5 800 200 200 \n
+ 8655  ./philosophers  5 800 200 200 \n
+ 8659  ./philosophers  5 800 200 200 \n
+ 8661  ./philosophers  5 800 200 200 \n
+ 8663  ./philosophers  5 800 200 200 \n
+ 8665  ./philosophers  5 800 200 200 \n
+ 8667  ./philosophers  5 800 200 200 \n
+ 8669  ./philosophers  5 800 200 200 \n
+ 8671  ./philosophers  5 800 200 200 \n
+ 8673  ./philosophers  5 800 200 200 \n
+ 8675  ./philosophers  5 800 200 200 \n
+ 8677  ./philosophers  5 800 200 200 \n
+ 8679  ./philosophers  5 800 200 200 \n
+ 8681  ./philosophers  5 800 200 200 \n
+ 8683  ./philosophers  5 800 200 200 \n
+ 8688  ./philosophers  5 800 200 200 \n
+ 8690  ./philosophers  5 800 200 200 \n
+ 8693  ./philosophers  5 800 200 200 \n
+ 8695  ./philosophers  5 800 200 200 \n
+ 8697  ./philosophers  5 800 200 200 \n
+ 8699  ./philosophers  5 800 200 200 \n
+ 8701  ./philosophers  5 800 200 200 \n
+ 8704  ./philosophers  5 800 200 200 \n
+ 8706  ./philosophers  5 800 200 200 \n
+ 8708  ./philosophers  5 800 200 200 \n
+ 8711  ./philosophers  5 800 200 200 \n
+ 8781  ./philosophers  5 800 200 200 \n
+ 8783  ./philosophers  5 800 200 200 \n
+ 8790  ./philosophers  5 800 200 200 \n
+ 8793  ./philosophers  5 800 200 200 \n
+ 8885  ./philosophers  5 800 200 200 \n
+ 8887  ./philosophers  5 800 200 200 \n
+ 8890  ./philosophers  5 800 200 200 \n
+ 8892  ./philosophers  5 800 200 200 \n
+ 8894  ./philosophers  5 800 200 200 \n
+ 8896  ./philosophers  5 800 200 200 \n
+ 8899  ./philosophers  5 800 200 200 \n
+ 8901  ./philosophers  5 800 200 200 \n
+ 8903  ./philosophers  5 800 200 200 \n
+ 8905  ./philosophers  5 800 200 200 \n
+ 8907  ./philosophers  5 800 200 200 \n
+ 8909  ./philosophers  5 800 200 200 \n
+ 8911  ./philosophers  5 800 200 200 \n
+ 8913  ./philosophers  5 800 200 200 \n
+ 8916  ./philosophers  5 800 200 200 \n
+ 8919  ./philosophers  5 800 200 200 \n
+ 8922  ./philosophers  5 800 200 200 \n
+ 8924  ./philosophers  5 800 200 200 \n
+ 8926  ./philosophers  5 800 200 200 \n
+ 8928  ./philosophers  5 800 200 200 \n
+ 8931  ./philosophers  5 800 200 200 \n
+ 8934  ./philosophers  5 800 200 200 \n
+ 8938  ./philosophers  5 800 200 200 \n
+ 8940  ./philosophers  5 800 200 200 \n
+ 8943  ./philosophers  5 800 200 200 \n
+ 8951  ./philosophers  5 800 200 200 \n
+ 8956  run-help ./philosophers
+ 8957  ./philosophers  5 800 200 200 \n
+ 8959  ./philosophers  5 800 200 200 \n
+ 8961  ./philosophers  5 800 200 200 \n
+ 8975  ./philosophers  5 800 200 200 \n
+ 8982  ./philosophers  5 800 200 200 \n
+ 8986  ./philosophers  5 800 200 200 \n
+ 8999  ./philosophers  5 800 200 200 \n
+ 9001  ./philosophers  5 800 200 200 \n
+ 9005  ./philosophers  5 800 200 200 \n
+ 9008  ./philosophers  5 800 200 200 \n
+ 9010  ./philosophers  5 800 200 200 \n
+ 9015  ./philosophers  5 800 200 200 \n
+ 9017  ./philosophers  5 800 200 200 \n
+ 9020  ./philosophers  5 800 200 200 \n
+ 9022  ./philosophers  5 800 200 200 \n
+ 9023  ./philosophers  100 800 200 200 \n
+ 9026  ./philosophers  100 800 200 200 \n
+ 9028  ./philosophers  5 800 200 200 \n
+ 9030  ./philosophers  5 800 200 200 \n
+ 9032  ./philosophers  5 800 200 200 \n
+ 9034  ./philosophers  5 800 200 200 \n
+ 9036  ./philosophers  5 800 200 200 \n
+ 9042  ./philosophers  5 800 200 200 \n
+ 9046  ./philosophers  5 800 200 200 \n
+ 9049  ./philosophers  5 800 200 200 \n
+ 9052  ./philosophers  5 800 200 200 \n
+ 9054  ./philosophers  5 800 200 200 \n
+ 9056  ./philosophers  5 800 200 200 \n
+ 9059  run-help ./philosophers
+ 9060  ./philosophers 
+ 9064  ./philosophers  5 800 200 200 \n
+ 9066  ./philosophers  5 800 200 200 \n
+ 9067  ./philosophers  100 800 200 200 \n
+ 9070  ./philosophers  100 800 200 200 \n
+ 9072  ./philosophers > cat
+ 9073  ./philosophers  100 800 200 200 >cat\n
+ 9075  ./philosophers  100 800 200 200 >cat\n
+ 9077  ./philosophers  100 800 200 200 >cat\n
+ 9078  ./philosophers  20 800 200 200 >cat\n
+ 9079  ./philosophers  30 800 200 200 >cat\n
+ 9080  ./philosophers  20 800 200 200 >cat\n
+ 9081  ./philosophers  20 800 200 200 \n
+ 9082  ./philosophers  10 800 200 200 \n
+ 9084  ./philosophers  10 800 200 200 20 > cat \n
+ 9085  ./philosophers  10 800 200 200 10 > cat \n
+ 9086  ./philosophers  20 800 200 200 10 > cat \n
+ 9087  ./philosophers  30 800 200 200 10 > cat \n
+ 9089  ./philosophers  30 800 200 200 10 \n
+ 9091  ./philosophers  30 800 200 200 10 \n
+ 9093  ./philosophers  30 800 200 200 10 \n
+ 9095  ./philosophers  30 800 200 200 10 \n
+ 9096  ./philosophers  20 800 200 200 10 \n
+ 9097  ./philosophers  20 800 200 200 10 mka\n
+ 9100  ./philosophers  20 800 200 200 10 mka\n
+ 9101  ./philosophers  20 800 200 200 10\n
+ 9102  ./philosophers  20 800 200 200 
+ 9103  ./philosophers  30 800 200 200 
+ 9104  ./philosophers  30 800 200 200 > cat 
+ 9105  ./philosophers  30 800 200 200 10 > cat 
+ 9113  run-help ./philosophers
+ 9114  ./philosophers 
+ 9119  ./philosophers  30 800 200 200 10 > cat 
+ 9120  ./philosophers  30 800 200 200 10 
+ 9122  ./philosophers  30 800 200 200 10 
+ 9123  ./philosophers  30 800 200 200 10 > cat
+ 9126  ./philosophers  30 800 200 200 10 > cat
+ 9127  ./philosophers  30 800 200 200 10 
+ 9128  ./philosophers  30 800 200 200 10 > cat
+ 9131  ./philosophers  30 800 200 200 10 > cat
+ 9132  ./philosophers  20 800 200 200 10 > cat
+ 9133  ./philosophers  20 800 200 200 
+ 9134  ./philosophers  200 800 200 200 
+ 9135  ./philosophers  20 800 200 200 
+ 9140  ./philosophers  20 800 200 200 
+ 9141  ./philosophers  30 800 200 200 
+ 9146  ./philosophers  30 800 200 200 
+ 9148  ./philosophers  30 800 200 200 10 > cat
+ 9149  ./philosophers  30 800 200 200 
+ 9151  ./philosophers  30 800 200 200 5
+ 9153  ./philosophers 30 800 200 200 5
+ 9155  ./philosophers 30 800 200 200 5
+ 9158  ./philosophers 30 800 200 200 5
+ 9159  ./philosophers 30 800 200 200 
+ 9160  ./philosophers 5 800 200 200 5 > cat
+ 9162  ./philosophers 30 800 200 200 5 > cat
+ 9163  ./philosophers 30 800 200 200 5 
+ 9164  ./philosophers 30 800 200 200 
+ 9167  ./philosophers 30 800 200 200 
+ 9169  ./philosophers 30 800 200 200 
+ 9171  ./philosophers 30 800 200 200 
+ 9172  ./philosophers > cat
+ 9173  ./philosophers 30 800 200 200 >cat 
+ 9174  ./philosophers 30 800 200 200 
+ 9177  ./philosophers 30 800 200 200 
+ 9179  ./philosophers 30 800 200 200 
+ 9184  ./philosophers 30 800 200 200 
+ 9186  ./philosophers  30 800 200 200 
+ 9188  valgrind ./philosophers   4 410 200 200 15\n
+ 9190  valgrind ./philosophers   4 410 200 200 15\n
+ 9191  valgrind ./philosophers   4 100 100 100 \n
+ 9192  valgrind ./philosophers   1 100 100 100 \n
+ 9194  ./philosophers  30 800 200 200 
+ 9197  ./philosophers  30 800 200 200 
+ 9198  ./philosophers  30 800 200 200 5 > cat  
+ 9200  ./philosophers  30 800 200 200 5 > cat  
+ 9202  ./philosophers  30 800 200 200 5 > cat  
+ 9206  ./philosophers  30 800 200 200 5 > cat  
+ 9208  ./philosophers  30 800 200 200 5 > cat  
+ 9211  ./philosophers  30 800 200 200 5 > cat  
+ 9214  ./philosophers  30 800 200 200 5 > cat  
+ 9215  ./philosophers  30 800 200 200 5 \n
+ 9217  ./philosophers  30 800 200 200 5 \n
+ 9218  ./philosophers  30 800 200 200 5 > cat \n
+ 9220  ./philosophers  30 800 200 200 5 > cat \n
+ 9232  ./philosophers  30 800 200 200 5 > cat \n
+ 9234  ./philosophers  30 800 200 200 5 > cat \n
+ 9235  ./philosophers  60 800 200 200 5 > cat \n
+ 9237  ./philosophers  60 800 200 200 5 \n
+ 9243  ./philosophers  60 800 200 200 5\n
+ 9245  ./philosophers  60 800 200 200 5\n
+ 9247  ./philosophers  60 800 200 200 5\n
+ 9248  ./philosophers  60 800 200 200 5 > cat\n
+ 9250  ./philosophers  60 800 200 200 5 > cat\n
+ 9252  ./philosophers  60 800 200 200 5 > cat\n
+ 9255  ./philosophers  60 800 200 200 5 > cat\n
+ 9259  run-help ./philosophers
+ 9260  ./philosophers c
+ 9263  ./philosophers c
+ 9264  ./philosophers  60 800 200 200 5 > cat\n
+ 9266  ./philosophers  60 800 200 200 5 > cat\n
+ 9269  ./philosophers  60 800 200 200 5 > cat\n
+ 9271  ./philosophers  60 800 200 200 5 > cat]\n
+ 9272  ./philosophers  60 800 200 200 5 > cat\n
+ 9274  ./philosophers  60 800 200 200 5 > cat\n
+ 9278  ./philosophers  60 800 200 200 \n
+ 9281  ./philosophers  60 800 200 200 \n
+ 9282  ./philosophers  60 800 200 200 10 > cat \n
+ 9285  run-help ./philosophers
+ 9286  ./philosophers 
+ 9288  run-help ./philosophers
+ 9289  ./philosophers 
+ 9290  ./philosophers  60 800 200 200 10 > cat \n
+ 9291  ./philosophers  60 800 200 200 3 > cat\n
+ 9293  ./philosophers  60 800 200 200 3 > cat\n
+ 9295  ./philosophers  60 800 200 200 3 > cat\n
+ 9297  ./philosophers  60 800 200 200 3 > cat\n
+ 9300  ./philosophers  60 800 200 200 3 > cat\n
+ 9304  ./philosophers  60 800 200 200 3 > cat\n
+ 9307  ./philosophers  60 800 200 200 3 > cat\n
+ 9308  ./philosophers  20 800 200 200 3 > cat\n
+ 9309  ./philosophers  200 800 200 200 3 > cat\n
+ 9310  ./philosophers  201 800 200 200 3 > cat\n
+ 9317  ./test.sh ../philosophers
+ 9321  valgrind ./philosophers   1 100 100 100 \n
+ 9322  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 9323  valgrind --tool=helgrind ./philosophers 5 800 200 200 2\n
+ 9324  valgrind --tool=helgrind ./philosophers\n
+ 9325  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 9328  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 9330  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 9332  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 9333  ./philosophers  201 800 200 200 3 > cat\n
+ 9335  ./philosophers  201 800 200 200 3 > cat\n
+ 9337  run-help ./philosophers
+ 9338  ./philosophers  201 800 200 200 3 > cat\n
+ 9340  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 9341  valgrind ./philosophers 6 10 6 4 5\n
+ 9342  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 9347  ./philosophers  201 800 200 200 3\n
+ 9348  valgrind --tool=helgrind ./philosophers 6 10 6 4 5\n
+ 9349  valgrind --tool=helgrind ./philosophers 5 800 200 200\n
+ 9351  valgrind --tool=helgrind ./philosophers 5 800 200 200\n
+ 9352  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9354  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9355  valgrind ./philosophers 5 800 200 200 5\n
+ 9356  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9357  valgrind ./philosophers 5 800 200 200 5\n
+ 9359  ./philosophers c
+ 9360  valgrind ./philosophers 5 800 200 200 5\n
+ 9362  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9365  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9368  ./philosophers c
+ 9369  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9373  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9376  ./philosophers c
+ 9377  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9380  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9382  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9386  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9389  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9391  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9393  ./philosophers c
+ 9395  ./philosophers 
+ 9396  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9398  ./philosophers 
+ 9399  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9400  ./philosophers 
+ 9403  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9406  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9411  run-help ./philosophers
+ 9412  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9416  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9420  run-help ./philosophers
+ 9421  ./philosophers 
+ 9422  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9425  run-help ./philosophers
+ 9426  ./philosophers
+ 9427  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9429  run-help ./philosophers
+ 9430  ./philosophers 
+ 9431  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9433  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9435  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9437  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9441  valgrind ./philosophers 5 800 200 200 5\n
+ 9442  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9444  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9446  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9448  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9450  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9452  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9454  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9457  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9461  ./philosophers c
+ 9462  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9465  ./philosophers c
+ 9466  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9470  ./philosophers 
+ 9471  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9473  ./philosophers
+ 9474  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9478  ./philosophers c
+ 9480  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9482  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9484  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9486  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9488  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9490  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9492  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9494  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9496  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9498  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9500  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9502  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9506  ./philosophers c
+ 9507  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9509  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9511  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9513  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9515  ./philosophers  201 800 200 200 3\n
+ 9518  ./philosophers  201 800 200 200 3\n
+ 9521  ./philosophers  201 800 200 200 3\n
+ 9526  ./philosophers  201 800 200 200 3\n
+ 9529  ./philosophers  201 800 200 200 3\n
+ 9531  ./philosophers  201 800 200 200 3\n
+ 9533  ./philosophers  201 800 200 200 3\n
+ 9538  ./philosophers  201 800 200 200 3\n
+ 9540  ./philosophers  201 800 200 200 3\n
+ 9542  ./philosophers  201 800 200 200 3\n
+ 9543  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9545  valgrind ./philosophers 5 800 200 200 5\n
+ 9547  ./philosophers  201 800 200 200 3\n
+ 9548  ./philosophers  201 800 200 200\n
+ 9549  ./philosophers  201 800 200 200 >cat \n
+ 9550  valgrind ./philosophers 5 800 200 200 5\n
+ 9556  valgrind ./philosophers 5 800 200 200 5\n
+ 9558  valgrind ./philosophers 5 800 200 200 5\n
+ 9559  valgrind ./philosophers 5 800 200 200 \n
+ 9561  ./philosophers  5 800 200 200 
+ 9564  ./philosophers  5 800 200 200 
+ 9566  valgrind ./philosophers 5 800 200 200 \n
+ 9567  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9569  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9571  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9573  valgrind ./philosophers 5 800 200 200 \n
+ 9575  ./philosophers  201 800 200 200 >cat \n
+ 9576  ./philosophers  201 800 200 200 \n
+ 9578  ./philosophers  201 800 200 200 \n
+ 9579  ./philosophers  201 100 200 200 \n
+ 9583  ./philosophers  201 100 200 200 \n
+ 9587  valgrind ./philosophers 5 800 200 200 \n
+ 9596  ./philosophers  201 100 200 200 \n
+ 9597  ./philosophers  201 800 200 200 5\n
+ 9599  ./philosophers  201 800 200 200 5\n
+ 9602  ./philosophers  201 800 200 200 5\n
+ 9604  ./philosophers  201 800 200 200 5\n
+ 9605  ./philosophers 1 800 200 200 5\n
+ 9606  valgrind ./philosophers 5 800 200 200 \n
+ 9609  ./philosophers  60 800 200 200 3 > cat\n
+ 9610  valgrind ./philosophers 5 800 200 200 \n
+ 9614  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9618  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9620  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9623  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9625  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9627  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9629  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9630  ./philosophers  60 800 200 200 3\n
+ 9631  ./philosophers  60 800 200 200\n
+ 9634  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9637  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9638  ./philosophers  60 800 200 200\n
+ 9640  ./philosophers  60 800 200 200\n
+ 9642  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9646  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9649  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9651  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9656  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9658  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9660  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9662  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9665  run-help ./philosophers
+ 9666  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9667  run-help ./philosophers
+ 9669  run-help ./philosophers
+ 9670  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9671  run-help ./philosophers
+ 9673  run-help ./philosophers
+ 9674  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9676  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9677  valgrind --tool=helgrind ./philosophers 5 800 200 200 \n
+ 9679  valgrind --tool=helgrind ./philosophers 5 800 200 200 \n
+ 9681  ./philosophers  60 800 200 200\n
+ 9682  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9684  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9686  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9688  ./philosophers  60 800 200 200\n
+ 9689  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9691  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9694  ./philosophers  60 800 200 200\n
+ 9695  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9697  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9698  valgrind --tool=helgrind ./philosophers 5 100 200 200 5\n
+ 9700  valgrind --tool=helgrind ./philosophers 5 100 200 200 5\n
+ 9701  valgrind --tool=helgrind ./philosophers 5 210 200 200 5\n
+ 9704  valgrind --tool=helgrind ./philosophers 5 210 200 200 5\n
+ 9705  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9706  valgrind --tool=helgrind ./philosophers 5 800 700 200 5\n
+ 9708  valgrind --tool=helgrind ./philosophers 5 800 700 200 5\n
+ 9710  valgrind --tool=helgrind ./philosophers 5 800 700 200 5\n
+ 9713  valgrind --tool=helgrind ./philosophers 5 800 700 200 5\n
+ 9714  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9718  run-help ./philosophers
+ 9719  ./philosophers  60 800 200 200 \n
+ 9720  ./philosophers  60 800 200 200 5 \n
+ 9721  ./philosophers  60 20 200 200 2\n
+ 9724  ./philosophers  60 20 200 200 2\n
+ 9726  ./philosophers  60 20 200 200 2\n
+ 9727  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9728  ./philosophers  60 20 200 200 2\n
+ 9731  ./philosophers  60 20 200 200 2\n
+ 9733  ./philosophers  60 20 200 200 2\n
+ 9735  ./philosophers  60 20 200 200 2\n
+ 9736  ./philosophers  60 800 200 200 \n
+ 9737  ./philosophers  60 100 200 200 \n
+ 9739  ./philosophers  60 100 200 200 \n
+ 9740  ./philosophers  60 200 200 200 \n
+ 9742  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9745  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9763  ./philosophers  60 200 200 200 \n
+ 9764  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9767  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9769  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9771  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9773  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9775  ./philosophers  60 200 200 200 \n
+ 9777  ./philosophers  60 200 200 200 \n
+ 9779  ./philosophers  60 200 200 200 \n
+ 9781  ./philosophers  60 200 200 200 \n
+ 9782  ./philosophers  60 300 200 200 \n
+ 9783  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9785  ./philosophers  60 300 200 200 \n
+ 9787  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9789  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9792  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9794  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9796  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9798  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9801  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9803  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9805  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9807  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9809  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9811  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9813  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9815  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9817  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9819  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9821  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9823  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9825  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9827  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9829  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9831  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9833  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9836  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9838  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9840  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9842  valgrind --tool=helgrind ./philosophers 5 800 900 200 5\n
+ 9843  valgrind --tool=helgrind ./philosophers 5 800 200 200 5\n
+ 9847  ./test.sh ../philosophers
+ 9853  valgrind --tool=helgrind ./philosophers 5 800 600 200 5\n
+ 9865  ./philosophers  60 300 200 200 \n
+ 9870  ./philosophers  60 800 200 200 \n
+ 9871  ./philosophers  60 800 200 200 3\n
+ 9872  ./philosophers  60 800 200 200 3 >cat \n
+ 9874  ./philosophers  60 60 200 200  \n
+ 9876  ./philosophers  60 60 200 200  \n
+ 9878  valgrind --tool=helgrind ./philosophers 5 800 600 200 5 \n
+ 9881  ./philosophers  60 60 200 200  \n
+ 9882  valgrind --tool=helgrind ./philosophers 5 800 600 200 5 \n
+ 9893  ./philosophers  60 60 200 200  \n
+ 9896  ./philosophers  60 60 200 200  \n
+ 9898  ./philosophers  60 60 200 200  \n
+ 9899  ./philosophers  10 60 200 200  \n
+ 9900  ./philosophers  10 800 200 200  \n
+ 9906  valgrind ./philosophers 2 200 200 2001
+ 9911  ./philosophers 2 300 20 300
+ 9914  valgrind ./philosophers 2 300 200 300
+ 9916  valgrind ./philosophers 2 300 200 300
+ 9920  ./philosophers 2 300 20 300
+ 9921  valgrind ./philosophers 2 300 200 300
+ 9923  valgrind --tool=helgrind ./philosophers 5 800 600 200 5 \n
+ 9925  valgrind --tool=helgrind ./philosophers 5 800 600 200 5 \n
+ 9943  valgrind --tool=helgrind ./philosophers 5 800 600 200 5 \n
+ 9945  valgrind --tool=helgrind ./philosophers 5 800 600 200 5 \n
+ 9947  valgrind --tool=helgrind ./philosophers 5 800 600 200 5 \n
+ 9949  valgrind --tool=helgrind ./philosophers 5 800 600 200 5 \n
+ 9952  valgrind --tool=helgrind ./philosophers 5 800 600 200 5 \n
+ 9953  ./philosophers 2 300 20 300
+ 9955  valgrind --tool=helgrind ./philosophers 5 800 600 200 5 \n
+ 9956  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+ 9958  ./philosophers 2 300 20 300
+ 9959  ./philosophers 2 100 20 300
+ 9960  ./philosophers 2 100 200 300
+ 9962  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+ 9963  ./philosophers 2 100 200 300
+ 9965  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+ 9967  ./philosophers 2 100 200 300
+ 9968  ./philosophers 10 100 200 300
+ 9970  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+ 9971  ./philosophers 10 100 200 300
+ 9973  ./philosophers 10 100 200 300
+ 9975  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+ 9977  ./philosophers 10 100 200 300
+ 9979  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+ 9980  ./philosophers 10 100 200 300
+ 9981  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+ 9983  run-help ./philosophers
+ 9984  ./philosophers v\n: 1726481226:0;valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+ 9985  ./philosophers v\n: 1726481252:0;make re
+ 9986  run-help ./philosophers
+ 9987  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+ 9988  run-help ./philosophers
+ 9993  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+ 9995  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10000  ./philosophers v\n: 1726481539:0;valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10002  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10004  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10007  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10010  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10012  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10014  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10016  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10018  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10020  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10022  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10025  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10030  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10032  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10034  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10036  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10038  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10040  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10042  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10044  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10046  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10051  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10052  ./philosophers v\n: 1726482557:0;./philosophers 10 100 200 300
+10054  ./philosophers 10 100 200 300
+10055  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10057  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10058  ./philosophers 10 100 200 300
+10060  ./philosophers 10 100 200 300
+10062  ./philosophers 10 100 200 300
+10065  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10067  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10069  ./philosophers 10 100 200 300
+10070  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10071  ./philosophers 10 100 200 300
+10073  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10075  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10079  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10081  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10084  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10086  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10088  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10090  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10093  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10097  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10103  ./philosophers 10 100 200 300
+10105  ./philosophers 10 100 200 300
+10106  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10109  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10112  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10114  ./philosophers 10 100 200 300
+10117  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10120  ./philosophers 10 100 200 300
+10122  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10126  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10128  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10130  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10132  ./philosophers 10 100 200 300
+10135  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10137  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10138  ./philosophers 10 100 200 300
+10140  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10142  ./philosophers 10 100 200 300
+10144  ./philosophers 10 100 200 300
+10146  ./philosophers 10 100 200 300
+10148  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10149  ./philosophers 10 100 200 300
+10151  ./philosophers 10 100 200 300
+10153  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10155  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10157  ./philosophers 10 100 200 300
+10159  ./philosophers 10 100 200 300
+10161  ./philosophers 10 100 200 300
+10164  ./philosophers 10 100 200 300
+10172  ./philosophers  10 800 200 200  \n
+10173  ./philosophers  10 100 200 200  \n
+10175  ./philosophers  10 100 200 200  \n
+10177  ./philosophers  10 100 200 200  \n
+10179  ./philosophers  10 100 200 200  \n
+10181  ./philosophers  10 100 200 200  \n
+10182  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10184  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10186  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10187  ./philosophers  10 100 200 200  \n
+10189  ./philosophers  10 100 200 200\n
+10191  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10192  ./philosophers  10 100 200 200\n
+10195  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10197  ./philosophers  10 100 200 200\n
+10198  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10201  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10203  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10206  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10209  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10211  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10214  ./philosophers  10 100 200 200\n
+10215  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10217  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10219  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10221  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10223  ./philosophers  10 100 200 200\n
+10224  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10230  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10233  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10245  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10247  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10249  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10251  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10255  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10257  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10259  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10261  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10264  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10266  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10269  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10271  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10273  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10275  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10278  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10280  ./philosophers  10 100 200 200\n
+10282  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10284  ./philosophers  10 100 200 200\n
+10287  ./philosophers  10 100 200 200\n
+10289  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10290  ./philosophers  10 100 200 200\n
+10294  ./philosophers  10 100 200 200\n
+10296  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10297  ./philosophers  10 100 200 200\n
+10301  ./philosophers  10 100 200 200\n
+10303  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10304  ./philosophers  10 100 200 200\n
+10306  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10310  ./philosophers  10 100 200 200\n
+10312  ./philosophers  10 100 200 200\n
+10314  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10315  ./philosophers  10 100 200 200\n
+10317  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10318  ./philosophers  10 100 200 200\n
+10322  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10324  ./philosophers  10 100 200 200\n
+10327  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10328  ./philosophers  10 100 200 200\n
+10330  ./philosophers  10 100 200 200\n
+10332  ./philosophers  10 100 200 200\n
+10334  ./philosophers  10 100 200 200
+10337  ./philosophers  10 100 200 200
+10339  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10340  ./philosophers  10 100 200 200
+10342  ./philosophers  10 100 200 200
+10344  ./philosophers  10 100 200 200
+10350  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10351  ./philosophers  10 100 200 200
+10353  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10354  ./philosophers  10 100 200 200
+10356  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10357  ./philosophers  10 100 200 200
+10359  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10360  ./philosophers  10 100 200 200
+10362  ./philosophers  10 100 200 200
+10366  ./philosophers  10 100 200 200
+10374  ./philosophers  10 100 200 200
+10379  ./philosophers  10 100 200 200
+10381  ./philosophers  10 100 200 200
+10383  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10386  ./philosophers  10 100 200 200
+10389  ./philosophers  10 100 200 200
+10391  ./philosophers  10 100 200 200
+10393  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10394  ./philosophers  10 100 200 200
+10397  ./philosophers  10 100 200 200
+10399  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10400  ./philosophers  10 100 200 200
+10402  ./philosophers  10 200 200 200
+10403  ./philosophers  10 300 200 200
+10404  ./philosophers  10 400 200 200
+10405  ./philosophers  10 800 200 200 10
+10407  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10409  ./philosophers  10 800 200 200 10
+10410  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10412  ./philosophers  10 800 200 200 10
+10413  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10416  ./philosophers  10 800 200 200 10
+10417  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10421  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10422  ./philosophers  10 800 200 200 10
+10423  ./philosophers  10 100 200 200 10
+10425  ./philosophers  10 100 200 200 10
+10426  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10432  ./philosophers  10 100 200 200 10
+10434  ./philosophers  10 100 200 200 10
+10436  ./philosophers  10 100 200 200 10
+10438  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10440  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10445  ./philosophers  10 100 200 200 10
+10447  ./philosophers  10 100 200 200 10
+10449  ./philosophers  10 100 200 200 10
+10451  ./philosophers  10 100 200 200 10
+10456  ./philosophers  10 100 200 200 10
+10458  ./philosophers  10 100 200 200 10
+10459  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10461  ./philosophers  10 100 200 200 10
+10463  ./philosophers  10 100 200 200 10
+10464  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10466  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10468  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10470  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10472  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10474  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10476  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10478  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10482  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10484  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10488  ./philosophers  10 100 200 200 10
+10489  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10491  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10494  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10496  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10499  ./philosophers  10 100 200 200 10
+10500  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10505  ./philosophers  10 100 200 200 10
+10506  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10509  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10511  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10513  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10515  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10518  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10520  ./philosophers  10 100 200 200 10
+10521  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10522  ./philosophers  10 100 200 200 10
+10524  ./philosophers  10 100 200 200 10
+10525  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10526  ./philosophers  10 100 200 200 10
+10529  ./philosophers  10 800 200 200 10
+10530  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10532  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10534  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10536  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10538  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10552  ./philosophers  10 800 200 200 10
+10553  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10557  ./philosophers  10 800 200 200 10
+10558  ./philosophers  10 800 200 200 1
+10560  ./philosophers  10 800 200 200 1
+10561  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10563  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10586  ./philosophers  10 800 200 200 1
+10588  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10591  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10594  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10596  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10598  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10600  ./philosophers  10 800 200 200 1
+10601  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10602  ./philosophers  10 800 200 200 1
+10605  ./philosophers  10 800 200 200 1
+10606  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10608  ./philosophers  10 800 200 200 1
+10609  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10611  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10613  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10615  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10617  ./philosophers  10 800 200 200 1
+10618  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10620  ./philosophers h
+10621  ./philosophers  10 800 200 200 1
+10622  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10623  ./philosophers  10 800 200 200 1
+10626  ./philosophers  10 100 200 200 1
+10628  ./philosophers  10 100 200 200 1
+10630  ./philosophers  10 100 200 200 1
+10632  ./philosophers  10 100 200 200 1
+10637  ./philosophers  10 100 200 200 1
+10654  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10656  ./philosophers  10 100 200 200 1
+10658  ./philosophers  10 100 200 200 1
+10660  ./philosophers  10 100 200 200 1
+10663  ./philosophers  10 100 200 200 1
+10666  ./philosophers  10 100 200 200 1
+10668  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10670  ./philosophers  10 100 200 200 1
+10672  ./philosophers  10 100 200 200 1
+10673  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10675  ./philosophers  10 100 200 200 1
+10676  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10678  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10680  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10682  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10684  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10686  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10690  ./philosophers  10 100 200 200 1
+10691  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10693  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10698  ./philosophers  10 100 200 200 1
+10699  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10701  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10704  ./philosophers  10 100 200 200 1
+10706  ./philosophers  10 100 200 200 1
+10707  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10709  ./philosophers  10 100 200 200 1
+10712  ./philosophers  10 100 200 200 1
+10713  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10715  ./philosophers  10 100 200 200 1
+10717  ./philosophers  10 100 200 200 1
+10719  ./philosophers  10 100 200 200 1
+10722  ./philosophers  10 100 200 200 1
+10724  ./philosophers  10 100 200 200 1
+10726  ./philosophers  10 100 200 200 1
+10728  ./philosophers  10 100 200 200 1
+10733  ./philosophers  10 100 200 200 1
+10736  ./philosophers  10 100 200 200 1
+10738  ./philosophers  10 100 200 200 1
+10739  ./philosophers  10 800 200 200 
+10740  ./philosophers  10 800 200 200  5
+10742  ./philosophers  10 800 200 200  
+10745  ./philosophers  10 800 200 200  
+10746  ./philosophers  10 100 200 200  
+10747  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10755  ./philosophers  10 100 200 200  
+10757  ./philosophers  10 100 200 200  
+10759  ./philosophers  10 100 200 200  
+10762  ./philosophers  10 100 200 200  
+10765  ./philosophers  10 100 200 200  
+10769  ./philosophers  10 100 200 200  
+10773  ./philosophers  10 100 200 200  
+10776  ./philosophers  10 100 200 200  
+10781  ./philosophers  10 100 200 200  
+10783  ./philosophers  10 100 200 200  
+10784  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10788  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10790  ./philosophers  10 100 200 200  
+10791  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10793  ./philosophers  10 100 200 200  
+10795  ./philosophers  10 100 200 200  
+10796  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10799  ./philosophers  10 100 200 200  
+10802  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10804  ./philosophers  10 100 200 200  
+10805  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10808  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10810  ./philosophers  10 100 200 200  
+10811  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10813  ./philosophers  10 100 200 200  
+10815  ./philosophers  10 100 200 200  
+10816  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10817  ./philosophers  10 100 200 200  
+10820  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10822  ./philosophers  10 100 200 200  
+10823  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10825  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10827  ./philosophers  10 100 200 200  
+10828  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10829  ./philosophers  10 100 200 200  
+10830  valgrind ./philosophers 5 60 600 200  \n
+10831  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10832  valgrind ./philosophers 5 60 600 200  \n
+10834  valgrind ./philosophers 5 60 600 200  \n
+10837  valgrind ./philosophers 5 60 600 200  \n
+10839  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10840  valgrind ./philosophers 5 60 600 200  \n
+10842  valgrind ./philosophers 5 60 600 200  \n
+10844  valgrind ./philosophers 5 60 600 200  \n
+10845  valgrind ./philosophers 5 800 200 200 \n
+10846  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10848  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10850  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10851  ./philosophers  10 100 200 200  
+10855  ./philosophers  10 100 200 200  
+10858  ./philosophers  10 100 200 200  
+10860  ./philosophers  10 100 200 200  
+10861  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10866  ./philosophers  10 100 200 200  
+10887  ./philosophers  10 100 200 200  
+10888  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10890  ./philosophers  10 100 200 200  
+10894  ./philosophers  10 100 200 200  
+10896  ./philosophers  10 100 200 200  
+10901  ./philosophers  10 100 200 200  
+10902  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10904  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10906  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10909  ./philosophers  10 100 200 200  
+10911  ./philosophers  10 100 200 200  
+10912  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10914  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10916  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10918  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10923  ./philosophers  10 100 200 200  
+10924  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10926  ./philosophers  10 100 200 200  
+10927  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10929  ./philosophers  10 100 200 200  
+10930  valgrind ./philosophers 5 60 600 200  \n
+10934  ./philosophers  10 100 200 200  
+10935  valgrind ./philosophers 5 60 600 200  \n
+10936  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10940  ./philosophers  10 100 200 200  
+10941  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10944  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10948  ./philosophers  10 100 200 200  
+10949  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10951  ./philosophers  10 100 200 200  
+10952  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10955  ./philosophers  10 100 200 200  
+10957  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10959  ./philosophers  10 100 200 200  
+10960  valgrind --tool=helgrind ./philosophers 5 60 600 200\n
+10963  ./philosophers  10 100 200 200  
+10964  valgrind --tool=helgrind ./philosophers 5 60 600 200\n
+10966  valgrind --tool=helgrind ./philosophers 5 60 600 200\n
+10968  ./philosophers  10 100 200 200  
+10969  valgrind --tool=helgrind ./philosophers 5 60 600 200\n
+10971  valgrind --tool=helgrind ./philosophers 5 60 600 200\n
+10974  ./philosophers  10 100 200 200  
+10975  valgrind --tool=helgrind ./philosophers 5 60 600 200\n
+10977  valgrind --tool=helgrind ./philosophers 5 60 600 200\n
+10979  ./philosophers  10 100 200 200  
+10980  valgrind --tool=helgrind ./philosophers 5 60 600 200\n
+10982  valgrind --tool=helgrind ./philosophers 5 60 600 200\n
+10983  ./philosophers  10 100 200 200  
+10984  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10988  ./philosophers  10 100 200 200  
+10989  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10991  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10993  ./philosophers  10 100 200 200  
+10994  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10996  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+10998  ./philosophers  10 100 200 200  
+11000  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+11001  ./philosophers  10 100 200 200  
+11007  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+11008  valgrind ./philosophers 5 60 600 200  \n
+11010  ./philosophers 5 800 300 200
+11011  ./philosophers 5 800 000 200
+11012  ./philosophers 5 800 200 200
+11013  ./philosophers 4 800 200 200
+11014  ./philosophers 200 800 200 200 > cat 
+11015  ./philosophers 200 800 200 200  5 > cat 
+11019  ./philosophers  10 100 200 200  
+11020  ./philosophers  10 800 200 200  
+11022  ./philosophers  10 800 200 200  
+11038  ./philosophers  10 800 200 200  
+11041  ./philosophers  10 800 200 200  
+11042  ./philosophers  10 800 200 200  5
+11043  ./philosophers  10 800 200 200  5 > cat
+11044  ./philosophers  10 800 200 200  5
+11045  ./philosophers  10 800 200 200  
+11047  ./philosophers  1 800 200 200  
+11048  ./philosophers  2 800 200 200  
+11050  valgrind ./philosophers 5 60 600 200  \n
+11051  ./philosophers  2 800 200 200  
+11052  ./philosophers  2 800 200 200  5
+11053  ./philosophers  2 100 200 200  
+11055  ./philosophers  2 100 200 200  
+11056  ./philosophers  5 800 200 200 5 
+11057  ./philosophers  5 800 200 200 5  > cat
+11059  ./philosophers  5 800 200 200 5  > cat
+11061  ./philosophers  10 800 200 200 5  > cat
+11063  ./philosophers  10 800 200 200 5  > cat
+11064  ./philosophers  10 800 200 200 5  
+11066  ./philosophers  10 800 200 200 5  
+11069  valgrind --tool=helgrind ./philosophers 5 60 600 200  \n
+11070  valgrind --tool=helgrind ./philosophers 5 800 200 200  \n
+11071  valgrind --tool=helgrind ./philosophers 5 800 200 200  5\n
+11073  valgrind --tool=helgrind ./philosophers 5 800 200 200  5\n
+11074  ./philosophers  10 800 200 200 5  
+11075  valgrind --tool=helgrind ./philosophers 5 800 200 200  5 > cat \n
+11076  valgrind --tool=helgrind ./philosophers 10 800 200 200  5 > cat \n
+11077  ./philosophers 10 800 200 200  5 > cat \n
+11079  ./philosophers 20 800 200 200  5 > cat \n
+11081  ./philosophers 20 800 200 200  5 > cat \n
+11082  ./philosophers 20 800 200 200  5 \n
+11084  ./philosophers 20 800 200 200  5 \n
+11086  ./philosophers 20 800 200 200  5 \n
+11087  ./philosophers 20 800 200 200  5 > cat \n
+11103  valgrind --tool=helgrind ./philosophers 10 800 200 200  5 > cat \n
+11105  ./philosophers 20 800 200 200  5 \n
+11106  ./philosophers 20 800 200 200 \n
+11107  ./philosophers 20 800 200 200 > cat\n
+11109  ./philosophers 20 800 200 200 > cat\n
+11110  ./philosophers 20 800 200 200 \n
+11112  ./philosophers 20 800 200 200 \n
+11114  ./philosophers 20 800 200 200 \n
+11117  ./philosophers 20 800 200 200 \n
+11118  ./philosophers 20 000 200 200 \n
+11119  ./philosophers 20 100 200 200 \n
+11120  valgrind --tool=helgrind ./philosophers 10 800 200 200  5 > cat \n
+11121  valgrind --tool=helgrind ./philosophers 10 200 200 200  5 > cat \n
+11125  ./philosophers 20 300 200 200 \n
+11126  ./philosophers 20 400 200 200 \n
+11127  ./philosophers 20 100 200 200 \n
+11130  run-help ./philosophers
+11131  ./philosophers clear
+11136  ./philosophers 20 100 200 200 \n
+11137  valgrind --tool=helgrind ./philosophers 10 200 200 200  5 > cat \n
+11139  valgrind --tool=helgrind ./philosophers 10 200 200 200  5 > cat \n
+11141  ./philosophers 20 100 200 200 \n
+11142  ./philosophers 20 200 200 200 \n
+11143  ./philosophers 20 100 200 200 \n
+11145  ./philosophers 20 100 200 200 \n
+11146  valgrind --tool=helgrind ./philosophers 10 200 200 200  5 > cat \n
+11147  valgrind --tool=helgrind ./philosophers 10 200 200 200  5 
+11149  valgrind --tool=helgrind ./philosophers 10 200 200 200  5 
+11151  ./philosophers 20 100 200 200 \n
+11154  ./philosophers 20 100 200 200 \n
+11156  ./philosophers 20 100 200 200 \n
+11157  valgrind --tool=helgrind ./philosophers 10 200 200 200  5 
+11158  valgrind --tool=helgrind ./philosophers 10 100 200 200  5 
+11160  ./philosophers 20 100 200 200 \n
+11162  ./philosophers 20 100 200 200 \n
+11191  ./philosophers 20 100 200 200 \n
+11192  ./philosophers 20 100 200 200 > cat\n
+11195  ./philosophers 20 100 200 200 > cat\n
+11197  ./philosophers 20 100 200 200 > cat\n
+11200  ./philosophers 20 100 200 200 > cat\n
+11201  valgrind --tool=helgrind ./philosophers 10 100 200 200  5 
+11202  ./philosophers 20 100 200 200 > cat\n
+11205  ./philosophers 20 100 200 200 > cat\n
+11206  valgrind --tool=helgrind ./philosophers 10 100 200 200  5 
+11207  ./philosophers 20 100 200 200 > cat\n
+11208  valgrind --tool=helgrind ./philosophers 10 100 200 200  5 
+11211  ./philosophers 20 100 200 200 > cat\n
+11212  valgrind --tool=helgrind ./philosophers 10 100 200 200  5
+11213  valgrind --tool=helgrind ./philosophers 10 100 200 200  
+11215  valgrind --tool=helgrind ./philosophers 10 100 200 200  
+11217  valgrind --tool=helgrind ./philosophers 10 100 200 200  
+11218  ./philosophers 20 100 200 200 > cat\n
+11219  ./philosophers 20 100 200 200 \n
+11222  ./philosophers 20 100 200 200 \n
+11225  valgrind --tool=helgrind ./philosophers 10 100 200 200  
+11227  ./philosophers 20 100 200 200 \n
+11229  ./philosophers 20 100 200 200 \n
+11232  valgrind --tool=helgrind ./philosophers 10 100 200 200  
+11236  ./philosophers  10 800 200 200 5  
+11237  valgrind --tool=helgrind ./philosophers 10 100 200 200  
+11241  ./philosophers  10 800 200 200 5  
+11243  ./philosophers  10 800 200 200 5  
+11244  ./philosophers  10 100 200 200 5  
+11245  valgrind --tool=helgrind ./philosophers 10 100 200 200  
+11248  ./philosophers  10 100 200 200 5  
+11249  ./philosophers  10 100 200 200 5 > cat
+11250  ./philosophers  5 100 200 200 5 > cat
+11251  ./philosophers  5 500 200 200 5 > cat
+11253  ./philosophers  5 500 200 200 5 > cat
+11254  ./philosophers  50 500 200 200 5 > cat
+11255  ./philosophers  50 100 200 200 5 > cat
+11259  valgrind --tool=helgrind ./philosophers 10 100 200 200  
+11261  ./philosophers  10 100 200 200 5 > cat
+11262  valgrind --tool=helgrind ./philosophers 10 100 200 200  
+11264  ./philosophers  10 100 200 200 5 > cat
+11265  valgrind --tool=helgrind ./philosophers 10 100 200 200  
+11266  valgrind --tool=helgrind ./philosophers 10 100 200 200  > cat 
+11268  valgrind --tool=helgrind ./philosophers 10 200 200 200  > cat 
+11270  ./philosophers  10 100 200 200 5 > cat
+11271  valgrind --tool=helgrind ./philosophers 10 200 200 200  > cat 
+11273  ./philosophers  10 100 200 200 5 > cat
+11274  valgrind --tool=helgrind ./philosophers 10 200 200 200  > cat 
+11276  valgrind --tool=helgrind ./philosophers 10 200 200 200  > cat 
+11280  ./philosophers  10 100 200 200 5 > cat
+11281  valgrind --tool=helgrind ./philosophers 10 200 200 200  > cat 
+11283  valgrind --tool=helgrind ./philosophers 10 200 200 200  > cat 
+11285  ./philosophers  10 100 200 200 5 > cat
+11286  valgrind --tool=helgrind ./philosophers 10 200 200 200  > cat 
+11287  ./philosophers  10 100 200 200 5 > cat
+11289  ./philosophers  10 100 200 200 5 > cat
+11291  ./philosophers  10 100 200 200 5 > cat
+11292  valgrind --tool=helgrind ./philosophers 10 200 200 200  > cat 
+11293  ./philosophers  10 100 200 200 5 > cat
+11300  ./philosophers  5 100 200 200 \n
+11302  ./philosophers  5 100 200 200 \n
+11304  ./philosophers  5 100 200 200 \n
+11305  valgrind --tool=helgrind ./philosophers 10 200 200 200  > cat 
+11306  ./philosophers  5 100 200 200 \n
+11308  ./philosophers  5 100 200 200 \n
+11309  valgrind --tool=helgrind ./philosophers 10 200 200 200  > cat 
+11310  valgrind --tool=helgrind ./philosophers 10 200 200 200  > cat
+11311  ./philosophers  5 100 200 200 \n
+11314  ./philosophers  5 100 200 200 \n
+11315  valgrind --tool=helgrind ./philosophers 10 200 200 200  > cat
+11317  ./philosophers  5 100 200 200 \n
+11319  ./philosophers  5 100 200 200 \n
+11321  ./philosophers  5 100 200 200 \n
+11322  valgrind --tool=helgrind ./philosophers 10 200 200 200  > cat
+11323  ./philosophers  5 100 200 200 \n
+11326  ./philosophers  5 100 200 200 \n
+11331  ./philosophers  5 100 200 200 \n
+11333  ./philosophers  5 100 200 200 \n
+11335  ./philosophers  5 100 200 200 \n
+11336  ./philosophers  5 800 200 200 \n
+11338  ./philosophers  5 800 200 200 \n
+11339  ./philosophers  5 100 200 200 \n
+11340  ./philosophers  5 500 200 200 \n
+11341  ./philosophers  5 500 200 200 > cast\n
+11342  ./philosophers  5 500 200 200 > cat\n
+11344  ./philosophers  5 500 200 200 > cat\n
+11345  valgrind --tool=helgrind ./philosophers 10 200 200 200  > cat
+11346  ./philosophers  5 500 200 200 > cat\n
+11347  ./philosophers  5 500 200 200 \n
+11348  ./philosophers  5 100 200 200 \n
+11351  ./philosophers  5 100 200 200 \n
+11352  valgrind --tool=helgrind ./philosophers 10 200 200 200  > cat
+11354  ./philosophers  5 100 200 200 \n
+11355  ./philosophers  5 800 200 200 \n
+11356  ./philosophers  5 500 200 200 \n
+11359  ./philosophers  5 500 200 200 \n
+11362  ./philosophers  5 500 200 200 \n
+11365  ./philosophers  5 500 200 200 \n
+11367  ./philosophers  5 500 200 200 \n
+11370  ./philosophers  5 500 200 200 \n
+11372  ./philosophers  5 500 200 200 \n
+11375  ./philosophers  5 500 200 200 \n
+11376  ./philosophers  5 600 200 200 \n
+11377  ./philosophers  5 550 200 200 \n
+11385  valgrind --tool=helgrind ./philosophers 10 200 200 200  > cat
+11387  valgrind --tool=helgrind ./philosophers 10 200 200 200  > cat
+11388  valgrind --tool=helgrind ./philosophers 10 500 200 200  > cat
+11390  ./philosophers  5 550 200 200 \n
+11395  ./philosophers  5 550 200 200 \n
+11396  valgrind --tool=helgrind ./philosophers 10 500 200 200  > cat
+11397  ./philosophers  5 550 200 200 \n
+11398  ./philosophers  5 30 200 200 \n
+11399  ./philosophers  5 300 200 200 \n
+11409  ./philosophers  5 300 200 200 \n
+11412  ./philosophers  5 300 200 200 \n
+11414  ./philosophers  5 300 200 200 \n
+11415  ./philosophers  5 300 100 200 \n
+11416  ./philosophers  5 200 100 200 \n
+11417  ./philosophers  5 300 100 200 \n
+11418  ./philosophers  5 300 200 200 \n
+11420  ./philosophers  5 300 200 200 \n
+11421  ./philosophers  4 410 200 200\n
+11422  ./philosophers  4 510 200 200\n
+11423  ./philosophers  4 610 200 200\n
+11427  ./philosophers  4 610 200 200\n
+11428  ./philosophers  4 410 200 200\n
+11429  ./philosophers  4 410 200 200 > cat\n
+11431  ./philosophers  4 410 200 200 > cat\n
+11433  ./philosophers  4 410 200 200 \n
+11435  run-help ./philosophers
+11436  ./philosophers  4 310 200 200 \n
+11439  valgrind --tool=helgrind ./philosophers 10 200 200 200  > cat
+11440  valgrind --tool=helgrind ./philosophers 10 350 200 200  > cat
+11442  ./philosophers  4 310 200 200 \n
+11453  ./philosophers  4 310 200 200 \n
+11455  ./philosophers  4 310 200 200 \n
+11457  ./philosophers  4 310 200 200 \n
+11460  ./philosophers  4 310 200 200 \n
+11461  ./philosophers  4 110 200 200 \n
+11467  ./philosophers  4 110 200 200 \n
+11468  valgrind --tool=helgrind ./philosophers 10 350 200 200  > cat
+11475  ./philosophers  4 110 200 200 \n
+11477  ./philosophers  4 110 200 200 \n
+11480  ./philosophers  4 110 200 200 \n
+11485  ./philosophers  4 110 200 200 \n
+11488  ./philosophers  4 110 200 200 \n
+11491  ./philosophers  4 110 200 200 \n
+11495  ./philosophers  4 110 200 200 \n
+11502  ./philosophers  4 110 200 200 \n
+11504  ./philosophers  4 110 200 200 \n
+11508  ./philosophers  4 110 200 200 \n
+11510  ./philosophers  4 110 200 200 \n
+11512  ./philosophers  4 110 200 200 \n
+11517  ./philosophers  4 110 200 200 \n
+11519  valgrind --tool=helgrind ./philosophers 10 350 200 200  > cat
+11521  ./philosophers  4 110 200 200 \n
+11525  ./philosophers  4 110 200 200 \n
+11527  ./philosophers  4 110 200 200 \n
+11529  ./philosophers  4 110 200 200 \n
+11533  ./philosophers  4 110 200 200 \n
+11535  ./philosophers  4 110 200 200 \n
+11538  ./philosophers  4 110 200 200 \n
+11540  ./philosophers  4 110 200 200 \n
+11541  ./philosophers  4 810 200 200 \n
+11542  ./philosophers  4 110 200 200 \n
+11544  ./philosophers  4 110 200 200 \n
+11546  ./philosophers  4 110 200 200 \n
+11551  ./philosophers  4 110 200 200 \n
+11554  ./philosophers  4 110 200 200 \n
+11557  ./philosophers  4 110 200 200 \n
+11558  ./philosophers  4 110 60 200 \n
+11560  ./philosophers  4 110 60 200 \n
+11561  ./philosophers  4 100 60 200 \n
+11563  ./philosophers  4 100 60 200 \n
+11566  ./philosophers  4 100 60 200 \n
+11567  valgrind --tool=helgrind ./philosophers 10 100 200 200  
+11574  ./philosophers  4 100 60 200 \n
+11575  ./philosophers  4 100 200 200 \n
+11580  valgrind --tool=helgrind ./philosophers 10 350 200 200  > cat
+11581  ./philosophers  4 100 200 200 \n
+11585  ./philosophers  4 100 200 200 \n
+11588  ./philosophers  4 100 200 200 \n
+11589  valgrind --tool=helgrind ./philosophers 10 350 200 200  > cat
+11592  ./philosophers  4 100 200 200 \n
+11595  ./philosophers  4 100 200 200 \n
+11596  valgrind --tool=helgrind ./philosophers 10 350 200 200  > cat
+11598  ./philosophers  4 100 200 200 \n
+11602  ./philosophers  4 100 200 200 \n
+11603  valgrind --tool=helgrind ./philosophers 10 350 200 200  > cat
+11610  ./philosophers  4 100 200 200 \n
+11611  ./philosophers  4 800 200 200 \n
+11612  ./philosophers  4 800 200 100 \n
+11614  ./philosophers  4 800 200 100 \n
+11615  ./philosophers  4 310 200 100 \n
+11616  ./philosophers  4 310 200 200 \n
+11617  ./philosophers  4 410 200 200 \n
+11619  ./philosophers  4 410 200 200 \n
+11621  ./philosophers  4 410 200 200 \n
+11624  ./philosophers  4 410 200 200 \n
+11625  ./philosophers  4 310 200 200 \n
+11627  ./philosophers  4 100 200 200 \n
+11628  ./philosophers  4 300 200 200 \n
+11629  ./philosophers  4 410 200 200 \n
+11631  ./philosophers  4 410 200 200 \n
+11635  ./philosophers h
+11636  ./philosophers  4 410 200 200 \n
+11640  ./philosophers  4 410 200 200 \n
+11645  ./philosophers  4 410 200 200 \n
+11648  ./philosophers  4 410 200 200 \n
+11652  ./philosophers  4 410 200 200 \n
+11653  valgrind --tool=helgrind ./philosophers 10 350 200 200  > cat
+11656  ./philosophers  4 410 200 200 \n
+11659  ./philosophers  4 410 200 200 \n
+11660  bash ./philosophers 4 410 200 200
+11664  ./philosophers  4 410 200 200 > cat \n
+11666  ./philosophers  4 410 200 200 > cat \n
+11668  ./philosophers  4 410 200 200 > cat \n
+11669  ./philosophers  4 410 200 200 \n
+11672  ./philosophers  4 410 200 200 \n
+11674  ./philosophers  4 410 200 200 \n
+11675  valgrind --tool=helgrind ./philosophers 10 350 200 200  > cat
+11681  ./philosophers  4 100 60 200 \n
+11682  ./philosophers  4 80 60 200 \n
+11683  ./philosophers  4 120 60 200 \n
+11684  ./philosophers  4 100 100 200 \n
+11685  ./philosophers  4 100 200 200 \n
+11688  ./philosophers  4 100 200 200 \n
+11690  ./philosophers  4 100 200 200 \n
+11691  valgrind --tool=helgrind ./philosophers 10 350 200 200  > cat
+11693  ./philosophers  4 100 200 200 \n
+11695  ./philosophers  4 100 200 200 \n
+11697  ./philosophers  4 100 200 200 \n
+11700  ./philosophers  4 100 200 200 \n
+11701  valgrind --tool=helgrind ./philosophers 10 350 200 200  > cat
+11703  ./philosophers  4 100 150 200 \n
+11706  ./philosophers  4 100 150 200 \n
+11708  ./philosophers  4 100 150 200 \n
+11709  ./philosophers  4 2000 150 200 \n
+11711  ./philosophers  4 2000 150 200 \n
+11712  ./philosophers  4 200 150 200 \n
+11713  ./philosophers  4 100 150 200 \n
+11716  ./philosophers  4 100 150 200 \n
+11718  ./philosophers  4 100 150 200 \n
+11720  ./philosophers  4 100 150 200 \n
+11724  ./philosophers  4 100 150 200 ]\n
+11725  ./philosophers  4 100 150 200 \n
+11726  ./philosophers  5 100 150 200 \n
+11727  ./philosophers  5 150 150 200 \n
+11728  ./philosophers 200 5050 150 200 \n
+11733  run-help ./philosophers
+11734  ./philosophers 
+11735  ./philosophers 200 5050 150 200 \n
+11736  ./philosophers 5 5050 150 200 \n
+11737  ./philosophers  5 150 150 200 \n
+11738  ./philosophers 5 150 200 200 \n
+11744  ./philosophers 5 150 200 200 \n
+11747  run-help ./philosophers
+11748  ./philosophers 
+11749  ./philosophers 5 150 200 200 \n
+11753  run-help ./philosophers
+11754  ./philosophers 5 20 200 200 \n
+11755  ./philosophers 5 200 200 200 \n
+11756  ./philosophers 5 200 200 100 \n
+11757  ./philosophers 5 200 200 300 \n
+11758  ./philosophers 5 200 100 300 \n
+11760  run-help ./philosophers
+11761  ./philosophers 
+11762  ./philosophers 5 200 100 300 \n
+11763  ./philosophers 5 250 100 300 \n
+11765  run-help ./philosophers
+11766  ./philosophers 5 250 100 300 \n
+11769  run-help ./philosophers
+11770  ./philosophers  5 150 150 200 \n
+11771  valgrind --tool=helgrind ./philosophers 10 350 200 200  > cat
+11779  ./philosophers 5 950 100 300 \n
+11781  ./philosophers 5 950 100 300 \n
+11783  ./philosophers 5 950 100 300 \n
+11789  valgrind ./philosophers 2 300 400 300
+11790  ./philosophers 2 300 400 300
+11791  ./philosophers 3 300 400 300
+11792  ./philosophers 3 900 400 300
+11793  ./philosophers 3 1200 400 300
+11795  ./philosophers 2 1200 400 300
+11796  ./philosophers 2 900 400 300
+11798  ./philosophers 2 400 400 300
+11800  ./philosophers 2 400 400 300 0
+11801  ./philosophers 2 400 400 300 -1
+11802  ./philosophers 2 -400 400 300
+11803  ./philosophers 0 400 400 300
+11804  valgrind ./philosophers 0 400 400 300
+11805  valgrind ./philosophers 0 400 400 300 0
+11807  valgrind ./philosophers 3 400 400 300 0
+11808  valgrind ./philosophers 3 400 400 300
+11809  ./philosophers 3 400 400 9000
+11811  ./philosophers  10 100 200 20
+11812  ./philosophers 5 100 200 200
+11813  ./philosophers 5 400 200 200
+11814  ./philosophers 5 400 200 198
+11815  ./philosophers 5 400 195 198
+11816  ./philosophers 4 400 195 198
+11817  ./philosophers 4 400 200 200
+11818  ./philosophers 4 400 200 195
+11819  ./philosophers 4 400 195 195
+11820  ./philosophers 2 400 195 195
+11821  ./philosophers 2 400 400 300
+11822  ./philosophers 2 400 400 195
+11823  ./philosophers 2 450 400 195
+11824  ./philosophers 1 450 400 195
+11825  ./philosophers 3 450 400 195
+11826  ./philosophers 3 900 400 195
+11827  ./philosophers 3 800 200 200
+11828  ./philosophers 3 400 200 200
+11829  ./philosophers 2 400 200 200
+11830  ./philosophers 3 800 200 200
