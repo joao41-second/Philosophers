@@ -82,5 +82,6 @@ void *bar_men_thead(void *infs);
 
 //int end(s_new *infos_new,s_new_fuck *infos,int boll);
 void print(s_new_fuck *infos,char *mens, s_new *infos_new ,int time);
+int ft_time(int second);
 
 #endif

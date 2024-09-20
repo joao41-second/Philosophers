@@ -6,18 +6,18 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/20 13:25:59 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/20 15:25:48 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philosophers.h"
 
- void end(s_new infos_new,s_new_fuck *infos)
+ void end(s_new infos_new,s_new_fuck *infos,int neg)
 {
 	pthread_mutex_lock(&infos->mens);
 	infos->fuck->im = fasle;
 	pthread_mutex_unlock(&infos->mens);
-	print(infos,"dead",&infos_new,ft_time(infos_new.start_time_second)-infos_new.start_time);
+	print(infos,"dead",&infos_new,(ft_time(infos_new.start_time_second)-infos_new.start_time)+neg);
 }
 
 int chek_end( s_new_fuck *infos)
@@ -179,8 +179,10 @@ int ft_food( s_new *infos_new,s_new_fuck *infos,int time)
 	forkss = set_forks(infos_new->start,infos_new->times.philosophers-1);
 	start_time = ft_time(infos_new->start_time_second)-infos_new->start_time;
 	fork = infos->fork;
-	if (forks(infos_new,infos,forkss) == fasle)
+	if (forks(infos_new,infos,forkss) == fasle){
+			
 		return(fasle);
+	}
 	time_temp = ft_time(infos_new->start_time_second)-infos_new->start_time;
 	if(time - (time_temp-start_time) < 0)
 	{
@@ -214,12 +216,11 @@ int ft_sleep(s_new *infos_new,int time,s_new_fuck *infos)
 		usleep((infos_new->times.food - infos_new->times.death)*1000);
 		return(-1);
 	}
-	if(chek_end(infos) == fasle)
+	if(chek_end(infos) == fasle || time - (ft_time(infos_new->start_time_second)-infos_new->start_time - start_time) < 0)
 	{
 		return(fasle);
 	}
-	print(infos,"is thinking",infos_new,ft_time(infos_new->start_time_second)-infos_new->start_time);
-	//printf("%d %d is thinking\n",ft_time(infos_new->start_time_second)-infos_new->start_time,infos_new->start);a
+	print(infos,"is thinking",infos_new,(ft_time(infos_new->start_time_second)-infos_new->start_time));
 	return(time - (ft_time(infos_new->start_time_second)-infos_new->start_time - start_time));
 }
 
@@ -278,7 +279,6 @@ void *thead(void *infs)
 		pthread_mutex_unlock(&infos->mens);
 		if( temp == 0)
 		{
-			printf("ola eu mato\n"); 
 			return("end");
 		}
 		time = ft_food(&infos_new,infos,time);
@@ -286,7 +286,8 @@ void *thead(void *infs)
 			return("");
 		if(time < 0)
 		{
-			end(infos_new,infos);
+			//printf("time %d \n",time);
+			end(infos_new,infos,time);
 			
 			return("oi");
 		}else
@@ -298,7 +299,7 @@ void *thead(void *infs)
 			return("");
 		if(time < 0)
 		{
-			end(infos_new,infos);
+			end(infos_new,infos,time);
 			return("oi");
 		}
 		x++;
