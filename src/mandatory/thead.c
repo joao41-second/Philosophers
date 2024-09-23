@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/20 17:07:46 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/23 10:22:28 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,10 +179,8 @@ int ft_food( s_new *infos_new,s_new_fuck *infos,int time)
 	forkss = set_forks(infos_new->start,infos_new->times.philosophers-1);
 	start_time = ft_time(infos_new->start_time_second)-infos_new->start_time;
 	fork = infos->fork;
-	if (forks(infos_new,infos,forkss) == fasle){
-			
+	if (forks(infos_new,infos,forkss) == fasle)
 		return(fasle);
-	}
 	time_temp = ft_time(infos_new->start_time_second)-infos_new->start_time;
 	if(time - (time_temp-start_time) < 0)
 	{
