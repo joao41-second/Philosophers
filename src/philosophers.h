@@ -74,6 +74,15 @@ typedef union t_forks {
 	
 } s_forks;
 
+typedef struct t_ints {
+	int time;
+	int x;
+	int fil_n;
+} s_ints;
+
+
+
+
 pthread_mutex_t  *ft_alloc_mutex(int philosop);
 void filof(s_times times);
 void ft_free_mutex(pthread_mutex_t *data,int philo);
