@@ -22,13 +22,7 @@ typedef struct t_times
 	int food_x;
 } 				s_times;
 
-typedef struct t_ThreadData{ 
-    int name;
-	int stay_or_life;
-	int time_start;
-	int start_second_time;
-	s_times times;
-} s_ThreadData;
+
 
 typedef struct t_loco {
 	
@@ -63,7 +57,6 @@ typedef struct t_new_fuck {
 	int philo;
 }	s_new_fuck;
 
-
 typedef union t_forks {
 	struct 
 	{
@@ -89,7 +82,7 @@ void ft_free_mutex(pthread_mutex_t *data,int philo);
 void *thead(void *infs);
 void *bar_men_thead(void *infs);
 
-//int end(s_new *infos_new,s_new_fuck *infos,int boll);
+
 void print(s_new_fuck *infos,char *mens, s_new *infos_new ,int time);
 int ft_time(int second);
 
