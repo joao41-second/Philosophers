@@ -1,89 +1,84 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philosophers.h                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/23 15:35:46 by jperpect          #+#    #+#             */
+/*   Updated: 2024/09/23 16:05:59 by jperpect         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PHILOSOPHERS_H
-#define PHILOSOPHERS_H
+# define PHILOSOPHERS_H
 
-# include "../libft/Get_next_line/get_next_line_bonus.h"
-# include "../libft/libft/libft.h"
-# include "../libft/printf/ft_printf.h"
+# include <pthread.h>
+# include <sys/time.h>
 
-#include <sys/time.h>
-#include <pthread.h>
+# define TRUE 0
+# define FASLE -1
 
-
-#define true  0
-#define fasle  -1
-
-typedef struct t_times 
+typedef struct s_times
 {
-	int philosophers;
-	int death;
-	int food;
-	int sleep;
-	int food_x;
-} 				s_times;
+	int				philosophers;
+	int				death;
+	int				food;
+	int				sleep;
+	int				food_x;
+}					t_times;
 
+typedef struct s_new
+{
+	int				start;
+	int				im;
+	int				start_time_second;
+	int				start_time;
+	t_times			times;
 
+	int				*i_end;
+	int				*set;
+}					t_new;
 
-typedef struct t_loco {
-	
-	int livfe;
-	int *eu;
-	//s_ThreadData *norm;
-	int thead_start;
-	pthread_mutex_t death;
-	pthread_mutex_t *mutex;
-}	s_loco;
+typedef struct s_new_philo
+{
+	t_new			*fuck;
+	pthread_mutex_t	mens;
+	pthread_mutex_t	death;
+	pthread_mutex_t	*fork;
+	int				end;
+	int				set;
+	int				pq;
+	int				philo;
+}					t_new_philo;
 
-typedef struct t_new {
-	int start;
-	int im;
-	int start_time_second;
-	int start_time; 
-	s_times times;
-	
-	int *i_end;
-	int *set;
-} s_new;
-
-
-typedef struct t_new_fuck {
-	s_new * fuck;
-	pthread_mutex_t mens;
-	pthread_mutex_t death;
-	pthread_mutex_t *fork;
-	int end;
-	int set;
-	int pq;
-	int philo;
-}	s_new_fuck;
-
-typedef union t_forks {
-	struct 
+typedef union s_forks
+{
+	struct
 	{
-		int my;
-		int steal;
+		int			my;
+		int			steal;
 	};
-	int fork[2];
-	
-} s_forks;
+	int				fork[2];
 
-typedef struct t_ints {
-	int time;
-	int x;
-	int fil_n;
-} s_ints;
+}					t_forks;
 
+typedef struct s_ints
+{
+	int				time;
+	int				x;
+	int				fil_n;
+}					t_ints;
 
+pthread_mutex_t		*ft_alloc_mutex(int philosop);
+long int			ft_atol(const char *nptr);
+void				filof(t_times times);
+void				ft_free_mutex(pthread_mutex_t *data, int philo);
+void				*thead(void *infs);
+void				*bar_men_thead(void *infs);
 
-
-pthread_mutex_t  *ft_alloc_mutex(int philosop);
-void filof(s_times times);
-void ft_free_mutex(pthread_mutex_t *data,int philo);
-void *thead(void *infs);
-void *bar_men_thead(void *infs);
-
-
-void print(s_new_fuck *infos,char *mens, s_new *infos_new ,int time);
-int ft_time(int second);
+void				print(t_new_philo *infos, char *mens, t_new *infos_new,
+						int time);
+int					ft_time(int second);
 
 #endif

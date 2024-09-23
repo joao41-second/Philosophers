@@ -6,7 +6,7 @@
 #    By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 06:17:31 by jperpect          #+#    #+#              #
-#    Updated: 2024/09/13 10:24:30 by jperpect         ###   ########.fr        #
+#    Updated: 2024/09/23 16:18:57 by jperpect         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ FLGS = -pthread
 #-fsanitize=thread -pthread -fsanitize=leak -Wall -Wextra -Werror
 MAKEFLAGS += -s
 
-FILES = ./src/main.c ./src/mandatory/start_thead.c ./src/mandatory/mutex/mutex_gen.c src/mandatory/thead.c
+FILES = ./src/main.c ./src/mandatory/start_thead.c ./src/mandatory/mutex/mutex_gen.c src/mandatory/thead.c ./src/utilitis/ft_atol.c
+
 
 SRCS = $(FILES:.c=.o)
 
@@ -57,8 +58,7 @@ all: $(NAME)
 
 
 $(NAME) : $(SRCS)
-	cd libft && make compile && make 
-	cc $(FLGS) $(SRCS) $(LIB) -o $(NAME)
+	cc $(FLGS) $(SRCS) -o $(NAME)
 	echo "╔══════════════════════════╗"
 	echo "║ ✅ Compiled Successfully!║"
 	echo "╚══════════════════════════╝"
@@ -81,10 +81,8 @@ bonus: $(OBJECT_B) $(NAME)
 
 clean:
 	
-	$(fclean)
 	$(RM)  $(SRCS)
-	$(RM)  $(OBJS_CLI)
-	cd ./libft && make clean
+
 		@rm -f $(COUNT_FILE)
 
 fclean: clean

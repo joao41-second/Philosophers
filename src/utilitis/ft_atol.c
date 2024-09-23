@@ -6,11 +6,18 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 14:13:13 by jperpect          #+#    #+#             */
-/*   Updated: 2024/08/08 14:13:17 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/23 16:05:24 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+static int	ft_isalnum(int c)
+{
+	if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z') || (c >= 'A'
+			&& c <= 'Z'))
+		return (1);
+	else
+		return (0);
+}
 
 static long int	v_nb(long int c)
 {
