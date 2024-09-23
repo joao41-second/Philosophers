@@ -1,0 +1,69 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bar_men.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/23 16:19:48 by jperpect          #+#    #+#             */
+/*   Updated: 2024/09/23 17:01:54 by jperpect         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../philosophers.h"
+
+static int	bar_run(t_new_philo *infus, t_new *infus2, int i, int nb)
+{
+	while (++i < nb - 1)
+	{
+		usleep(25);
+		pthread_mutex_lock(&infus->mens);
+		if (infus2->im == FASLE)
+		{
+			i = -5;
+		}
+		pthread_mutex_unlock(&infus->mens);
+		if (i == -5)
+		{
+			pthread_mutex_lock(&infus->mens);
+			*infus->fuck->i_end = 0;
+			pthread_mutex_unlock(&infus->mens);
+			return (FASLE);
+		}
+		pthread_mutex_lock(&infus->mens);
+		infus2--;
+		pthread_mutex_unlock(&infus->mens);
+	}
+	pthread_mutex_lock(&infus->mens);
+	infus2 += nb - 1;
+	pthread_mutex_unlock(&infus->mens);
+	return (TRUE);
+}
+
+void	*bar_men_thead(void *infs)
+{
+	t_new_philo	*infus;
+	t_new		*infus2;
+	int			nb;
+	int			i;
+
+	infus = (t_new_philo *)infs;
+	nb = infus->philo;
+	pthread_mutex_lock(&infus->mens);
+	*infus->fuck->i_end = 2;
+	pthread_mutex_unlock(&infus->mens);
+	infus2 = (t_new *)infus->fuck;
+	if (nb == 1)
+	{
+		nb++;
+	}
+	while (1)
+	{
+		i = -1;
+		if (bar_run(infs, infus2, i, nb) == FASLE)
+		{
+			break ;
+		}
+	}
+	return ("oi");
+}

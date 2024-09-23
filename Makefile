@@ -6,7 +6,7 @@
 #    By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 06:17:31 by jperpect          #+#    #+#              #
-#    Updated: 2024/09/23 16:18:57 by jperpect         ###   ########.fr        #
+#    Updated: 2024/09/23 17:36:58 by jperpect         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,11 @@ FLGS = -pthread
 #-fsanitize=thread -pthread -fsanitize=leak -Wall -Wextra -Werror
 MAKEFLAGS += -s
 
-FILES = ./src/main.c ./src/mandatory/start_thead.c ./src/mandatory/mutex/mutex_gen.c src/mandatory/thead.c ./src/utilitis/ft_atol.c
+FILES = ./src/main.c ./src/mandatory/start_thead.c \
+./src/mandatory/mutex/mutex_gen.c src/mandatory/thead.c \
+./src/utilitis/ft_atol.c ./src/mandatory/bar_men.c \
+ ./src/utilitis/ft_math.c  src/utilitis/ft_forks.c \
+ src/utilitis/ft_random.c \
 
 
 SRCS = $(FILES:.c=.o)
