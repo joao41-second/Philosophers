@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:43:30 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/23 15:44:08 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/24 10:44:48 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,19 +56,20 @@ int	main(int ac, char **av)
 		times.food_x = 0;
 	}
 	else if (ac == 6)
-	{
 		times.food_x = ft_atol(av[4]);
-	}
-	else
-		printf("erro\n");
-	if (cheke_philosophrt_times(++av, ac) == FASLE)
+	if (5 >= ac && ac <= 6)
 	{
-		printf("erro\n");
+		if (cheke_philosophrt_times(++av, ac) == FASLE)
+		{
+			printf("erro\n");
+			return (0);
+		}
+		gettimeofday(&tv, NULL);
+		times = set_philosophert_times(av);
+		times.food_x = 0;
+		gettimeofday(&tv, NULL);
+		filof(times);
 		return (0);
 	}
-	gettimeofday(&tv, NULL);
-	times = set_philosophert_times(av);
-	times.food_x = 0;
-	gettimeofday(&tv, NULL);
-	filof(times);
+	printf("erro\n");
 }
