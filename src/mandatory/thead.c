@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/24 17:04:32 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/24 20:28:51 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ int	ft_food(t_new *infot_new, t_new_philo *infos, int time)
 	pthread_mutex_unlock(&infos->fork[forkss.fork[1]]);
 	pthread_mutex_unlock(&infos->fork[forkss.fork[0]]);
 	time_temp = get_time(infos) - infot_new->start_time;
-	return (time - (time_temp - start_time));
+	printf("oi o meu temmpo e de %d\n",time - ((time_temp - start_time) - infot_new->times.food));
+	return (time - ((time_temp - start_time) - infot_new->times.food));
 }
 
 int	ft_sleep(t_new *infot_new, int time, t_new_philo *infos)

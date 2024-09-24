@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 16:19:48 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/24 17:34:51 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/24 20:23:37 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,14 @@ void	*bar_men_thead(void *infs)
 	set_fuck_i_end(infus);
 	set_time(infus, second());
 	infus2 = (t_new *)infus->fuck;
-	if (nb == 1)
+	if (nb == 1 )
 		nb++;
-	if (infus->fuck->start == 0)
-		return ("i");
+	if(nb == 0)
+		nb = 2;
+
 	while (1)
 	{
+		//printf("oi\n");
 		usleep(100);
 		set_time(infus, second());
 		i = -1;
