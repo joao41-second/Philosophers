@@ -6,13 +6,13 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:43:30 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/24 16:50:35 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/24 17:07:40 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-t_times	set_philosophert_times(char **time,int temp)
+t_times	set_philosophert_times(char **time, int temp)
 {
 	t_times	times;
 
@@ -20,7 +20,7 @@ t_times	set_philosophert_times(char **time,int temp)
 	times.death = ft_atol(time[1]);
 	times.food = ft_atol(time[2]);
 	times.sleep = ft_atol(time[3]);
-	times.food_x =temp;
+	times.food_x = temp;
 	return (times);
 }
 
@@ -50,7 +50,7 @@ int	cheke_philosophrt_times(char **time, int max)
 int	main(int ac, char **av)
 {
 	t_times			times;
-	int temp;
+	int				temp;
 	struct timeval	tv;
 
 	if (ac == 5)
@@ -68,7 +68,7 @@ int	main(int ac, char **av)
 			return (0);
 		}
 		gettimeofday(&tv, NULL);
-		times = set_philosophert_times(av,temp);
+		times = set_philosophert_times(av, temp);
 		filof(times);
 		return (0);
 	}

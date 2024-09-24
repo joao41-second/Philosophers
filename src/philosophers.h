@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:35:46 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/24 13:45:21 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/24 17:35:11 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct s_new
 	int				start_time;
 	t_times			times;
 	int				*i_end;
-	int 			*i_time;
+	int				*i_time;
 	int				*set;
 }					t_new;
 
@@ -105,5 +105,11 @@ t_new				copy_struct(t_new *infot_new, int im);
 char				*not_philos(t_new_philo *infos, t_new infos_new);
 
 int					get_time(t_new_philo *infos);
+
+void				set_time(t_new_philo *infus, int second);
+
+int					second(void);
+
+void				set_fuck_i_end(t_new_philo *infus);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 17:29:35 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/24 16:57:39 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/24 17:03:35 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,11 +91,13 @@ int	forks(t_new *infot_new, t_new_philo *infos, t_forks forks)
 
 int	end(t_new infot_new, t_new_philo *infos, int neg)
 {
+	if (neg)
+	{
+	}
 	pthread_mutex_lock(&infos->mens);
 	infos->fuck->im = FASLE;
 	pthread_mutex_unlock(&infos->mens);
-	print(infos, "died", &infot_new, (get_time(infos)
-			- infot_new.start_time) + (neg + 1));
+	print(infos, "died", &infot_new, (get_time(infos)-infot_new.start_time));
 	return (FASLE);
 }
 

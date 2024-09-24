@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/24 16:51:19 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/24 17:04:32 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	thead_run(t_new infot_new, t_new_philo *infos, int time, int x)
 	while (1)
 	{
 		if (x == infot_new.times.food_x && infot_new.times.food_x != 0)
-			return(end(infot_new, infos, time));
+			return (end(infot_new, infos, time));
 		pthread_mutex_lock(&infos->mens);
 		temp = *infos->fuck->i_end;
 		pthread_mutex_unlock(&infos->mens);
