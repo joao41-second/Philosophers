@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:35:46 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/23 17:36:02 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/24 10:34:18 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,7 @@ int					end(t_new infot_new, t_new_philo *infos, int neg);
 int					chek_end(t_new_philo *infos);
 
 t_new				copy_struct(t_new *infot_new, int im);
+
+char				*not_philos(t_new_philo *infos, t_new infos_new);
 
 #endif

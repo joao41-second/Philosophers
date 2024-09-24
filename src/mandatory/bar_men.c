@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 16:19:48 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/23 17:01:54 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/24 10:31:48 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ void	*bar_men_thead(void *infs)
 	pthread_mutex_unlock(&infus->mens);
 	infus2 = (t_new *)infus->fuck;
 	if (nb == 1)
-	{
 		nb++;
-	}
+	if (infus->fuck->start == 0)
+		return ("i");
 	while (1)
 	{
 		i = -1;

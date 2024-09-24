@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/23 17:39:52 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/24 10:31:10 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,8 +117,8 @@ void	thead_sleep(t_new_philo *infos)
 void	*thead(void *infs)
 {
 	t_new_philo		*infos;
-	t_new			*infot_news;
-	t_new			infot_new;
+	t_new			*infos_news;
+	t_new			infos_new;
 	struct timeval	tv;
 	t_ints			ints;
 
@@ -127,13 +127,17 @@ void	*thead(void *infs)
 	ints.x = 0;
 	thead_sleep(infos);
 	pthread_mutex_lock(&infos->mens);
-	infot_news = (t_new *)infos->fuck;
-	infot_new = copy_struct(infot_news, ints.fil_n);
+	infos_news = (t_new *)infos->fuck;
+	infos_new = copy_struct(infos_news, ints.fil_n);
 	ints.time = infos->fuck->times.death;
 	pthread_mutex_unlock(&infos->mens);
 	gettimeofday(&tv, NULL);
-	infot_new.start_time_second = tv.tv_sec * 1000;
-	infot_new.start_time = ft_time(infot_new.start_time_second);
-	thead_run(infot_new, infos, ints.time, ints.x);
+	infos_new.start_time_second = tv.tv_sec * 1000;
+	infos_new.start_time = ft_time(infos_new.start_time_second);
+	if (infos->fuck->start == 0)
+	{
+		return (not_philos(infos, infos_new));
+	}
+	thead_run(infos_new, infos, ints.time, ints.x);
 	return ("oi");
 }
