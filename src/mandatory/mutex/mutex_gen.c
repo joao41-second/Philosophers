@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/20 11:45:15 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/23 14:27:26 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/24 16:52:03 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ pthread_mutex_t	*ft_alloc_mutex(int philosop)
 	{
 		pthread_mutex_init(&(data[i]), NULL);
 	}
-	printf("tenho x motex %d \n", i);
 	return (data);
 }
 

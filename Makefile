@@ -6,7 +6,7 @@
 #    By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 06:17:31 by jperpect          #+#    #+#              #
-#    Updated: 2024/09/24 12:47:05 by jperpect         ###   ########.fr        #
+#    Updated: 2024/09/24 12:51:54 by jperpect         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ RM = rm -f
 
 CAT = cat number.txt 
 
-NAME = philosophers
+NAME = philo
 
 COUNT_FILE = count.txt
 

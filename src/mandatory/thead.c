@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/24 10:31:10 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/24 16:51:19 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ int	ft_food(t_new *infot_new, t_new_philo *infos, int time)
 	t_forks			forkss;
 
 	forkss = set_forks(infot_new->start, infot_new->times.philosophers - 1);
-	start_time = ft_time(infot_new->start_time_second) - infot_new->start_time;
+	start_time = get_time(infos) - infot_new->start_time;
 	if (forks(infot_new, infos, forkss) == FASLE)
 		return (FASLE);
-	time_temp = ft_time(infot_new->start_time_second) - infot_new->start_time;
+	time_temp = get_time(infos) - infot_new->start_time;
 	if (time - (time_temp - start_time) < 0)
 	{
 		pthread_mutex_unlock(&infos->fork[forkss.fork[1]]);
@@ -31,12 +31,12 @@ int	ft_food(t_new *infot_new, t_new_philo *infos, int time)
 	}
 	if (chek_end(infos) == FASLE)
 		return (-1);
-	print(infos, "is eating", infot_new, ft_time(infot_new->start_time_second)
+	print(infos, "is eating", infot_new, get_time(infos)
 		- infot_new->start_time);
 	usleep(infot_new->times.food * 1000);
 	pthread_mutex_unlock(&infos->fork[forkss.fork[1]]);
 	pthread_mutex_unlock(&infos->fork[forkss.fork[0]]);
-	time_temp = ft_time(infot_new->start_time_second) - infot_new->start_time;
+	time_temp = get_time(infos) - infot_new->start_time;
 	return (time - (time_temp - start_time));
 }
 
@@ -44,10 +44,10 @@ int	ft_sleep(t_new *infot_new, int time, t_new_philo *infos)
 {
 	int	start_time;
 
-	start_time = ft_time(infot_new->start_time_second) - infot_new->start_time;
+	start_time = get_time(infos) - infot_new->start_time;
 	if (infot_new->i_end == 0)
 		return (-1);
-	print(infos, "is sleeping", infot_new, ft_time(infot_new->start_time_second)
+	print(infos, "is sleeping", infot_new, get_time(infos)
 		- infot_new->start_time);
 	if (infot_new->times.food < infot_new->times.death)
 		usleep(infot_new->times.food * 1000);
@@ -57,14 +57,14 @@ int	ft_sleep(t_new *infot_new, int time, t_new_philo *infos)
 		return (-1);
 	}
 	if (chek_end(infos) == FASLE || time
-		-(ft_time(infot_new->start_time_second) - infot_new->start_time
+		-(get_time(infos) - infot_new->start_time
 			- start_time) < 0)
 	{
 		return (FASLE);
 	}
 	print(infos, "is thinking", infot_new,
-		(ft_time(infot_new->start_time_second) - infot_new->start_time));
-	return (time - (ft_time(infot_new->start_time_second)
+		(get_time(infos) - infot_new->start_time));
+	return (time - (get_time(infos)
 			- infot_new->start_time - start_time));
 }
 
@@ -75,11 +75,11 @@ int	thead_run(t_new infot_new, t_new_philo *infos, int time, int x)
 	while (1)
 	{
 		if (x == infot_new.times.food_x && infot_new.times.food_x != 0)
-			end(infot_new, infos, time);
+			return(end(infot_new, infos, time));
 		pthread_mutex_lock(&infos->mens);
 		temp = *infos->fuck->i_end;
 		pthread_mutex_unlock(&infos->mens);
-		if (temp < 0)
+		if (temp <= 0)
 			return (end(infot_new, infos, time));
 		time = ft_food(&infot_new, infos, time);
 		if (chek_end(infos) == FASLE)
@@ -119,7 +119,6 @@ void	*thead(void *infs)
 	t_new_philo		*infos;
 	t_new			*infos_news;
 	t_new			infos_new;
-	struct timeval	tv;
 	t_ints			ints;
 
 	infos = (t_new_philo *)infs;
@@ -131,9 +130,7 @@ void	*thead(void *infs)
 	infos_new = copy_struct(infos_news, ints.fil_n);
 	ints.time = infos->fuck->times.death;
 	pthread_mutex_unlock(&infos->mens);
-	gettimeofday(&tv, NULL);
-	infos_new.start_time_second = tv.tv_sec * 1000;
-	infos_new.start_time = ft_time(infos_new.start_time_second);
+	infos_new.start_time = get_time(infos);
 	if (infos->fuck->start == 0)
 	{
 		return (not_philos(infos, infos_new));

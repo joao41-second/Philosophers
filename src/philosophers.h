@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:35:46 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/24 10:57:10 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/24 13:45:21 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ typedef struct s_new
 	int				start_time_second;
 	int				start_time;
 	t_times			times;
-
 	int				*i_end;
+	int 			*i_time;
 	int				*set;
 }					t_new;
 
@@ -49,6 +49,7 @@ typedef struct s_new_philo
 	pthread_mutex_t	mens;
 	pthread_mutex_t	death;
 	pthread_mutex_t	*fork;
+	int				time;
 	int				end;
 	int				set;
 	int				pq;
@@ -84,7 +85,6 @@ void				print(t_new_philo *infos, char *mens, t_new *infos_new,
 						int time);
 int					ft_time(int second);
 
-int					ft_time(int second);
 int					par(int n);
 
 t_forks				set_forks(int my, int max);
@@ -103,5 +103,7 @@ int					chek_end(t_new_philo *infos);
 t_new				copy_struct(t_new *infot_new, int im);
 
 char				*not_philos(t_new_philo *infos, t_new infos_new);
+
+int					get_time(t_new_philo *infos);
 
 #endif

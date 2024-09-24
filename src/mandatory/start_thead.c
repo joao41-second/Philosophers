@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:23:05 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/23 15:57:05 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/24 16:13:53 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,12 @@ pthread_mutex_t *mutex)
 		fuck->pq = i;
 		fuck->set = TRUE;
 		fuck->end = 1;
+		fuck->time = 0;
 		fuck->fuck = &env[i];
 		fuck->fork = mutex;
 		fuck->philo = times.philosophers - 1;
 		env[i].i_end = &fuck->end;
+		env[i].i_time = &fuck->time;
 	}
 	return (env);
 }
@@ -72,7 +74,7 @@ void	trhed_start(pthread_t *therds, pthread_mutex_t *mutex, t_times times)
 	env = set_philo_data(times, &fuck, mutex);
 	while (++i < times.philosophers)
 	{
-		usleep(15000);
+		usleep(25000);
 		pthread_mutex_lock(&fuck.mens);
 		fuck.fuck = &env[i];
 		pthread_mutex_unlock(&fuck.mens);

@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 17:29:35 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/23 17:38:24 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/24 16:57:39 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ int	end(t_new infot_new, t_new_philo *infos, int neg)
 	pthread_mutex_lock(&infos->mens);
 	infos->fuck->im = FASLE;
 	pthread_mutex_unlock(&infos->mens);
-	print(infos, "dead", &infot_new, (ft_time(infot_new.start_time_second)
+	print(infos, "died", &infot_new, (get_time(infos)
 			- infot_new.start_time) + (neg + 1));
 	return (FASLE);
 }

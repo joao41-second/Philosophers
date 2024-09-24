@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 16:30:44 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/24 10:01:06 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/24 16:13:58 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,6 @@ int	print_forks(t_new_philo *infos, t_new *infot_new, pthread_mutex_t *fork,
 	}
 	pthread_mutex_unlock(&infos->mens);
 	print(infos, "has taken a fork", infot_new,
-		ft_time(infot_new->start_time_second) - infot_new->start_time);
+		get_time(infos) - infot_new->start_time);
 	return (TRUE);
 }

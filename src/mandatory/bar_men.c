@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 16:19:48 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/24 10:31:48 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/24 16:54:54 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,18 +40,37 @@ static int	bar_run(t_new_philo *infus, t_new *infus2, int i, int nb)
 	return (TRUE);
 }
 
+int get_time(t_new_philo *infos)
+{
+	int temp;
+	pthread_mutex_lock(&infos->death);
+		temp =*infos->fuck->i_time;
+	pthread_mutex_unlock(&infos->death);
+	return(temp);
+}
+
+
 void	*bar_men_thead(void *infs)
 {
 	t_new_philo	*infus;
 	t_new		*infus2;
 	int			nb;
 	int			i;
+	int 		second;
+	struct timeval	tv;
 
 	infus = (t_new_philo *)infs;
 	nb = infus->philo;
+	gettimeofday(&tv, NULL);
+	second = tv.tv_sec * 1000;
 	pthread_mutex_lock(&infus->mens);
 	*infus->fuck->i_end = 2;
 	pthread_mutex_unlock(&infus->mens);
+
+	pthread_mutex_lock(&infus->death);
+			*infus->fuck->i_time = ft_time(second);
+		pthread_mutex_unlock(&infus->death);
+	
 	infus2 = (t_new *)infus->fuck;
 	if (nb == 1)
 		nb++;
@@ -59,6 +78,10 @@ void	*bar_men_thead(void *infs)
 		return ("i");
 	while (1)
 	{
+		usleep(100);
+		pthread_mutex_lock(&infus->death);
+			*infus->fuck->i_time = ft_time(second);
+		pthread_mutex_unlock(&infus->death);
 		i = -1;
 		if (bar_run(infs, infus2, i, nb) == FASLE)
 		{
