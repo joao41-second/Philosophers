@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 13:43:30 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/24 10:48:46 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/24 10:57:54 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	main(int ac, char **av)
 		times.food_x = ft_atol(av[4]);
 		ac--;
 	}
-	if ( ac == 5)
+	if (ac == 5)
 	{
 		if (cheke_philosophrt_times(++av, ac) == FASLE)
 		{

@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:35:46 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/24 10:34:18 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/24 10:57:10 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <pthread.h>
 # include <sys/time.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 # define TRUE 0
 # define FASLE -1
