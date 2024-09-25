@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/24 20:28:51 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/25 14:41:39 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,15 @@ int	ft_food(t_new *infot_new, t_new_philo *infos, int time)
 	}
 	if (chek_end(infos) == FASLE)
 		return (-1);
-	print(infos, "is eating", infot_new, get_time(infos)
-		- infot_new->start_time);
+	print(infos, "is eating", infot_new, infot_new->start_time);
+	time = infot_new->times.death;
 	usleep(infot_new->times.food * 1000);
 	pthread_mutex_unlock(&infos->fork[forkss.fork[1]]);
 	pthread_mutex_unlock(&infos->fork[forkss.fork[0]]);
 	time_temp = get_time(infos) - infot_new->start_time;
-	printf("oi o meu temmpo e de %d\n",time - ((time_temp - start_time) - infot_new->times.food));
 	return (time - ((time_temp - start_time) - infot_new->times.food));
 }
+
 
 int	ft_sleep(t_new *infot_new, int time, t_new_philo *infos)
 {
@@ -48,13 +48,12 @@ int	ft_sleep(t_new *infot_new, int time, t_new_philo *infos)
 	start_time = get_time(infos) - infot_new->start_time;
 	if (infot_new->i_end == 0)
 		return (-1);
-	print(infos, "is sleeping", infot_new, get_time(infos)
-		- infot_new->start_time);
+	print(infos, "is sleeping", infot_new, infot_new->start_time);
 	if (infot_new->times.food < infot_new->times.death)
-		usleep(infot_new->times.food * 1000);
+		usleep(infot_new->times.sleep * 1000);
 	else
 	{
-		usleep((infot_new->times.food - infot_new->times.death) * 1000);
+		usleep((infot_new->times.sleep - infot_new->times.death) * 1000);
 		return (-1);
 	}
 	if (chek_end(infos) == FASLE || time
@@ -63,10 +62,8 @@ int	ft_sleep(t_new *infot_new, int time, t_new_philo *infos)
 	{
 		return (FASLE);
 	}
-	print(infos, "is thinking", infot_new,
-		(get_time(infos) - infot_new->start_time));
-	return (time - (get_time(infos)
-			- infot_new->start_time - start_time));
+	print(infos, "is thinking", infot_new,infot_new->start_time);
+	return (time - (get_time(infos) - infot_new->start_time - start_time));
 }
 
 int	thead_run(t_new infot_new, t_new_philo *infos, int time, int x)
@@ -87,8 +84,7 @@ int	thead_run(t_new infot_new, t_new_philo *infos, int time, int x)
 			return (FASLE);
 		if (time < 0)
 			return (end(infot_new, infos, time));
-		else
-			time = infot_new.times.death;
+
 		usleep(1000);
 		time = ft_sleep(&infot_new, time, infos);
 		if (chek_end(infos) == FASLE)

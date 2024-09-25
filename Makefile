@@ -6,7 +6,7 @@
 #    By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 06:17:31 by jperpect          #+#    #+#              #
-#    Updated: 2024/09/24 12:51:54 by jperpect         ###   ########.fr        #
+#    Updated: 2024/09/25 13:48:30 by jperpect         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,8 @@ MAKEFLAGS += -s
 FILES = ./src/main.c ./src/mandatory/start_thead.c \
 ./src/mandatory/mutex/mutex_gen.c src/mandatory/thead.c \
 ./src/utilitis/ft_atol.c ./src/mandatory/bar_men.c \
- ./src/utilitis/ft_math.c  src/utilitis/ft_forks.c \
- src/utilitis/ft_random.c \
+./src/utilitis/ft_math.c  src/utilitis/ft_forks.c \
+./src/utilitis/ft_random.c \
 
 
 SRCS = $(FILES:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:23:05 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/24 16:13:53 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/25 14:15:06 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ pthread_mutex_t *mutex)
 
 	pthread_mutex_init(&(fuck->death), NULL);
 	pthread_mutex_init(&(fuck->mens), NULL);
+	pthread_mutex_init(&(fuck->mens_set), NULL);
 	i = -1;
 	env = (t_new *)malloc(times.philosophers * sizeof(t_new));
 	if (env == NULL)
@@ -88,6 +89,7 @@ void	trhed_start(pthread_t *therds, pthread_mutex_t *mutex, t_times times)
 	trhed_sleep(times.philosophers, therds);
 	pthread_mutex_destroy(&fuck.death);
 	pthread_mutex_destroy(&(fuck.mens));
+	pthread_mutex_destroy(&(fuck.mens_set));
 	free(env);
 	return ;
 }

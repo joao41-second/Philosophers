@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 16:30:44 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/24 16:13:58 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/25 14:42:37 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,14 @@ int	par(int n)
 void	print(t_new_philo *infos, char *mens, t_new *infot_new, int time)
 {
 	static int	hp = 0;
-
+	if(time)
+	{}
 	pthread_mutex_lock(&infos->mens);
 	if (hp == 0)
 	{
 		if (*infos->fuck->i_end != 0)
 		{
-			printf("%d %d %s\n", time, infot_new->start, mens);
+			printf("%d %d %s\n", get_time(infos) - time, infot_new->start, mens);
 		}
 		else
 			hp = 1;
@@ -74,7 +75,6 @@ int	print_forks(t_new_philo *infos, t_new *infot_new, pthread_mutex_t *fork,
 		return (FASLE);
 	}
 	pthread_mutex_unlock(&infos->mens);
-	print(infos, "has taken a fork", infot_new,
-		get_time(infos) - infot_new->start_time);
+	print(infos, "has taken a fork", infot_new, infot_new->start_time);
 	return (TRUE);
 }
