@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 16:30:44 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/25 14:42:37 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/26 12:03:15 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ int	par(int n)
 void	print(t_new_philo *infos, char *mens, t_new *infot_new, int time)
 {
 	static int	hp = 0;
-	if(time)
-	{}
+
 	pthread_mutex_lock(&infos->mens);
 	if (hp == 0)
 	{
 		if (*infos->fuck->i_end != 0)
 		{
-			printf("%d %d %s\n", get_time(infos) - time, infot_new->start, mens);
+			printf("%d %d %s\n", get_time(infos)
+				- time, infot_new->start, mens);
 		}
 		else
 			hp = 1;

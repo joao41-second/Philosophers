@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 15:35:46 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/25 14:14:53 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/26 11:58:23 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ typedef struct s_new_philo
 	t_new			*fuck;
 	pthread_mutex_t	mens;
 	pthread_mutex_t	death;
-	pthread_mutex_t mens_set;
 	pthread_mutex_t	*fork;
 	int				time;
 	int				end;

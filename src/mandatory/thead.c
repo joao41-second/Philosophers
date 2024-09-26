@@ -6,7 +6,7 @@
 /*   By: jperpect <jperpect@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:03:08 by jperpect          #+#    #+#             */
-/*   Updated: 2024/09/25 14:41:39 by jperpect         ###   ########.fr       */
+/*   Updated: 2024/09/26 12:01:41 by jperpect         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int	ft_food(t_new *infot_new, t_new_philo *infos, int time)
 	return (time - ((time_temp - start_time) - infot_new->times.food));
 }
 
-
 int	ft_sleep(t_new *infot_new, int time, t_new_philo *infos)
 {
 	int	start_time;
@@ -62,7 +61,7 @@ int	ft_sleep(t_new *infot_new, int time, t_new_philo *infos)
 	{
 		return (FASLE);
 	}
-	print(infos, "is thinking", infot_new,infot_new->start_time);
+	print(infos, "is thinking", infot_new, infot_new->start_time);
 	return (time - (get_time(infos) - infot_new->start_time - start_time));
 }
 
@@ -84,7 +83,6 @@ int	thead_run(t_new infot_new, t_new_philo *infos, int time, int x)
 			return (FASLE);
 		if (time < 0)
 			return (end(infot_new, infos, time));
-
 		usleep(1000);
 		time = ft_sleep(&infot_new, time, infos);
 		if (chek_end(infos) == FASLE)
