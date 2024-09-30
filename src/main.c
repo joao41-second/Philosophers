@@ -58,7 +58,8 @@ int	main(int ac, char **av)
 	else if (ac == 6)
 	{
 		temp = ft_atol(av[5]);
-		ac--;
+		if (temp > 0)
+			ac--;
 	}
 	if (ac == 5)
 	{
