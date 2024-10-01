@@ -20,8 +20,9 @@ int	ft_food(t_new *infot_new, t_new_philo *infos, int time)
 
 	forkss = set_forks(infot_new->start, infot_new->times.philosophers - 1);
 	start_time = get_time(infos) - infot_new->start_time;
+	infot_new->time_reste = start_time;
 	if (forks(infot_new, infos, forkss) == FASLE)
-		return (FASLE);
+		return (time - (get_time(infos) - infot_new->start_time - start_time));
 	time_temp = get_time(infos) - infot_new->start_time;
 	if (time - (time_temp - start_time) < 0)
 	{
@@ -48,11 +49,11 @@ int	ft_sleep(t_new *infot_new, int time, t_new_philo *infos)
 	if (infot_new->i_end == 0)
 		return (-1);
 	print(infos, "is sleeping", infot_new, infot_new->start_time);
-	if (infot_new->times.food < infot_new->times.death)
+	if (infot_new->times.sleep <= time)
 		usleep(infot_new->times.sleep * 1000);
 	else
 	{
-		usleep((infot_new->times.sleep - infot_new->times.death) * 1000);
+		usleep(( infot_new->times.sleep-time ) * 1000);
 		return (-1);
 	}
 	if (chek_end(infos) == FASLE || time
@@ -78,6 +79,7 @@ int	thead_run(t_new infot_new, t_new_philo *infos, int time, int x)
 		pthread_mutex_unlock(&infos->mens);
 		if (temp <= 0)
 			return (end(infot_new, infos, time));
+		infot_new.dead_time = time;
 		time = ft_food(&infot_new, infos, time);
 		if (chek_end(infos) == FASLE)
 			return (FASLE);

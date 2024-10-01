@@ -37,6 +37,8 @@ typedef struct s_new
 	int				im;
 	int				start_time_second;
 	int				start_time;
+	int				dead_time;
+	int				time_reste;
 	t_times			times;
 	int				*i_end;
 	int				*i_time;
@@ -74,6 +76,7 @@ typedef struct s_ints
 	int				fil_n;
 }					t_ints;
 
+int					save(t_new_philo *infos, t_new *infot_new);
 pthread_mutex_t		*ft_alloc_mutex(int philosop);
 long int			ft_atol(const char *nptr);
 void				filof(t_times times);

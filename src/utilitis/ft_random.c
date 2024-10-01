@@ -29,7 +29,7 @@ char	*not_philos(t_new_philo *infos, t_new infos_new)
 {
 	print(infos, "has taken a fork", &infos_new, infos_new.start_time);
 	usleep(infos_new.times.death * 1000);
-	end(infos_new, infos, infos_new.times.death);
+	end(infos_new, infos, 0);
 	return ("end");
 }
 

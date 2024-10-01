@@ -35,6 +35,10 @@ int	cheke_philosophrt_times(char **time, int max)
 		{
 			return (FASLE);
 		}
+		if (ft_atol(time[0]) >= 201)
+		{
+			return (FASLE);
+		}
 	}
 	i = 0;
 	while (++i < max - 1)
@@ -44,6 +48,14 @@ int	cheke_philosophrt_times(char **time, int max)
 			return (FASLE);
 		}
 	}
+	return (TRUE);
+}
+
+int	save(t_new_philo *infos, t_new *infot_new)
+{
+	if ((infot_new->dead_time - ((get_time(infos) - infot_new->start_time)
+				- (infot_new->time_reste))) < 0)
+		return (FASLE);
 	return (TRUE);
 }
 

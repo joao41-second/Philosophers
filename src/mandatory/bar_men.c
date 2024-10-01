@@ -12,10 +12,26 @@
 
 #include "../philosophers.h"
 
+int dead_off_static(t_new_philo *infus)
+{
+	int time_save;
+	pthread_mutex_lock(&infus->mens);
+	//printf("ola mundo minha vida e de %d %d\n",infus->fuck->dead_time,get_time(infus)-infus->fuck->start_time);
+	time_save =  (get_time(infus)-infus->fuck->start_time) - infus->fuck->dead_time  ;
+	//printf("ola time %d\n", (infus->fuck->times.death - infus->fuck->times.food)-time_save );
+	if(infus->fuck->dead_time > 0)
+		if(((  (infus->fuck->times.death - infus->fuck->times.food)-time_save ) < 0 ))
+			*infus->fuck->i_end = 0;
+	pthread_mutex_unlock(&infus->mens);
+	return(TRUE);
+}
+
+
 static int	bar_run(t_new_philo *infus, t_new *infus2, int i, int nb)
 {
-	while (++i < nb - 1)
+	while (++i < nb +1)
 	{
+
 		usleep(25);
 		pthread_mutex_lock(&infus->mens);
 		if (infus2->im == FASLE)
@@ -23,6 +39,7 @@ static int	bar_run(t_new_philo *infus, t_new *infus2, int i, int nb)
 			i = -5;
 		}
 		pthread_mutex_unlock(&infus->mens);
+			dead_off_static(infus);
 		if (i == -5)
 		{
 			pthread_mutex_lock(&infus->mens);

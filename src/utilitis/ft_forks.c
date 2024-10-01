@@ -22,12 +22,14 @@ int	pair_fork(t_new_philo *infos, t_new *infot_new, t_forks forks,
 		return (FASLE);
 	}
 	pthread_mutex_unlock(&infos->mens);
-	if (print_forks(infos, infot_new, fork, forks.fork[1]) == FASLE)
+	if (save(infos, infot_new) == FASLE
+		|| print_forks(infos, infot_new, fork, forks.fork[1]) == FASLE)
 	{
 		pthread_mutex_unlock(&fork[forks.fork[1]]);
 		return (FASLE);
 	}
-	if (print_forks(infos, infot_new, fork, forks.fork[0]) == FASLE)
+	if (save(infos, infot_new) == FASLE
+		|| print_forks(infos, infot_new, fork, forks.fork[0]) == FASLE)
 	{
 		pthread_mutex_unlock(&fork[forks.fork[1]]);
 		pthread_mutex_unlock(&fork[forks.fork[0]]);
@@ -47,12 +49,14 @@ int	odd_fork(t_new_philo *infos, t_new *infot_new, t_forks forks,
 		return (FASLE);
 	}
 	pthread_mutex_unlock(&infos->mens);
-	if (print_forks(infos, infot_new, fork, forks.fork[0]) == FASLE)
+	if (save(infos, infot_new) == FASLE
+		|| print_forks(infos, infot_new, fork, forks.fork[0]) == FASLE)
 	{
 		pthread_mutex_unlock(&fork[forks.fork[0]]);
 		return (FASLE);
 	}
-	if (print_forks(infos, infot_new, fork, forks.fork[1]) == FASLE)
+	if (save(infos, infot_new) == FASLE
+		||print_forks(infos, infot_new, fork, forks.fork[1]) == FASLE)
 	{
 		pthread_mutex_unlock(&fork[forks.fork[0]]);
 		pthread_mutex_unlock(&fork[forks.fork[1]]);
@@ -97,7 +101,7 @@ int	end(t_new infot_new, t_new_philo *infos, int neg)
 	pthread_mutex_lock(&infos->mens);
 	infos->fuck->im = FASLE;
 	pthread_mutex_unlock(&infos->mens);
-	print(infos, "died", &infot_new, (infot_new.start_time));
+	print(infos, "died", &infot_new, (infot_new.start_time) );
 	return (FASLE);
 }
 

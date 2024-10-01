@@ -89,7 +89,6 @@ void	trhed_start(pthread_t *therds, pthread_mutex_t *mutex, t_times times)
 	pthread_mutex_destroy(&fuck.death);
 	pthread_mutex_destroy(&(fuck.mens));
 	free(env);
-	return ;
 }
 
 void	filof(t_times times)
