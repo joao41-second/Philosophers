@@ -41,13 +41,13 @@ void	print(t_new_philo *infos, char *mens, t_new *infot_new, int time)
 	pthread_mutex_lock(&infos->mens);
 	if (hp == 0)
 	{
-		// if (*infos->fuck->i_end != 0)
-		// {
+		if (*infos->fuck->i_end != 0)
+		{
 			printf("%d %d %s\n", get_time(infos)
 				- time, infot_new->start, mens);
-		// }
-		// else
-		// 	hp = 1;
+		}
+		else
+			hp = 1;
 		if (mens[0] == 'd')
 			hp = 1;
 	}
