@@ -30,11 +30,11 @@ int	par(int n)
 void	print(t_new_philo *infos, char *mens, t_new *infot_new, int time)
 {
 	static int	hp = 0;
-	
-	if(mens[3] == 'e')
+
+	if (mens[3] == 'e')
 	{
 		pthread_mutex_lock(&infos->mens);
-		infos->fuck->dead_time = get_time(infos)-infot_new->start_time;
+		infos->fuck->dead_time = get_time(infos) - infot_new->start_time;
 		infos->fuck->start_time = infot_new->start_time;
 		pthread_mutex_unlock(&infos->mens);
 	}
@@ -84,9 +84,8 @@ int	print_forks(t_new_philo *infos, t_new *infot_new, pthread_mutex_t *fork,
 	pthread_mutex_unlock(&infos->mens);
 	if (save(infos, infot_new) == FASLE)
 	{
-		return	(FASLE);
+		return (FASLE);
 	}
-		
 	print(infos, "has taken a fork", infot_new, infot_new->start_time);
 	return (TRUE);
 }

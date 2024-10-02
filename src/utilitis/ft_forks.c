@@ -101,7 +101,7 @@ int	end(t_new infot_new, t_new_philo *infos, int neg)
 	pthread_mutex_lock(&infos->mens);
 	infos->fuck->im = FASLE;
 	pthread_mutex_unlock(&infos->mens);
-	print(infos, "died", &infot_new, (infot_new.start_time) );
+	print(infos, "died", &infot_new, (infot_new.start_time));
 	return (FASLE);
 }
 

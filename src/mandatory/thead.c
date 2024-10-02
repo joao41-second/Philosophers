@@ -53,7 +53,7 @@ int	ft_sleep(t_new *infot_new, int time, t_new_philo *infos)
 		usleep(infot_new->times.sleep * 1000);
 	else
 	{
-		usleep(( infot_new->times.sleep-time ) * 1000);
+		usleep(infot_new->times.sleep - time * 1000);
 		return (-1);
 	}
 	if (chek_end(infos) == FASLE || time
